@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="product_topping_add_layout_form" model="ir.ui.view">
+        <field name="name">product.topping.add.wizard.form</field>
+        <field name="model">product.topping.add.wizard</field>
+        <field name="mode">primary</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <group>
+                        <field name="topping_group_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        <field name="topping_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="process" string="Confirm" type="object" class="btn-primary"/>
+                    <button string="Discard" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_open_label_layout" model="ir.actions.act_window">
+        <field name="name">Update Toppings</field>
+        <field name="res_model">product.topping.add.wizard</field>
+        <field name="target">new</field>
+        <field name="view_ids"
+                eval="[(5, 0, 0),
+                (0, 0, {'view_mode': 'form', 'view_id': ref('product_topping_add_layout_form')})]" />
+        <field name="binding_model_id" ref="product.model_product_product"/>
+    </record>
+</odoo>

@@ -1,0 +1,386 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_stock
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:32+0000\n"
+"PO-Revision-Date: 2015-09-10 10:32+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,name:0
+#: field:medical.patient.ambulatory_care.medicament,name:0
+#: field:medical.patient.ambulatory_care.vaccine,name:0
+#: field:medical.patient.rounding.medical_supply,name:0
+#: field:medical.patient.rounding.medicament,name:0
+#: field:medical.patient.rounding.vaccine,name:0
+msgid "Ambulatory ID"
+msgstr "Ambulatory ID"
+
+#. module: medical_stock
+#: view:medical.prescription.shipment:medical_stock.view_prescription_make_shipment
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care,care_location:0
+msgid "Care Location"
+msgstr "Care Location"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,short_comment:0
+#: field:medical.patient.ambulatory_care.medicament,short_comment:0
+#: field:medical.patient.ambulatory_care.vaccine,short_comment:0
+#: field:medical.patient.rounding.medical_supply,short_comment:0
+#: field:medical.patient.rounding.medicament,short_comment:0
+#: field:medical.patient.rounding.vaccine,short_comment:0
+msgid "Comment"
+msgstr "Comment"
+
+#. module: medical_stock
+#: model:ir.actions.act_window,name:medical_stock.action_create_prescription_shipment
+msgid "Create Prescription Shipment"
+msgstr "Create Prescription Shipment"
+
+#. module: medical_stock
+#: view:medical.prescription.shipment:medical_stock.view_prescription_make_shipment
+msgid "Create Prescription Shipments"
+msgstr "Create Prescription Shipments"
+
+#. module: medical_stock
+#: view:medical.prescription.shipment:medical_stock.view_prescription_make_shipment
+msgid "Create prescription shipments"
+msgstr "Create prescription shipments"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,create_uid:0
+#: field:medical.patient.ambulatory_care.medicament,create_uid:0
+#: field:medical.patient.ambulatory_care.vaccine,create_uid:0
+#: field:medical.patient.rounding.medical_supply,create_uid:0
+#: field:medical.patient.rounding.medicament,create_uid:0
+#: field:medical.patient.rounding.vaccine,create_uid:0
+#: field:medical.prescription.shipment,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,create_date:0
+#: field:medical.patient.ambulatory_care.medicament,create_date:0
+#: field:medical.patient.ambulatory_care.vaccine,create_date:0
+#: field:medical.patient.rounding.medical_supply,create_date:0
+#: field:medical.patient.rounding.medicament,create_date:0
+#: field:medical.patient.rounding.vaccine,create_date:0
+#: field:medical.prescription.shipment,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_stock
+#: view:medical.prescription.shipment:medical_stock.view_prescription_make_shipment
+msgid "Do you want to create the prescription shipment ?"
+msgstr "Do you want to create the prescription shipment ?"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care:medical_stock.medical_stock_ambulatory_care_form
+#: selection:medical.patient.ambulatory_care,state:0
+#: view:medical.patient.rounding:medical_stock.medical_stock_rounding_form
+#: selection:medical.patient.rounding,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.vaccine,dose:0
+#: field:medical.patient.rounding.vaccine,dose:0
+msgid "Dose"
+msgstr "Dose"
+
+#. module: medical_stock
+#: selection:medical.patient.ambulatory_care,state:0
+#: selection:medical.patient.rounding,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: medical_stock
+#: field:stock.production.lot,expiration_date:0
+msgid "Expiration Date"
+msgstr "Expiration Date"
+
+#. module: medical_stock
+#: code:addons/medical_stock/medical_stock.py:93
+#: code:addons/medical_stock/medical_stock.py:227
+#, python-format
+msgid "Expired medicaments"
+msgstr "Expired medicaments"
+
+#. module: medical_stock
+#: code:addons/medical_stock/medical_stock.py:115
+#: code:addons/medical_stock/medical_stock.py:250
+#, python-format
+msgid "Expired supplies"
+msgstr "Expired supplies"
+
+#. module: medical_stock
+#: code:addons/medical_stock/medical_stock.py:140
+#: code:addons/medical_stock/medical_stock.py:275
+#, python-format
+msgid "Expired vaccines"
+msgstr "Expired vaccines"
+
+#. module: medical_stock
+#: field:medical.patient.rounding,hospitalization_location:0
+msgid "Hospitalization Location"
+msgstr "Hospitalization Location"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,id:0
+#: field:medical.patient.ambulatory_care.medicament,id:0
+#: field:medical.patient.ambulatory_care.vaccine,id:0
+#: field:medical.patient.rounding.medical_supply,id:0
+#: field:medical.patient.rounding.medicament,id:0
+#: field:medical.patient.rounding.vaccine,id:0
+#: field:medical.prescription.shipment,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_stock
+#: field:res.partner,warehouse:0
+msgid "Inventory"
+msgstr "Inventory"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,write_uid:0
+#: field:medical.patient.ambulatory_care.medicament,write_uid:0
+#: field:medical.patient.ambulatory_care.vaccine,write_uid:0
+#: field:medical.patient.rounding.medical_supply,write_uid:0
+#: field:medical.patient.rounding.medicament,write_uid:0
+#: field:medical.patient.rounding.vaccine,write_uid:0
+#: field:medical.prescription.shipment,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,write_date:0
+#: field:medical.patient.ambulatory_care.medicament,write_date:0
+#: field:medical.patient.ambulatory_care.vaccine,write_date:0
+#: field:medical.patient.rounding.medical_supply,write_date:0
+#: field:medical.patient.rounding.medicament,write_date:0
+#: field:medical.patient.rounding.vaccine,write_date:0
+#: field:medical.prescription.shipment,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,lot:0
+#: field:medical.patient.ambulatory_care.medicament,lot:0
+#: field:medical.patient.ambulatory_care.vaccine,lot:0
+#: field:medical.patient.rounding.medical_supply,lot:0
+#: field:medical.patient.rounding.medicament,lot:0
+#: field:medical.patient.rounding.vaccine,lot:0
+#: field:stock.move,lot:0
+msgid "Lot"
+msgstr "Lot"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_stock_production_lot
+msgid "Lot/Serial"
+msgstr "Lot/Serial"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care:medical_stock.medical_stock_ambulatory_care_form
+#: field:medical.patient.ambulatory_care,medical_supplies:0
+#: view:medical.patient.rounding:medical_stock.medical_stock_rounding_form
+#: field:medical.patient.rounding,medical_supplies:0
+msgid "Medical Supplies"
+msgstr "Medical Supplies"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,product:0
+#: field:medical.patient.rounding.medical_supply,product:0
+msgid "Medical Supply"
+msgstr "Medical Supply"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care.medicament:medical_stock.medical_patient_ambulatory_care_medicament_form
+#: field:medical.patient.ambulatory_care.medicament,medicament:0
+#: view:medical.patient.rounding.medicament:medical_stock.medical_patient_rounding_medicament_form
+#: field:medical.patient.rounding.medicament,medicament:0
+msgid "Medicament"
+msgstr "Medicament"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care:medical_stock.medical_stock_ambulatory_care_form
+#: field:medical.patient.ambulatory_care,medicaments:0
+#: view:medical.patient.ambulatory_care.medicament:medical_stock.medical_patient_ambulatory_care_medicament_tree
+#: view:medical.patient.rounding:medical_stock.medical_stock_rounding_form
+#: field:medical.patient.rounding,medicaments:0
+#: view:medical.patient.rounding.medicament:medical_stock.medical_patient_rounding_medicament_tree
+msgid "Medicaments"
+msgstr "Medicaments"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care:medical_stock.medical_stock_ambulatory_care_form
+#: view:medical.patient.rounding:medical_stock.medical_stock_rounding_form
+msgid "Medication"
+msgstr "Medication"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.vaccine,vaccine:0
+#: field:medical.patient.rounding.vaccine,vaccine:0
+msgid "Name"
+msgstr "Name"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.vaccine,next_dose_date:0
+#: field:medical.patient.rounding.vaccine,next_dose_date:0
+msgid "Next Dose"
+msgstr "Next Dose"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_res_partner
+msgid "Partner"
+msgstr "Partenaire"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_ambulatory_care
+msgid "Patient Ambulatory Care"
+msgstr "Patient Ambulatory Care"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_ambulatory_care_medical_supply
+msgid "Patient Ambulatory Care Medical Supply"
+msgstr "Patient Ambulatory Care Medical Supply"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_ambulatory_care_medicament
+msgid "Patient Ambulatory Care Medicament"
+msgstr "Patient Ambulatory Care Medicament"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_ambulatory_care_vaccine
+msgid "Patient Ambulatory Care Vaccine"
+msgstr "Patient Ambulatory Care Vaccine"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_rounding
+msgid "Patient Rounding"
+msgstr "Patient Rounding"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_rounding_medical_supply
+#: view:medical.patient.ambulatory_care.medical_supply:medical_stock.medical_patient_ambulatory_care_medical_supply_form
+#: view:medical.patient.ambulatory_care.medical_supply:medical_stock.medical_patient_ambulatory_care_medical_supply_tree
+#: view:medical.patient.rounding.medical_supply:medical_stock.medical_patient_rounding_medical_supply_form
+#: view:medical.patient.rounding.medical_supply:medical_stock.medical_patient_rounding_medical_supply_tree
+msgid "Patient Rounding Medical Supply"
+msgstr "Patient Rounding Medical Supply"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_rounding_medicament
+msgid "Patient Rounding Medicament"
+msgstr "Patient Rounding Medicament"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_medical_patient_rounding_vaccine
+msgid "Patient Rounding Vaccine"
+msgstr "Patient Rounding Vaccine"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_stock_picking
+msgid "Picking List"
+msgstr "Bon de livraison"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medicament,product:0
+#: field:medical.patient.rounding.medicament,product:0
+msgid "Product"
+msgstr "Product"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care.medical_supply,quantity:0
+#: field:medical.patient.ambulatory_care.medicament,quantity:0
+#: field:medical.patient.ambulatory_care.vaccine,quantity:0
+#: field:medical.patient.rounding.medical_supply,quantity:0
+#: field:medical.patient.rounding.medicament,quantity:0
+#: field:medical.patient.rounding.vaccine,quantity:0
+msgid "Quantity"
+msgstr "Quantity"
+
+#. module: medical_stock
+#: view:stock.production.lot:medical_stock.lot_view_tree_inherit
+msgid "Serial Number"
+msgstr "Serial Number"
+
+#. module: medical_stock
+#: help:medical.patient.ambulatory_care.medical_supply,short_comment:0
+#: help:medical.patient.ambulatory_care.medicament,short_comment:0
+#: help:medical.patient.ambulatory_care.vaccine,short_comment:0
+#: help:medical.patient.rounding.medical_supply,short_comment:0
+#: help:medical.patient.rounding.medicament,short_comment:0
+#: help:medical.patient.rounding.vaccine,short_comment:0
+msgid "Short comment on the specific drug"
+msgstr "Short comment on the specific drug"
+
+#. module: medical_stock
+#: field:stock.move,ambulatory_care:0
+msgid "Source Ambulatory Care"
+msgstr "Source Ambulatory Care"
+
+#. module: medical_stock
+#: field:stock.picking,prescription_order:0
+msgid "Source Prescription"
+msgstr "Source Prescription"
+
+#. module: medical_stock
+#: field:stock.move,rounding:0
+msgid "Source Rounding"
+msgstr "Source Rounding"
+
+#. module: medical_stock
+#: field:medical.patient.ambulatory_care,state:0
+#: field:medical.patient.rounding,state:0
+msgid "Status"
+msgstr "Status"
+
+#. module: medical_stock
+#: model:ir.model,name:medical_stock.model_stock_move
+msgid "Stock Move"
+msgstr "Mouvement de stock"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care:medical_stock.medical_stock_ambulatory_care_form
+#: field:medical.patient.ambulatory_care,moves:0
+#: view:medical.patient.rounding:medical_stock.medical_stock_rounding_form
+#: field:medical.patient.rounding,moves:0
+msgid "Stock Moves"
+msgstr "Stock Moves"
+
+#. module: medical_stock
+#: code:addons/medical_stock/medical_stock.py:93
+#: code:addons/medical_stock/medical_stock.py:115
+#: code:addons/medical_stock/medical_stock.py:140
+#: code:addons/medical_stock/medical_stock.py:227
+#: code:addons/medical_stock/medical_stock.py:250
+#: code:addons/medical_stock/medical_stock.py:275
+#, python-format
+msgid "UserError"
+msgstr "UserError"
+
+#. module: medical_stock
+#: view:medical.patient.ambulatory_care:medical_stock.medical_stock_ambulatory_care_form
+#: field:medical.patient.ambulatory_care,vaccines:0
+#: view:medical.patient.ambulatory_care.vaccine:medical_stock.medical_patient_ambulatory_care_vaccine_form
+#: view:medical.patient.ambulatory_care.vaccine:medical_stock.medical_patient_ambulatory_care_vaccine_tree
+#: view:medical.patient.rounding:medical_stock.medical_stock_rounding_form
+#: field:medical.patient.rounding,vaccines:0
+#: view:medical.patient.rounding.vaccine:medical_stock.medical_patient_rounding_vaccine_form
+#: view:medical.patient.rounding.vaccine:medical_stock.medical_patient_rounding_vaccine_tree
+msgid "Vaccines"
+msgstr "Vaccines"
+

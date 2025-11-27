@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t name="inherit_discuss_category" t-inherit="mail.DiscussSidebarCategories" t-inherit-mode="extension">
+        <xpath expr="//t[@t-foreach='categories']" position="replace">
+            <t t-if="this.__owl__.parent.component.__owl__.parent.parent.props.action.display_name === 'Discuss Whatsapp'">
+                <t t-foreach="categories" t-as="categoryData" t-key="categoryData_index">
+                    <t t-if="categoryData.value == '(store)=>store.discuss.whatsapp' ">
+                        <t t-if="categoryData.predicate?.(store) ?? true" t-call="mail.DiscussSidebarCategory">
+                            <t t-set="category" t-value="categoryData.value(store)"/>
+                        </t>
+                    </t>
+                </t>
+            </t>
+            <t t-elif="this.__owl__.parent.component.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">
+                <t t-foreach="categories" t-as="categoryData" t-key="categoryData_index">
+                    <t t-if="categoryData.value == '(store)=>store.discuss.whatsapp' ">
+                        <t t-if="categoryData.predicate?.(store) ?? true" t-call="mail.DiscussSidebarCategory">
+                            <t t-set="category" t-value="categoryData.value(store)"/>
+                        </t>
+                    </t>
+                </t>
+            </t>
+            <t t-elif="this.__owl__.parent.component.__owl__.parent.parent.props.action.name === this.discuss_name and this.hideWhatsappMenu === 'true'">
+                <t t-foreach="categories" t-as="categoryData" t-key="categoryData_index">
+                    <t t-if="categoryData.value != '(store)=>store.discuss.whatsapp' ">
+                        <t t-if="categoryData.predicate?.(store) ?? true" t-call="mail.DiscussSidebarCategory">
+                            <t t-set="category" t-value="categoryData.value(store)"/>
+                        </t>
+                    </t>
+                </t>
+            </t>
+            <t t-else=" ">
+                <t t-foreach="categories" t-as="categoryData" t-key="categoryData_index">
+                    <t t-if="categoryData.predicate?.(store) ?? true" t-call="mail.DiscussSidebarCategory">
+                        <t t-set="category" t-value="categoryData.value(store)"/>
+                    </t>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//hr[@class='w-100 opacity-0']" position="replace">
+            <t t-if="this.__owl__.parent.component.__owl__.parent.parent.props.action.display_name === 'Discuss Whatsapp'">
+                <span></span>
+            </t>
+            <t t-elif="this.__owl__.parent.component.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">
+                <span></span>
+            </t>
+            <t t-else="">
+                <hr class="w-100 opacity-0"/>
+            </t>
+        </xpath>
+    </t>
+    <t name="inherit_mail_category" t-inherit="mail.DiscussSidebarCategory" t-inherit-mode="extension">
+        <xpath expr="//div[@t-att-class='category.extraClass']" position="replace">
+            <t t-if="this.__owl__.parent.component.__owl__.parent.parent.props.action.display_name === 'Discuss Whatsapp'">
+                <div class="o-mail-DiscussSidebarCategory d-flex align-items-center my-1"
+                     t-att-class="category.extraClass">
+                    <div t-attf-class="d-flex align-items-baseline mx-1 {{ hover_class }}">
+                        <span class="btn-sm p-0 fw-bolder">
+                            WhatsApp Chats
+                        </span>
+                    </div>
+                    <div class="flex-grow-1"/>
+                    <div class="d-flex me-3">
+                        <i t-if="category.canView" t-attf-class="fa fa-cog {{ hover_class }}"
+                           title="View or join channels" t-on-click="() => this.openCategory(category)" role="img"/>
+                    </div>
+                    <div t-if="!category.isOpen and threadService.getDiscussSidebarCategoryCounter(category.id) > 0"
+                         class="o-mail-DiscussSidebar-badge badge rounded-pill me-3 o-discuss-badge fw-bold cust-o-discuss-badge">
+                        <t t-esc="threadService.getDiscussSidebarCategoryCounter(category.id)"/>
+                    </div>
+                </div>
+                <t t-if="this.addToCategory(category)">
+                    <t t-if="category.canAdd">
+                        <t t-if="category.isOpen">
+                            <div t-if="state.editing === category.id" class="p-2" t-ref="selector">
+                                <ChannelSelector category="category" onValidate.bind="stopEditing" autofocus="true"
+                                                 close.bind="stopEditing"/>
+                            </div>
+                            <t t-foreach="filteredThreads(category)" t-as="thread" t-key="thread.localId"
+                               t-call="mail.DiscussSidebarChannel">
+                                <t t-set="thread" t-value="thread"/>
+                            </t>
+                        </t>
+                    </t>
+                </t>
+            </t>
+
+            <t t-elif="this.__owl__.parent.component.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">
+                <div class="o-mail-DiscussSidebarCategory d-flex align-items-center my-1"
+                     t-att-class="category.extraClass">
+                    <div t-attf-class="d-flex align-items-baseline mx-1 {{ hover_class }}">
+                        <span class="btn-sm p-0 fw-bolder">
+                            WhatsApp Chats
+                        </span>
+
+                    </div>
+                    <div class="flex-grow-1"/>
+                    <div class="d-flex me-3">
+                        <i t-if="category.canView" t-attf-class="fa fa-cog {{ hover_class }}"
+                           title="View or join channels" t-on-click="() => this.openCategory(category)" role="img"/>
+                    </div>
+                    <div t-if="!category.isOpen and threadService.getDiscussSidebarCategoryCounter(category.id) > 0"
+                         class="o-mail-DiscussSidebar-badge badge rounded-pill me-3 o-discuss-badge fw-bold cust-o-discuss-badge">
+                        <t t-esc="threadService.getDiscussSidebarCategoryCounter(category.id)"/>
+                    </div>
+                </div>
+                <t t-if="this.addToCategory(category)">
+                    <t t-if="category.canAdd">
+                        <t t-if="category.isOpen">
+                            <div t-if="state.editing === category.id" class="p-2" t-ref="selector">
+                                <ChannelSelector category="category" onValidate.bind="stopEditing" autofocus="true"
+                                                 close.bind="stopEditing"/>
+                            </div>
+                            <t t-foreach="filteredThreads(category)" t-as="thread" t-key="thread.localId"
+                               t-call="mail.DiscussSidebarChannel">
+                                <t t-set="thread" t-value="thread"/>
+                            </t>
+                        </t>
+                    </t>
+                </t>
+            </t>
+
+
+            <t t-else="">
+                <div class="o-mail-DiscussSidebarCategory d-flex align-items-center my-1"
+                     t-att-class="category.extraClass">
+                    <div t-attf-class="d-flex align-items-baseline mx-1 {{ hover_class }}"
+                         t-on-click="() => this.toggleCategory(category)">
+                        <i class="o-mail-DiscussSidebarCategory-icon small me-1"
+                           t-att-class="category.isOpen ? 'oi oi-chevron-down' : 'oi oi-chevron-right'"/>
+                        <span class="btn-sm p-0 text-uppercase fw-bolder">
+                            <t t-esc="category.name"/>
+                        </span>
+
+                    </div>
+                    <div class="flex-grow-1"/>
+                    <div class="d-flex me-3">
+                        <i t-if="category.canView" t-attf-class="fa fa-cog {{ hover_class }}"
+                           title="View or join channels" t-on-click="() => this.openCategory(category)" role="img"/>
+                        <i t-if="category.canAdd and category.isOpen" class="o-mail-DiscussSidebarCategory-add"
+                           t-attf-class="fa fa-plus {{ hover_class }} ms-1"
+                           t-on-click="() => this.addToCategory(category)" t-att-title="category.addTitle" role="img"
+                           t-att-data-hotkey="category.addHotkey"/>
+                    </div>
+                    <div t-if="!category.isOpen and threadService.getDiscussSidebarCategoryCounter(category.id) > 0"
+                         class="o-mail-DiscussSidebar-badge badge rounded-pill me-3 o-discuss-badge fw-bold">
+                        <t t-esc="threadService.getDiscussSidebarCategoryCounter(category.id)"/>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+</templates>

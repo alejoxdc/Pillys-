@@ -1,0 +1,445 @@
+<?xml version="1.0" ?>
+<odoo>
+
+
+    <!-- <menuitem name="Nursing" id="medical_nursing_menu" parent="pragtech_veterinary_app.medical_inpatient_menu" sequence="4"/> -->
+
+    <record model="ir.ui.view" id="medical_patient_rounding_form">
+        <field name="name">medical.patient.rounding.form</field>
+        <field name="model">medical.patient.rounding</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Roundings" version="7.0">
+                <header>
+                </header>
+                <notebook>
+                    <page string="Main" id="rounding_main">
+                        <group colspan="4" id="group_admin_data">
+                            <field name="name"/>
+                            <field name="health_professional"/>
+                            <field name="evaluation_start"/>
+                            <field name="evaluation_end"/>
+                            <field name="environmental_assessment"/>
+                            <field name="warning"/>
+                        </group>
+                        <group colspan="6" col="6" string="Six P's">
+                            <field name="pain"/>
+                            <field name="potty"/>
+                            <field name="position"/>
+                            <field name="proximity"/>
+                            <field name="pump"/>
+                            <field name="personal_needs"/>
+                        </group>
+                        <group colspan="6" col="6" string="Vital Signs">
+                            <field name="temperature"/>
+                            <field name="systolic"/>
+                            <field name="diastolic"/>
+                            <field name="bpm"/>
+                            <field name="respiratory_rate"/>
+                            <field name="osat"/>
+                        </group>
+                        <group colspan="6" col="6" string="Other">
+                            <field name="diuresis"/>
+                            <field name="urinary_catheter"/>
+                            <field name="glycemia"/>
+                            <field name="depression"/>
+                            <field name="evolution"/>
+                        </group>
+                        <group colspan="4" string="Round Summary">
+                            <field name="round_summary" nolabel="1" colspan="4"/>
+                        </group>
+                    </page>
+                    <page string="Procedures">
+                        <group col="4" colspan="4">
+                            <field name="procedures" colspan="4" nolabel="1"/>
+                        </group>
+                    </page>
+                    <!--
+                    <page string="Medication">
+                        <group colspan="4" col="4" >
+                        <field name="medicaments" string="Medicaments" nolabel="1" widget="one2many_list"/>
+                        <field name="medical_supplies" string="Medical Supplies" nolabel="1" widget="one2many_list"/>
+                        <field name="vaccines" string="Vaccines" nolabel="1" widget="one2many_list"/>
+                        </group>
+                    </page>
+                    -->
+                </notebook>
+
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_rounding_tree">
+        <field name="name">medical.patient.rounding.tree</field>
+        <field name="model">medical.patient.rounding</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Roundings">
+                <field name="warning"/>
+                <field name="name"/>
+                <field name="evaluation_start"/>
+                <field name="health_professional"/>
+                <field name="evolution"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_patient_rounding_action">
+        <field name="name">Roundings</field>
+        <field name="res_model">medical.patient.rounding</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- 	<menuitem name="Roundings" id="medical_patient_rounding_menu"
+            action="medical_patient_rounding_action" parent="medical_nursing_menu"/> -->
+
+    <!-- Rounding Procedure-->
+
+    <record model="ir.ui.view" id="medical_rounding_procedure_form">
+        <field name="name">medical.rounding_procedure.form</field>
+        <field name="model">medical.rounding_procedure</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Rounding Procedure">
+                <group colspan="4" col="4">
+                    <field name="procedure"/>
+                    <field name="notes"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_rounding_procedure_tree">
+        <field name="name">medical.rounding_procedure.tree</field>
+        <field name="model">medical.rounding_procedure</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Rounding Procedure">
+                <field name="procedure"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--
+    <record model="ir.ui.view" id="medical_patient_rounding_medicament_form">
+    <field name="name">medical.patient.rounding.medicament.form</field>
+    <field name="model">medical.patient.rounding.medicament</field>
+    <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medicament">
+            <separator string="Medicaments"/>
+            <group colspan="4" col="4">
+                <field name="name"></field>
+                <field name="medicament"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_rounding_medicament_tree">
+        <field name="name">medical.patient.rounding.medicament.tree</field>
+        <field name="model">medical.patient.rounding.medicament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  string='Medicaments'>
+                <field name="name"></field>
+                <field name="medicament"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_rounding_medical_supply_form">
+    <field name="name">medical.patient.rounding.medical_supply.form</field>
+    <field name="model">medical.patient.rounding.medical_supply</field>
+    <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient Rounding Medical Supply">
+            <separator string="Medical Supplies"/>
+            <group colspan="4" col="4">
+                <field name="name"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_rounding_medical_supply_tree">
+        <field name="name">medical.patient.rounding.medical_supply.tree</field>
+        <field name="model">medical.patient.rounding.medical_supply</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  string='Patient Rounding Medical Supply'>
+                <field name="name"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_rounding_vaccine_form">
+    <field name="name">medical.patient.rounding.vaccine.form</field>
+    <field name="model">medical.patient.rounding.vaccine</field>
+    <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Vaccines">
+            <separator string="Vaccines"/>
+            <group colspan="4" col="4">
+                <field name="name"></field>
+                <field name="vaccine"></field>
+                <field name="quantity"></field>
+                <field name="dose"></field>
+                <field name="next_dose_date"></field>
+                <field name="short_comment"></field>
+            </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_rounding_vaccine_tree">
+        <field name="name">medical.patient.rounding.vaccine.tree</field>
+        <field name="model">medical.patient.rounding.vaccine</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  string='Vaccines'>
+                <field name="name"></field>
+                <field name="vaccine"></field>
+                <field name="quantity"></field>
+                <field name="dose"></field>
+                <field name="next_dose_date"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+
+    -->
+
+
+    <!-- Outpatient Care view -->
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_form">
+        <field name="name">medical.patient.ambulatory_care.form</field>
+        <field name="model">medical.patient.ambulatory_care</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient Ambulatory Care" version="7.0">
+                <header>
+                </header>
+                <sheet string="Basic Info">
+                    <group colspan="4" col="4">
+                        <field name="name"/>
+                        <field name="health_professional"/>
+                        <field name="ordering_professional"/>
+                        <field name="patient"/>
+                        <field name="base_condition"/>
+                        <field name="evaluation" domain="[('name', '=',patient)]"
+                               context="{'name':patient}"/>
+                        <field name="session_number"/>
+                        <field name="session_start"/>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Main">
+                            <group colspan="4" string="Procedures">
+                                <field name="procedures" colspan="4" nolabel="1"/>
+                            </group>
+                            <group colspan="4" string="Summary">
+                                <field name="session_notes" colspan="4" nolabel="1"/>
+                            </group>
+                            <group colspan="4" col="6" id="ambulatory_care_finish">
+                                <field name="warning"/>
+                                <field name="session_end"/>
+                                <field name="next_session"/>
+                            </group>
+                        </page>
+                        <page string="Other">
+                            <group colspan="6" col="6" string="Vital Signs">
+                                <field name="temperature"/>
+                                <field name="systolic"/>
+                                <field name="diastolic"/>
+                                <field name="bpm"/>
+                                <field name="respiratory_rate"/>
+                                <field name="osat"/>
+                            </group>
+                            <group colspan="6" col="6" string="Other">
+                                <field name="glycemia"/>
+                                <field name="evolution"/>
+                            </group>
+                        </page>
+
+                        <!--
+                        <page string="Medication">
+                        <group colspan="4" col="4" >
+                        <field name="medicaments" string="Medicaments" nolabel="1" widget="one2many_list"/>
+                        <field name="medical_supplies" string="Medical Supplies" nolabel="1" widget="one2many_list"/>
+                        <field name="vaccines" string="Vaccines" nolabel="1" widget="one2many_list"/>
+                        </group>
+                        </page>
+                        -->
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_tree">
+        <field name="name">medical.patient.ambulatory_care.tree</field>
+        <field name="model">medical.patient.ambulatory_care</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Patient Ambulatory Care">
+                <field name="warning"/>
+                <field name="name"/>
+                <field name="patient"/>
+                <field name="session_start"/>
+                <field name="health_professional"/>
+                <field name="evolution"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_patient_ambulatory_care_action">
+        <field name="name">Patient Ambulatory Care</field>
+        <field name="res_model">medical.patient.ambulatory_care</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="Patient Ambulatory Care" id="medical_patient_ambulatory_care_menu"
+        action="medical_patient_ambulatory_care_action" parent="medical_nursing_menu"/> -->
+
+    <!-- OUTPATIENT CARE -->
+
+    <record model="ir.ui.view" id="medical_ambulatory_care_procedure_form">
+        <field name="name">medical.ambulatory_care_procedure.form</field>
+        <field name="model">medical.ambulatory_care_procedure</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Rounding Procedure">
+                <group colspan="4" col="4">
+                    <field name="procedure"/>
+                    <field name="comments"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_ambulatory_care_procedure_tree">
+        <field name="name">medical.ambulatory_care_procedure.tree</field>
+        <field name="model">medical.ambulatory_care_procedure</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Rounding Procedure">
+                <field name="procedure"/>
+                <field name="comments"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medicament_form">
+    <field name="name">medical.patient.ambulatory_care.medicament.form</field>
+    <field name="model">medical.patient.ambulatory_care.medicament</field>
+    <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medicament">
+                <field name="name"></field>
+                <field name="medicament"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medicament_tree">
+        <field name="name">medical.patient.ambulatory_care.medicament.tree</field>
+        <field name="model">medical.patient.ambulatory_care.medicament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  string='Medicaments'>
+                <field name="name"></field>
+                <field name="medicament"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medical_supply_form">
+    <field name="name">medical.patient.ambulatory_care.medical_supply.form</field>
+    <field name="model">medical.patient.ambulatory_care.medical_supply</field>
+    <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient Rounding Medical Supply">
+                <field name="name"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medical_supply_tree">
+        <field name="name">medical.patient.ambulatory_care.medical_supply.tree</field>
+        <field name="model">medical.patient.ambulatory_care.medical_supply</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  string='Patient Rounding Medical Supply'>
+                <field name="name"></field>
+                <field name="product"></field>
+                <field name="quantity"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_vaccine_form">
+    <field name="name">medical.patient.ambulatory_care.vaccine.form</field>
+    <field name="model">medical.patient.ambulatory_care.vaccine</field>
+    <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Vaccines">
+                <field name="name"></field>
+                <field name="vaccine"></field>
+                <field name="quantity"></field>
+                <field name="dose"></field>
+                <field name="next_dose_date"></field>
+                <field name="short_comment"></field>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_vaccine_tree">
+        <field name="name">medical.patient.ambulatory_care.vaccine.tree</field>
+        <field name="model">medical.patient.ambulatory_care.vaccine</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree  string='Vaccines'>
+                <field name="name"></field>
+                <field name="vaccine"></field>
+                <field name="quantity"></field>
+                <field name="dose"></field>
+                <field name="next_dose_date"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+    -->
+
+</odoo>

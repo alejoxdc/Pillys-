@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+
+        <record model="product.category" id="medicament_p">
+            <field name="name">Medicaments</field>
+        </record>
+
+        <record model="product.category" id="Flea_Tic_&_Fly_Prds_Oral">
+            <field name="name">Flea Tic & Fly Prds - Oral</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Pharmaceuticals_Animal">
+            <field name="name">Pharmaceuticals - Animal</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Misc_Pharmaceuticals">
+            <field name="name">Misc. Pharmaceuticals</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Canine_Biologicals">
+            <field name="name">Canine Biologicals</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="MISCELLANEOUS">
+            <field name="name">MISCELLANEOUS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="DENTAL_ACCESSORIES">
+            <field name="name">DENTAL ACCESSORIES</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Feline_Biologicals">
+            <field name="name">Feline Biologicals</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Flea_Tic_&_Fly_Prds_Topical">
+            <field name="name">Flea Tic & Fly Prds - Topical</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Anthelmintics_Oral">
+            <field name="name">Anthelmintics - Oral</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Otic_Topical">
+            <field name="name">Otic Topical</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Vitamins_&_Minerals_Oral">
+            <field name="name">Vitamins & Minerals - Oral</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="DISPOSABLE_SYRINGES">
+            <field name="name">DISPOSABLE SYRINGES</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="CATHETERS_TUBES_SETS">
+            <field name="name">CATHETERS TUBES & IV SETS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Antiobiotics_Injectable">
+            <field name="name">Antiobiotics - Injectable</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="EQUIPMENT_ACCESS">
+            <field name="name">EQUIPMENT ACCESS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="LUBES">
+            <field name="name">LUBESS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+        <record model="product.category" id="RESTRAINT_EQUIPMENT">
+            <field name="name">RESTRAINT EQUIPMENT</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="SANITATION_SOLUTIONS">
+            <field name="name">SANITATION SOLUTIONS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="SURGICAL_DRESSINGS">
+            <field name="name">SURGICAL DRESSINGS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="ANALGESICS_ANESTHETICS_TRANQU">
+            <field name="name">ANALGESICS ANESTHETICS TRANQU</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+
+        <record model="product.category" id="Pharmaceuticals_Human">
+            <field name="name">Pharmaceuticals - Human</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="SANITATION_SOLUTIONS">
+            <field name="name">SANITATION SOLUTIONS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Shampoo_Lotion_Rinses">
+            <field name="name">Shampoo Lotion & Rinses</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="MASTITAS_TUBES">
+            <field name="name">MASTITAS TUBES</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+
+        <record model="product.category" id="Technical_Solutions">
+            <field name="name">Technical Solutions</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Dispensing_Bottle_Vial">
+            <field name="name">Dispensing Bottle Vial & Jars</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="DIAGNOSTIC_REAGENTS">
+            <field name="name">DIAGNOSTIC REAGENTS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="DIAGNOSTIC_EQUIPMENT">
+            <field name="name">DIAGNOSTIC EQUIPMENT</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+
+        <record model="product.category" id="LAB_EQUIPMENT/NON_DIAGNOSTIC">
+            <field name="name">LAB EQUIPMENT/NON DIAGNOSTIC</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="Dispensing_Bottle_Vial">
+            <field name="name">Dispensing Bottle Vial & Jars</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="DIAGNOSTIC_REAGENTS">
+            <field name="name">DIAGNOSTIC REAGENTS</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+        <record model="product.category" id="DIAGNOSTIC_EQUIPMENT">
+            <field name="name">DIAGNOSTIC EQUIPMENT</field>
+            <field name="parent_id" ref="medicament_p"/>
+        </record>
+
+
+    </data>
+</odoo>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?> 
+<odoo>
+    <!-- Odoo View Definition for Whatsapp Message Form -->
+    <record id="whatsapp_send_message_view_form" model="ir.ui.view">
+        <field name="name">whatsapp.send.message.view.form</field>
+        <field name="model">whatsapp.send.message</field>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <form string="Mensaje WhatsApp">
+                <sheet>
+                    <group>
+                        <field name="user_id" readonly="context.get('default_user_id')"/>
+                        <field name="mobile" readonly="1"/>
+                        <field name="move_id" invisible="1"/>
+                        <field name="related_record_model" invisible="1"/>
+                        <field name="related_record_id" invisible="1"/>
+                    </group>
+                    
+                    <group>
+                        <field name="use_template" default="0"/>
+                        <field name="template_id" 
+                               domain="[('model', '=', related_record_model)]"
+                               options="{'no_create': True, 'no_create_edit': True}"
+                               invisible="use_template == False"
+                               required="use_template == True"/>
+                    </group>
+                    
+                    <group>
+                        <field name="message" placeholder="Escriba su mensaje aquí..." 
+                               widget="html" options="{'style-inline': true}"/>
+                    </group>
+                    
+                    <!-- Simplificar a un solo campo de adjuntos -->
+                    <group string="Archivos Adjuntos" invisible="use_template == True">
+                        <field name="attachments_ids" widget="many2many_binary" options="{'no_create': True}"/>
+                    </group>
+                </sheet>
+                <footer>
+                    <button name="action_send_message" string="Enviar" type="object" class="btn-primary"/>
+                    <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

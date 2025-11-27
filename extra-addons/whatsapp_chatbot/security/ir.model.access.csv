@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_whatsapp_chatbot_administrator,access.whatsapp.chatbot.admin,model_whatsapp_chatbot_chatbot,whatsapp.group_whatsapp_admin,1,1,1,1
+access_whatsapp_chatbot_user,access.whatsapp.chatbot.user,model_whatsapp_chatbot_chatbot,base.group_user,1,1,1,1
+access_whatsapp_chatbot_flow_administrator,access.whatsapp.chatbot.flow.admin,model_whatsapp_chatbot_chatbot_flow,whatsapp.group_whatsapp_admin,1,1,1,1
+access_whatsapp_chatbot_flow_user,access.whatsapp.chatbot.flow.user,model_whatsapp_chatbot_chatbot_flow,base.group_user,1,1,1,1
+access_whatsapp_chatbot_message_warning_administrator,access.whatsapp.chatbot.message.warning.admin,model_whatsapp_chatbot_message_warning,whatsapp.group_whatsapp_admin,1,1,1,1
+access_whatsapp_message_warning_user,access.whatsapp.message.warning.user,model_whatsapp_chatbot_message_warning,base.group_user,1,1,1,1
+access_whatsapp_chatbot_execution_record_administrator,access.whatsapp.chatbot.execution.record.admin,model_chatbot_execution_record,whatsapp.group_whatsapp_admin,1,1,1,1
+access_whatsapp_chatbot_execution_record_user,access.whatsapp.chatbot.execution.record.user,model_chatbot_execution_record,base.group_user,1,1,1,1
+access_whatsapp_quick_response_admin,access.whatsapp.quick.response.admin,model_whatsapp_quick_response,whatsapp.group_whatsapp_admin,1,1,1,1
+access_whatsapp_quick_response_user,access.whatsapp.quick.response.user,model_whatsapp_quick_response,base.group_user,1,1,1,1

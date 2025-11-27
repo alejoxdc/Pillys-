@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="report_appointments_document">
+    <t t-call="web.external_layout">
+        <div class="page">
+            <div class="oe_structure"/>
+            <div class="row">
+                <div style="font-size: 25px; font-weight: bold;margin: 0px auto;">
+                    <strong><u>APPOINTMENT INFORMATION</u></strong>
+                </div>
+            </div>
+            <br/>
+            <br/>
+            <br/>
+            <table class="table table-condensed" style="width: 100%; border-collapse: collapse;">
+                <tbody class="sale_tbody">
+                    <tr>
+                        <td style="width: 25%; border: 1px solid black; padding: 5px;">
+                            <strong>Patient</strong>
+                        </td>
+                        <td style="width: 25%; border: 1px solid black; padding: 5px;">
+                            <span t-field="doc.patient.partner_id.name"/>
+                        </td>
+                        <td style="width: 25%; border: 1px solid black; padding: 5px;">
+                            <strong>Appointment</strong>
+                        </td>
+                        <td style="width: 25%; border: 1px solid black; padding: 5px;">
+                            <span t-field="doc.name"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <strong>SSN</strong>
+                        </td>
+
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <span t-field=" doc.patient.partner_id.ref"/>
+                        </td>
+
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <strong>Date</strong>
+                        </td>
+
+                        <td style="border: 1px solid black; padding: 5px;" >
+                            <span t-field="doc.appointment_sdate"/>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <strong>Instructions / Notes </strong>
+                        </td>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <span t-field="doc.comments"/>
+                        </td>
+
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <strong>Institution </strong>
+                        </td>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <span t-field="doc.doctor.institution.name"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <strong>Specialty </strong>
+                        </td>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <span t-field="doc.doctor.speciality.name"/>
+                        </td>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <strong>Health Professional </strong>
+                        </td>
+                        <td style="border: 1px solid black; padding: 5px;">
+                            <span t-field="doc.doctor.res_partner_physician_id.name"/>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </t>
+    </template>
+    <template id="report_appointments">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="pragtech_veterinary_app.report_appointments_document"
+                   t-lang="doc.doctor.res_partner_physician_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>
+		
+		
+	

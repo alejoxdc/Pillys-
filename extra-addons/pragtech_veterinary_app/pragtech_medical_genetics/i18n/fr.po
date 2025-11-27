@@ -1,0 +1,270 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_genetics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:06+0000\n"
+"PO-Revision-Date: 2015-09-10 10:06+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,chromosome:0
+msgid "Affected Chromosome"
+msgstr "Affected Chromosome"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Aunt"
+msgstr "Tante"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Brother"
+msgstr "Frère"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Cousin"
+msgstr "Cousin"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,create_uid:0
+#: field:medical.family.diseases,create_uid:0
+#: field:medical.genetic.risk,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,create_date:0
+#: field:medical.family.diseases,create_date:0
+#: field:medical.genetic.risk,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_genetics
+#: field:medical.family.diseases,name:0
+msgid "Disease"
+msgstr "Maladie"
+
+#. module: medical_genetics
+#: field:medical.genetic.risk,disease_gene:0
+msgid "Disease Gene"
+msgstr "Disease Gene"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,dominance:0
+msgid "Dominance"
+msgstr "Dominance"
+
+#. module: medical_genetics
+#: model:ir.model,name:medical_genetics.model_medical_family_diseases
+msgid "Family Diseases"
+msgstr "Maladies de la famille"
+
+#. module: medical_genetics
+#: field:medical.patient,family_history:0
+msgid "Family History"
+msgstr "Historique famillial"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Father"
+msgstr "Père"
+
+#. module: medical_genetics
+#: help:medical.family.diseases,relative:0
+msgid "First degree = siblings, mother and father; second degree = Uncles, nephews and Nieces; third degree = Grandparents and cousins"
+msgstr "au premier degré = frères et sœurs, père et mère; au deuxième degré = oncles, neveux et nièces; troisième degré = grands-parents et cousins"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,gene_id:0
+msgid "Gene ID"
+msgstr "Gene ID"
+
+#. module: medical_genetics
+#: view:medical.family.diseases:medical_genetics.medical_family_diseases_tree
+#: view:medical.family.diseases:medical_genetics.medical_family_diseases_view
+msgid "Genetic Family Diseases"
+msgstr "Maladies génétiques de la famille"
+
+#. module: medical_genetics
+#: model:ir.actions.act_window,name:medical_genetics.medical_action_genetic_risks
+#: model:ir.model,name:medical_genetics.model_medical_disease_gene
+#: model:ir.ui.menu,name:medical_genetics.menu_medical_action_genetic_risks
+#: view:medical.disease.gene:medical_genetics.medical_genetic_disease_tree
+#: view:medical.patient:medical_genetics.medical_patient_view
+#: field:medical.patient,genetic_risks:0
+msgid "Genetic Risks"
+msgstr "Risques génétiques"
+
+#. module: medical_genetics
+#: model:ir.ui.menu,name:medical_genetics.medical_conf_genetics
+msgid "Genetics"
+msgstr "Génétique"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Grandfather"
+msgstr "Grand-père"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Grandmother"
+msgstr "Grand-mère"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,id:0
+#: field:medical.family.diseases,id:0
+#: field:medical.genetic.risk,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,info:0
+msgid "Information"
+msgstr "Information"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,write_uid:0
+#: field:medical.family.diseases,write_uid:0
+#: field:medical.genetic.risk,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,write_date:0
+#: field:medical.family.diseases,write_date:0
+#: field:medical.genetic.risk,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,location:0
+msgid "Location"
+msgstr "Location"
+
+#. module: medical_genetics
+#: help:medical.disease.gene,location:0
+msgid "Locus of the chromosome"
+msgstr "Locus of the chromosome"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,xory:0
+msgid "Maternal"
+msgstr "Maternel"
+
+#. module: medical_genetics
+#: field:medical.family.diseases,xory:0
+msgid "Maternal or Paternal"
+msgstr "Maternel ou Paternel"
+
+#. module: medical_genetics
+#: view:medical.disease.gene:medical_genetics.medical_genetic_disease_view
+msgid "Medical Genetic Risks"
+msgstr "Medical Genetic Risks"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Mother"
+msgstr "Mère"
+
+#. module: medical_genetics
+#: help:medical.disease.gene,chromosome:0
+msgid "Name of the affected chromosome"
+msgstr "Name of the affected chromosome"
+
+#. module: medical_genetics
+#: help:medical.disease.gene,info:0
+msgid "Name of the protein(s) affected"
+msgstr "Name of the protein(s) affected"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Nephew"
+msgstr "Neveu"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Niece"
+msgstr "Nièce"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,long_name:0
+msgid "Official Long Name"
+msgstr "Official Long Name"
+
+#. module: medical_genetics
+#: field:medical.disease.gene,name:0
+msgid "Official Symbol"
+msgstr "Official Symbol"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,xory:0
+msgid "Paternal"
+msgstr "Paternel"
+
+#. module: medical_genetics
+#: field:medical.family.diseases,patient:0
+#: field:medical.genetic.risk,patient:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_genetics
+#: view:medical.genetic.risk:medical_genetics.medical_genetic_risk_view
+#: view:medical.genetic.risk:medical_genetics.medical_genetic_risks_tree123
+msgid "Patient Genetic Risks"
+msgstr "Patient Genetic Risks"
+
+#. module: medical_genetics
+#: help:medical.family.diseases,patient:0
+msgid "Patient Name"
+msgstr "Patient Name"
+
+#. module: medical_genetics
+#: model:ir.model,name:medical_genetics.model_medical_patient
+msgid "Patient related information"
+msgstr "Renseignements sur le patient"
+
+#. module: medical_genetics
+#: field:medical.family.diseases,relative:0
+msgid "Relative"
+msgstr "Relative"
+
+#. module: medical_genetics
+#: view:medical.disease.gene:medical_genetics.view_medical_genetics_filter
+msgid "Search Patient Genetic Risks"
+msgstr "Search Patient Genetic Risks"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Sister"
+msgstr "Sœur"
+
+#. module: medical_genetics
+#: selection:medical.family.diseases,relative:0
+msgid "Uncle"
+msgstr "Oncle"
+
+#. module: medical_genetics
+#: help:medical.disease.gene,gene_id:0
+msgid "default code from NCBI Entrez database."
+msgstr "default code from NCBI Entrez database."
+
+#. module: medical_genetics
+#: selection:medical.disease.gene,dominance:0
+msgid "dominant"
+msgstr "dominant"
+
+#. module: medical_genetics
+#: selection:medical.disease.gene,dominance:0
+msgid "recessive"
+msgstr "recessive"
+

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="prescription_viewreport" model="ir.actions.report">
+        <field name="name">Prescription</field>
+        <field name="model">medical.appointment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.prescription_demo_report</field>
+        <field name="report_file">pragtech_veterinary_app.prescription_demo_report</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_appointment"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

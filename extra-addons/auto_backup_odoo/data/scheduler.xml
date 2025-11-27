@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo noupdate="1">
+    <record id="cron_auto_backup_odoo_dump" model="ir.cron">
+        <field name="name">Dump Current Odoo DB</field>
+        <field name="active" eval="True" />
+        <field name="user_id" ref="base.user_root" />
+        <field name="interval_number">1</field>
+        <field name="interval_type">days</field>
+        <field name="numbercall">-1</field>
+        <field name="doall">1</field>
+        <field name="model_id" ref="model_auto_backup" />
+        <field name="state">code</field>
+        <field name="code">model.dump()</field>
+        <field name="priority" eval="0" />
+    </record>
+</odoo>

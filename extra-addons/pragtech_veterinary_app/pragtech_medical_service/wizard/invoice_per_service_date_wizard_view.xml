@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="invoice_service_wizard_form">
+        <field name="name">invoice.service.wizard.form</field>
+        <field name="model">invoice.service.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Service Start-end Wizard" version="7.0">
+                <group colspan="4" col='4'>
+                    <field name="s_date"/>
+                    <field name="e_date"/>
+                </group>
+                <footer>
+                    <button string="Show" type="object" name="show_record"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+
+            </form>
+        </field>
+    </record>
+
+
+    <!--             <field name="name">Appointment Evaluation Per Medical Health Services</field> -->
+
+    <record model="ir.actions.act_window" id="service_start_end_wizard_act">
+        <field name="name">Appointment Evaluation Per Health Services</field>
+        <field name="res_model">invoice.service.wizard</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!--  <menuitem action="service_start_end_wizard_act" id="appointment_wizard_act11_startend_form" parent="pragtech_veterinary_app.medical_reporting_menu" sequence="1" /> -->
+</odoo>      

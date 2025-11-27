@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_paper_archive,access_medical_paper_archive,model_medical_paper_archive,pragtech_veterinary_app.group_medical_user,1,1,1,1

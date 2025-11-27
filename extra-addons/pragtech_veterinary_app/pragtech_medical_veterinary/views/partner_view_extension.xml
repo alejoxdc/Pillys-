@@ -1,0 +1,52 @@
+<odoo>
+    <record model="ir.ui.view" id="view_partner_form_pet_inherit">
+        <field name="name">partner.form.pet.inherit</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="pragtech_medical.view_partner_form2"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='phone']" position="replace">
+                <field name="phone" invisible="is_pet  == True"/>
+            </xpath>
+
+            <xpath expr="/form/sheet/group/group[2]/field[@name='function']" position="replace">
+                <field name="function"
+                       invisible="is_pet  == True or is_company == True"
+                       />
+            </xpath>
+
+            <xpath expr="//field[@name='website']" position="replace">
+                <field name="website" invisible="is_pet  == True"/>
+            </xpath>
+
+            <xpath expr="//field[@name='mobile']" position="replace">
+                <field name="mobile" invisible="is_pet  == True"/>
+            </xpath>
+
+            <xpath expr="//field[@name='email']" position="replace">
+                <field name="email"
+                       invisible="is_pet  == True"  required="user_ids  != []"/>
+/>
+            </xpath>
+
+
+            <xpath expr="//field[@name='title']" position="replace">
+                <field name="title" invisible="is_pet  == True or is_company == True"/>
+            </xpath>
+
+            <xpath expr="//field[@name='lang']" position="replace">
+                <field name="lang" invisible="is_pet  == True"/>
+            </xpath>
+
+            <!-- <xpath expr="//field[@name='fax']" position="replace">
+                <field name="fax" invisible="is_pet  == True"></field>
+            </xpath> -->
+
+            <field name="alias" position="replace">
+                <field name="alias" invisible="is_pet  == True"/>
+            </field>
+
+        </field>
+    </record>
+</odoo>

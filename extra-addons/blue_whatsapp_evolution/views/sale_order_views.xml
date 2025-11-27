@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- Agregar el botón de WhatsApp a la vista de formulario de pedidos de venta -->
+        <record id="view_order_form_inherit_whatsapp" model="ir.ui.view">
+            <field name="name">sale.order.view.form.inherit.whatsapp</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='button_box']" position="inside">
+                    <button name="action_send_msg" string="Enviar WhatsApp"
+                            type="object"
+                            class="oe_stat_button" icon="fa-whatsapp"
+                            invisible="not partner_id"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- Agregar el botón de WhatsApp a la vista de lista de pedidos de venta (opcional) -->
+        <record id="view_order_tree_inherit_whatsapp" model="ir.ui.view">
+            <field name="name">sale.order.view.tree.inherit.whatsapp</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_quotation_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <button name="action_send_msg" string="WhatsApp"
+                            type="object"
+                            icon="fa-whatsapp"/>
+                </xpath>
+            </field>
+        </record>
+
+        <!-- También para la vista de árbol de pedidos confirmados -->
+        <record id="view_order_tree_confirmed_inherit_whatsapp" model="ir.ui.view">
+            <field name="name">sale.order.tree.confirmed.inherit.whatsapp</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//tree" position="inside">
+                    <button name="action_send_msg" string="WhatsApp"
+                            type="object"
+                            icon="fa-whatsapp"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

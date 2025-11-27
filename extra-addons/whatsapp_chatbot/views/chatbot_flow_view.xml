@@ -1,0 +1,91 @@
+<odoo>
+    <record id="view_chatbot_flow_form" model="ir.ui.view">
+        <field name="name">whatsapp_chatbot.chatbot.flow.form</field>
+        <field name="model">whatsapp_chatbot.chatbot.flow</field>
+        <field name="arch" type="xml">
+            <form string="Chatbot Flow">
+                <header>
+                    <button name="action_start_flow" string="Start Flow" type="object" class="oe_highlight" invisible="state == 'active'"/>
+                    <button name="action_stop_flow" string="Stop Flow" type="object" class="oe_highlight" invisible="state != 'active'"/>
+                    <button name="action_draft_flow" string="Turn Draft Flow" type="object" class="oe_highlight" invisible="state == 'draft'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,active,stoped" />
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <label for="name" string="Flow Name"/>
+                        <h1>
+                            <field name="name" default_focus="1" placeholder="e.g. &quot;Saludation Bot&quot;"/>
+                        </h1>
+                    </div>
+                    <group>
+                        <group>
+                            <field name="wa_account_id" groups="whatsapp.group_whatsapp_admin" readonly="state != 'draft'" />
+                            <field name="resource_calendar_id" groups="whatsapp.group_whatsapp_admin" readonly="state != 'draft'"/>
+                            <field name='company_id' groups="base.group_multi_company"/>
+                            <field name="utm_campaign_id" groups="whatsapp.group_whatsapp_admin" readonly="state != 'draft'"/>
+                            <field name="utm_campaign_ids" widget="many2many_tags" groups="whatsapp.group_whatsapp_admin" readonly="state != 'draft'"/>
+                            <field name="type" readonly="state != 'draft'"/>
+                            <field name="webhook_url" groups="whatsapp.group_whatsapp_admin" readonly="state != 'draft'" invisible="type != 'agent'"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Chatbots" invisible="type != 'chatbot'">
+                            <field name="chatbot_ids" readonly="state != 'draft'"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_chatbot_flow_tree" model="ir.ui.view">
+        <field name="name">whatsapp_chatbot.chatbot.flow.tree</field>
+        <field name="model">whatsapp_chatbot.chatbot.flow</field>
+        <field name="arch" type="xml">
+            <tree string="Chatbot Flow">
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_chatbot_flow_kanban" model="ir.ui.view">
+        <field name="name">whatsapp_chatbot.chatbot.flow.kanban</field>
+        <field name="model">whatsapp_chatbot.chatbot.flow</field>
+        <field name="arch" type="xml">
+            <kanban default_group_by="state" quick_create="false" sample="0">
+                <field name="name"/>
+                <field name="wa_account_id"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div t-attf-class="oe_kanban_global_click">
+                            <div class="o_kanban_record_top mb16">
+                                <h1 class="mt4">
+                                    <strong>
+                                        <field name="name"/>
+                                    </strong>
+                                </h1>
+                            </div>
+                            <div class="row text-uppercase text-left mt8">
+                                <div class="col text-muted o_ma_campaign_item">
+                                    <span>Account</span>
+                                    <h4 class="mt4">
+                                        <strong>
+                                            <field name="wa_account_id"/>
+                                        </strong>
+                                    </h4>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+    <record id="action_chatbot_flow" model="ir.actions.act_window">
+        <field name="name">Chatbot Flow</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">whatsapp_chatbot.chatbot.flow</field>
+        <field name="view_mode">kanban,tree,form</field>
+    </record>
+    <menuitem name="Chatbot Flow" id="chatbot_flow_menu" parent="whatsapp.whatsapp_configuration_menu" action="whatsapp_chatbot.action_chatbot_flow"/>
+</odoo>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t name="inherit_whatsapp_mail_thread" t-inherit="mail.Thread" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='state.mountedAndLoaded']"
+               position="replace">
+<!--                <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp' and props.thread.type != 'whatsapp' ">-->
+<!--                </t>-->
+                <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp' and (props.thread.id === 'inbox' or props.thread.id === 'history') ">
+                </t>
+                <t t-else="">
+                    <t t-if="state.mountedAndLoaded" t-foreach="props.order === 'asc' ? props.thread.nonEmptyMessages : [...props.thread.nonEmptyMessages].reverse()" t-as="msg" t-key="msg.id">
+                    <t t-if="msg.dateDay !== currentDay and props.showDates">
+                        <DateSection date="msg.dateDay" className="'pt-4'"/>
+                        <t t-set="currentDay" t-value="msg.dateDay"/>
+                    </t>
+                    <Transition t-if="props.thread.model === 'discuss.channel'"  visible="props.thread.seen_message_id === (prevMsg?.id ?? false)" name="'o-fade'" t-slot-scope="transition">
+                        <div class="o-mail-Thread-newMessage d-flex align-items-center fw-bolder" t-att-class="{ 'opacity-0': transition.className.includes('o-fade-leave') }">
+                            <hr class="ms-2 flex-grow-1 border border-danger opacity-50"/><span class="px-2 text-danger">New messages</span><hr class="me-2 flex-grow-1 border border-danger opacity-50"/>
+                        </div>
+                    </Transition>
+                     <t t-if="msg.isNotification">
+                            <t t-call="mail.NotificationMessage"/>
+                        </t>
+                        <Message t-else=""
+                            isInChatWindow="props.isInChatWindow"
+                            message="msg"
+                            messageToReplyTo="props.messageToReplyTo"
+                            squashed="isSquashed(msg, prevMsg)"
+                            highlighted="messageHighlight?.highlightedMessageId === msg.id"
+                            onParentMessageClick="() => msg.parentMessage and env.messageHighlight?.highlightMessage(msg.parentMessage, props.thread)"
+                            thread="props.thread"
+                            messageEdition="props.messageEdition"
+                            isFirstMessage="msg_first"
+                            hasActions="props.messageActions"
+                            showDates="props.showDates"
+                        />
+                     <t t-set="prevMsg" t-value="msg"/>
+                </t>
+                </t>
+        </xpath>
+    </t>
+</templates>

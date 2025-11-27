@@ -1,0 +1,27 @@
+<odoo>
+    <data>
+        <!-- Visão herdada única para usuários -->
+        <record id="view_users_form_inherit_whatsapp" model="ir.ui.view">
+            <field name="name">res.users.form.inherit.whatsapp</field>
+            <field name="model">res.users</field>
+            <field name="inherit_id" ref="base.view_users_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook" position="inside">
+                    <page string="Configuração WhatsApp" name="whatsapp_config">
+                        <group>
+                            <field name="evolution_api_url" required="1" placeholder="https://api.evolution.com"/>
+                            <field name="evolution_global_token" required="1" password="True"/>
+                            <field name="evolution_api_instance" required="1"/>
+                        </group>
+                        <group>
+                            <button name="action_test_whatsapp_api" 
+                                    string="Testar Conexão" 
+                                    type="object" 
+                                    class="oe_highlight"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_form_message_warning" model="ir.ui.view">
+        <field name="name">message.warning.form</field>
+        <field name="model">whatsapp_chatbot.message.warning</field>
+        <field name="arch" type="xml">
+            <form string="Warning">
+                <field name="text" readonly="True"/>
+                <footer>
+                    <button string="Close" class="btn-primary" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Server Actions for the Chatbot -->
+        <record id="action_chatbot_text_message" model="ir.actions.server">
+            <field name="name">Send Text Message</field>
+            <field name="model_id" ref="model_chatbot"/>
+            <field name="state">code</field>
+            <field name="code">model.send_text_message()</field>
+        </record>
+        <record id="action_chatbot_template_message" model="ir.actions.server">
+            <field name="name">Send Template Message</field>
+            <field name="model_id" ref="model_chatbot"/>
+            <field name="state">code</field>
+            <field name="code">model.send_template_message()</field>
+        </record>
+        <record id="action_chatbot_template_button_message" model="ir.actions.server">
+            <field name="name">Send Template Button Message</field>
+            <field name="model_id" ref="model_chatbot"/>
+            <field name="state">code</field>
+            <field name="code">model.send_template_button_message()</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="medical_view_report_lab_result_demo">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="oe_structure"/>
+                <div class="row">
+                    <div>
+                        <div style="font-size: 30px; font-weight: bold;margin: 0px 250px 0px;">
+                            <strong>
+                                <u>LABORATORY REPORT</u>
+                            </strong>
+                        </div>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-4">
+                        <strong>Doctor</strong>
+                        <strong class="px-2">:</strong>
+                        <span t-field="doc.requestor"/>
+                    </div>
+                    <div class="col-4">
+                        <strong>Patient Name</strong>
+                        <strong class="px-2">:</strong>
+                        <span t-field="doc.patient.partner_id"/>
+                    </div>
+                    <div class="col-4">
+                        <strong>Patient ID</strong>
+                        <strong class="px-2">:</strong>
+                        <span t-field="doc.patient.patient_id"/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-4">
+                        <strong>Age</strong>
+                        <strong class="px-2">:</strong>
+                        <span t-field="doc.patient.age"/>
+                    </div>
+                    <div class="col-4">
+                        <strong>Sex</strong>
+                        <strong class="px-2">:</strong>
+                        <span t-field="doc.patient.sex"/>
+                    </div>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <div style="font-size: 18px; font-weight: bold;">
+                    <strong>Test Type:</strong>
+                    <span t-field="doc.test"/>
+                </div>
+				<br/>
+                <div>
+                    <table class="table table-condensed">
+                        <thead>
+                            <tr class="table-dark" style="background-color: #006DCC;color: white;">
+                                <th style="color: black;border: 1px solid black;">Analyte</th>
+                                <th style="color: black;border: 1px solid black;">Result</th>
+                                <th style="color: black;border: 1px solid black;">Normal Range</th>
+                                <th style="color: black;border: 1px solid black;">Units</th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <t t-foreach="doc.critearea" t-as="test">
+                                <tr>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="test.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="test.result"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <t t-if="test.lower_limit">
+                                            <t t-if="test.upper_limit == 0">
+                                                Above
+                                                <span t-field="test.lower_limit"/>
+                                            </t>
+                                        </t>
+                                        <t t-if="test.lower_limit == 0">
+                                            <t t-if="test.upper_limit">
+                                                Below
+                                                <span t-field="test.upper_limit"/>
+                                            </t>
+                                        </t>
+                                        <t t-if="test.lower_limit">
+                                            <t t-if="test.upper_limit">
+                                                <span t-field="test.lower_limit"/>
+                                                -
+                                                <span t-field="test.upper_limit"/>
+                                            </t>
+                                        </t>
+                                        <t t-if="test.lower_limit == 0">
+                                            <t t-if="test.upper_limit == 0">-</t>
+                                        </t>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="test.units"/>
+                                    </td>
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+                <div class="row">
+                    <div class="col-1"/>
+                    <strong>Signature:_____________________________</strong>
+                </div>
+            </div>
+        </t>
+    </template>
+    <template id="lab_result_demo">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="pragtech_veterinary_app.medical_view_report_lab_result_demo"
+                   t-lang="doc.patient.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>

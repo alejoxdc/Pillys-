@@ -1,0 +1,30 @@
+<?xm        <!-- Cron para Backup Automático cada 2 minutos -->
+        <record id="backup_auto_scp_cron" model="ir.cron">
+            <field name="name">Backup Automático SCP - Cada 2 minutos (PRUEBA)</field>
+            <field name="model_id" ref="model_backup_auto_scp"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_auto_backup()</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_admin"/>
+        </record>.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        
+        <!-- Cron para Backup Automático cada 2 minutos (TESTING) -->
+        <record id="backup_auto_scp_cron" model="ir.cron">
+            <field name="name">Backup Automático SCP - Cada 2 minutos (PRUEBA)</field>
+            <field name="model_id" ref="model_backup_auto_scp"/>
+            <field name="state">code</field>
+            <field name="code">model.cron_auto_backup()</field>
+            <field name="interval_number">2</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="active">True</field>
+            <field name="user_id" ref="base.user_admin"/>
+        </record>
+        
+    </data>
+</odoo>

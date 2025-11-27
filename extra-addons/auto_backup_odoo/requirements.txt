@@ -1,0 +1,6 @@
+pysftp
+dropbox
+tqdm
+boto3
+botocore
+simplejson

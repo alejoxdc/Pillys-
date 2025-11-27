@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="appointment_wizard_form_medical">
+        <field name="name">appointment_wizard.form</field>
+        <field name="model">appointment.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Appointment Wizard" version="7.0">
+                <group>
+                    <group>
+                        <field name="phy_id" required="1"/>
+                    </group>
+                    <group>
+                        <field name="a_date" required="1"/>
+                    </group>
+                </group>
+                <footer>
+                    <button name="show_record" string="Show" type="object"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="appointment_wizard_act">
+        <field name="name">Appointment Wizard</field>
+        <field name="res_model">appointment.wizard</field>
+        <field name="view_id" ref="appointment_wizard_form_medical"/>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <menuitem action="appointment_wizard_act" id="appointment_wizard_act_form" parent="medical_appointment_menu"
+              sequence="1"/>
+
+</odoo>      

@@ -1,0 +1,72 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <!-- Include the Socioeconomics page into the Patient History -->
+
+    <record model="ir.ui.view" id="medical_patient_view_inherit_socioeconomics">
+        <field name="name">Patient</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_view"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="Socioeconomics" invisible="1">
+
+                    <notebook>
+
+                        <page string="Main">
+                            <group colspan="4">
+                                <group col="4">
+                                    <field name="ses"></field>
+                                    <field name="education"></field>
+                                    <field name="housing"></field>
+                                    <field name="occupation"></field>
+                                </group>
+                                <group col="6" colspan="6">
+                                    <field name="works_at_home"></field>
+                                    <field name="hours_outside"></field>
+                                    <field name="hostile_area"></field>
+                                </group>
+                                <field colspan="6" name="ses_notes"/>
+                            </group>
+                        </page>
+                        <page string="Infrastructure">
+                            <group col="8" colspan="8" string="Infrastructure">
+                                <field name="sewers"></field>
+                                <field name="water"></field>
+                                <field name="trash"></field>
+                                <field name="electricity"></field>
+                                <field name="gas"></field>
+                                <field name="telephone"></field>
+                                <field name="television"></field>
+                                <field name="internet"></field>
+                            </group>
+                        </page>
+                        <page string="Family">
+                            <group col="6" colspan="6" string="Family APGAR">
+                                <field name="fam_apgar_help"></field>
+                                <field name="fam_apgar_discussion"></field>
+                                <field name="fam_apgar_decisions"></field>
+                                <field name="fam_apgar_timesharing"></field>
+                                <field name="fam_apgar_affection"></field>
+                                <field name="fam_apgar_score"></field>
+                            </group>
+                            <group col="8" colspan="8" string="Other Family Issues">
+                                <field name="single_parent"></field>
+                                <field name="domestic_violence"></field>
+                                <field name="working_children"></field>
+                                <field name="teenage_pregnancy"></field>
+                                <field name="sexual_abuse"></field>
+                                <field name="drug_addiction"></field>
+                                <field name="school_withdrawal"></field>
+                                <field name="prison_past"></field>
+                                <field name="prison_current"></field>
+                                <field name="relative_in_prison"></field>
+                            </group>
+                        </page>
+                    </notebook>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>

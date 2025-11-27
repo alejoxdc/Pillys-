@@ -1,0 +1,180 @@
+:root{
+    --background-color: #ffffff;
+    --layout-color: #128C7E;
+}
+
+.cust-class-1{
+}
+
+.cust-my-1{
+    background-color: #128C7E;
+    height: 46px;
+    margin-top: -15px !important;
+}
+
+.new-div-class{
+    background-color: black;
+}
+
+.cust-bg-view{
+    background-color: #128C7E !important;
+}
+
+.cust-o-selfAuthored {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: end !important;
+}
+
+.o-mail-Message.cust-o-outbound {
+    flex-direction: row-reverse !important;
+
+    .o-mail-Message-core, .o-mail-Message-textContent {
+        flex-direction: row-reverse !important;
+    }
+    .o-mail-Message-sidebar{
+        justify-content: flex-end !important;
+    }
+
+    .o-mail-MessageInReply{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+
+    .o-mail-MessageInReply .text-muted{
+        color: black !important;
+    }
+
+    .o-mail-Message-header {
+        flex-direction: row-reverse !important;
+    }
+}
+
+.o-mail-ChatWindow .o-mail-Message.cust-o-outbound {
+    .o-mail-Message-header {
+        justify-content: flex-start !important;
+    }
+
+    .o-mail-MessageInReply{
+        display: flex;
+        justify-content: flex-start !important;
+    }
+}
+
+.cust-o-mail-MessageInReply-corner{
+    right: -31px;
+    border-radius: 0 0.2rem 0 0;
+    border-right: 1px solid var(--border-color, #276fdb) !important;
+}
+
+
+
+.cust-o-mail-MessageInReply {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.cust-o-inbound{
+}
+
+.cust-justify-content-end{
+    justify-content: flex-end !important;
+}
+
+.cust-flex-direction {
+    flex-direction: row-reverse !important;
+}
+
+.cust-o-inbound .o-mail-Message-body {
+    background-color: #FFFFFF;
+    color: black;
+}
+
+.cust-o-discuss-badge {
+        background-color: green !important;
+}
+
+.cust-o-outbound .o-mail-Message-body {
+    background-color:  	#6AD380 !important;
+    color: black;
+}
+
+.cust-ps-4 {
+  padding-left: 24px !important;
+  padding-right: 0px !important;
+}
+
+.cust-start-0 {
+  left: 0 !important;
+}
+
+.cust-wa-background-image {
+
+    background-color: #EBE5DE !important;
+}
+
+.cust-text-muted {
+    color: black !important;
+}
+
+.outbound-Message-body {
+    background-color: #154B38 !important;
+    color: white;
+}
+
+.inbound-Message-body {
+    background-color: #1F2C34;
+    color: white;
+}
+
+.cust-o-mail-Message-sidebar {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: end !important;
+}
+
+.cust-o-mail-Message-content {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: end !important;
+}
+
+.cust-o-mail-Message-header {
+    display: flex !important;
+    flex-direction: row-reverse !important;
+    justify-content: end !important;
+    width: max-content;
+    margin-left: auto;
+}
+
+.cust-pr-10 {
+    min-width: 0;
+    padding-right: 10px;
+}
+
+.o_Message.o_MessageList_item.o_MessageList_message {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: end;
+}
+
+.cust-text-white{
+    color: white !important;
+}
+
+.cust-o-selfAuthored .o-mail-Message-body {
+    background-color: #154B38 !important;
+    color: white;
+    max-width: 500px;
+    word-wrap: break-word;
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+.o-mail-ChatWindow .cust-o-selfAuthored .o-mail-Message-body {
+    max-width: 200px !important;
+}
+
+
+

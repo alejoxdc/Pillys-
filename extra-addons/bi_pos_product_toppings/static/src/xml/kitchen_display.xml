@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">	
+	<t t-name="DiOrderline" t-inherit="pos_preparation_display.Orderline" t-inherit-mode="extension" owl="1">
+		<xpath expr="//div[hasclass('o_pdis_orderline_infos')]" position="after">
+			<div class="o_pdis_orderline_infos d-flex pe-2">
+				<span t-esc="toppingData" style="display: none;"/>
+				<t t-if="toppingData">
+					<div class="o_pdis_quantity px-2 text-center text-muted">
+						<div class="o_pdis_todo"><span>Toppings:</span></div> 
+					</div>
+					<t t-esc="toppingData" />
+				</t>
+			</div>
+		</xpath>
+	</t>
+</templates>

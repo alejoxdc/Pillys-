@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>index.html</title>
+    <style></style>
+</head>
+<body id="preview">
+<h1 class="code-line" data-line-start=0 data-line-end=1><a id="BACKUP_0"></a>BACKUP</h1>
+<p class="has-line-data" data-line-start="1" data-line-end="2">ODOO DATABASES &amp; FILESTORE</p>
+<p class="has-line-data" data-line-start="3" data-line-end="5"><strong>Available Odoo Backup DB/Filestore<br>
+    Modes:</strong></p>
+<ul>
+    <li class="has-line-data" data-line-start="6" data-line-end="7"><strong>Local</strong></li>
+    <li class="has-line-data" data-line-start="7" data-line-end="8"><strong>Remote Server</strong></li>
+    <li class="has-line-data" data-line-start="8" data-line-end="9"><strong>Google Drive</strong></li>
+    <li class="has-line-data" data-line-start="9" data-line-end="10"><strong>Dropbox</strong></li>
+    <li class="has-line-data" data-line-start="10" data-line-end="12"><strong>Amazon S3</strong></li>
+</ul>
+<strong>Formats:
+<ul>
+    <li>Custom Archive</li>
+    <li>Plain Text SQL</li>
+    <li>TAR Archive</li>
+    <li>ZIP Archive</li>
+    <li>Dump Including Filestore</li>
+</ul></strong>
+<p class="has-line-data" data-line-start="12" data-line-end="14"><strong>Module For backup ODOO databases and<br>
+    automating the backup process of ODOO.</strong></p>
+<ul>
+    <li class="has-line-data" data-line-start="15" data-line-end="16">Multiple Backup Modes</li>
+    <li class="has-line-data" data-line-start="16" data-line-end="17"><strong>Filestore</strong> Backup</li>
+    <li class="has-line-data" data-line-start="17" data-line-end="18">Backup <strong>ODOO Databases</strong> in
+        specified path
+    </li>
+    <li class="has-line-data" data-line-start="18" data-line-end="19">Detailed Message Log</li>
+    <li class="has-line-data" data-line-start="19" data-line-end="20">Backup Status Information and History</li>
+    <li class="has-line-data" data-line-start="20" data-line-end="21">User can select the format to dump, either custom
+        archive, plain text SQL or tar archive
+    </li>
+    <li class="has-line-data" data-line-start="21" data-line-end="22">Archive Backup Process</li>
+    <li class="has-line-data" data-line-start="22" data-line-end="23">Repeat Missed Backup Process</li>
+    <li class="has-line-data" data-line-start="23" data-line-end="25">Backup to Amazon S3</li>
+</ul>
+<h1 class="code-line" data-line-start=25 data-line-end=26><a id="Features_25"></a>Features</h1>
+<ul>
+    <li class="has-line-data" data-line-start="27" data-line-end="28">Dump ODOO Database in specified format</li>
+    <li class="has-line-data" data-line-start="28" data-line-end="29">Zip filestore in a specified location</li>
+    <li class="has-line-data" data-line-start="29" data-line-end="30">The custom archive format is a flexible option for
+        backing up a database with the intention of restoring it using pg_restore. This format allows for the reordering
+        of data loading and object definitions, and is compressed by default using gzip.
+
+        One advantage of using the custom archive format is that it allows the user to restore single objects from a
+        backup, rather than having to restore the entire database. This can be useful if you only need to restore a
+        specific object or if you want to selectively restore certain objects from the backup.
+
+        To use the custom archive format, you will need to select it as the format for the database dump when setting up
+        the backup process. The custom archive will be saved with a .gz extension, such as test.gz.
+    </li>
+    <li class="has-line-data" data-line-start="30" data-line-end="31">Output a plain-text SQL script file (the default).
+        The plain text format is useful for very small databases with a minimal number of objects but other than that,
+        it should be avoided.
+    </li>
+    <li class="has-line-data" data-line-start="31" data-line-end="32">The tar archive format is another option for
+        backing up a database with the intention of restoring it using pg_restore. This format allows for the reordering
+        and exclusion of database objects at the time of restoration, and it is possible to limit which data is reloaded
+        during the restore process.
+
+        One advantage of using the tar archive format is that it allows for a greater level of control over the
+        restoration process, as you can choose which objects to include or exclude from the restored database.
+
+        To use the tar archive format, you will need to select it as the format for the database dump when setting up
+        the backup process. The tar archive will be compressed using gzip to reduce the file size.
+    </li>
+    <li class="has-line-data" data-line-start="32" data-line-end="33">Backup Filestore</li>
+    <li class="has-line-data" data-line-start="33" data-line-end="34">Multiple backup modes at sametime</li>
+    <li class="has-line-data" data-line-start="34" data-line-end="35">ODOO Backup to Amazon S3</li>
+    <li class="has-line-data" data-line-start="35" data-line-end="36">ODOO Backup to Google Drive</li>
+    <li class="has-line-data" data-line-start="36" data-line-end="37">ODOO Backup tp Dropbox</li>
+    <li class="has-line-data" data-line-start="37" data-line-end="39">ODOO Backup to remote server</li>
+</ul>
+<h3 class="code-line" data-line-start=39 data-line-end=40><a id="Tech_39"></a>Tech</h3>
+<p class="has-line-data" data-line-start="41" data-line-end="42">Odoo Auto Backup Module uses</p>
+<ul>
+    <li class="has-line-data" data-line-start="43" data-line-end="44"><a href="https://www.python.org/">PYTHON</a> -
+        Models
+    </li>
+    <li class="has-line-data" data-line-start="44" data-line-end="45"><a href="https://www.w3.org/XML/">XML</a> - Views
+    </li>
+    <li class="has-line-data" data-line-start="45" data-line-end="46"><a href="https://www.w3.org/html/">HTML</a> - UI
+    </li>
+    <li class="has-line-data" data-line-start="46" data-line-end="47"><a href="https://getbootstrap.com/2.3.2/">Twitter
+        Bootstrap</a> - UI
+    </li>
+    <li class="has-line-data" data-line-start="47" data-line-end="48"><a href="http://backbonejs.org/">backbone.js</a> -
+        Views
+    </li>
+    <li class="has-line-data" data-line-start="48" data-line-end="49"><a href="https://jquery.com/">jQuery</a></li>
+    <li class="has-line-data" data-line-start="49" data-line-end="51"><a href="https://www.postgresql.org/">PSQL</a> -
+        DB
+    </li>
+</ul>
+<h3 class="code-line" data-line-start=51 data-line-end=52><a id="External_51"></a>External</h3>
+<p class="has-line-data" data-line-start="52" data-line-end="53">Dependencies</p>
+<ul>
+    <li class="has-line-data" data-line-start="54" data-line-end="55"><a
+            href="https://pypi.org/project/pysftp/">PYSFTP</a> <code>pip install pysftp</code></li>
+    <li class="has-line-data" data-line-start="55" data-line-end="56"><a href="https://pypi.org/project/dropbox/">Dropbox</a>
+        <code>pip install dropbox</code></li>
+    <li class="has-line-data" data-line-start="56" data-line-end="57"><a href="https://pypi.org/project/tqdm/">Progress
+        Meter</a> <code>pip install tqdm</code></li>
+    <li class="has-line-data" data-line-start="57" data-line-end="58"><a
+            href="https://pypi.org/project/boto3/">Boto3</a> <code>pip install boto3</code></li>
+    <li class="has-line-data" data-line-start="58" data-line-end="60"><a href="https://pypi.org/project/botocore/">Botocore</a>
+        <code>pip install botocore</code></li>
+</ul>
+<h3 class="code-line" data-line-start=60 data-line-end=61><a id="Installation_60"></a>Installation</h3>
+<p class="has-line-data" data-line-start="62" data-line-end="69">To install the ODOO and Auto Backup module and
+    configure backup, you can follow these steps:<br>
+<p class="has-line-data" data-line-start="62" data-line-end="69">Install ODOO: Follow the installation instructions for
+    your operating system to install ODOO.<br>
+<p class="has-line-data" data-line-start="62" data-line-end="69">Configure backup: Go to the "General Settings" menu in
+    ODOO and configure the backup settings as desired.<br>
+<p class="has-line-data" data-line-start="62" data-line-end="69">Start the backup process: Once you have configured the
+    backup settings, the backup process will start according to the schedule you have set. You can view the backup
+    status and history in the Auto Backup menu.<br>
+<h3 class="code-line" data-line-start=70 data-line-end=71><a id="CHANGELOGS_70"></a>CHANGELOGS</h3>
+<blockquote>
+    <p class="has-line-data" data-line-start="72" data-line-end="73">Date: 07/12/2020</p>
+</blockquote>
+<ul>
+    <li class="has-line-data" data-line-start="74" data-line-end="75">Performance Improvement</li>
+    <li class="has-line-data" data-line-start="75" data-line-end="76">Session Upload Trace For Dropbox Files &gt; 150
+        mb
+    </li>
+    <li class="has-line-data" data-line-start="76" data-line-end="77">Full Metadata Track In Message Logs</li>
+    <li class="has-line-data" data-line-start="77" data-line-end="78">Fix Dropbox Tar files upload</li>
+    <li class="has-line-data" data-line-start="78" data-line-end="79">Progress Meter In Logs</li>
+</ul>
+<blockquote>
+    <p class="has-line-data" data-line-start="79" data-line-end="80">Date: 22/11/2020</p>
+</blockquote>
+<ul>
+    <li class="has-line-data" data-line-start="80" data-line-end="81">Amazon S3 Database Backup</li>
+    <li class="has-line-data" data-line-start="81" data-line-end="82">Amazon S3 Filestore Backup</li>
+</ul>
+
+<blockquote>
+    <p class="has-line-data" data-line-start="79" data-line-end="80">Date: 25/12/2022</p>
+</blockquote>
+<ul>
+    <li class="has-line-data" data-line-start="80" data-line-end="81">GDRIVE Client Update: There has been an update to
+        the GDRIVE client./li>
+    <li class="has-line-data" data-line-start="81" data-line-end="82">New Format Named DUMP: A new format named DUMP has
+        been added, which allows the user to get a backup with both the filestore and database dump zipped.
+    </li>
+    <li class="has-line-data" data-line-start="81" data-line-end="82">Documentation: The documentation for the backup
+        configuration views has been improved.
+    </li>
+</ul>
+<h3 class="code-line" data-line-start=85 data-line-end=86><a id="Todos_85"></a>Todos</h3>
+<ul>
+    <li class="has-line-data" data-line-start="87" data-line-end="89">Backup Dashboard</li>
+</ul>
+<h3 class="code-line" data-line-start=89 data-line-end=90><a id="Author_89"></a>Author</h3>
+<p class="has-line-data" data-line-start="91" data-line-end="92"><a href="https://www.linkedin.com/in/hilar-ak/">Hilar
+    AK</a></p>
+<h3 class="code-line" data-line-start=93 data-line-end=94><a id="Git_93"></a>Git</h3>
+<p class="has-line-data" data-line-start="94" data-line-end="95">Repository</p>
+<p class="has-line-data" data-line-start="96" data-line-end="97"><a href="https://github.com/hilarak">Hilar AK</a></p>
+<h2 class="code-line" data-line-start=98 data-line-end=99><a id="Configurations_98"></a>Configurations</h2>
+<p class="has-line-data" data-line-start="100" data-line-end="101">Cron Job To Enable Automatic Backup</p>
+<p class="has-line-data" data-line-start="102" data-line-end="103"><img src="backup_cron.png" alt=""></p>
+<p class="has-line-data" data-line-start="104" data-line-end="105">New Record</p>
+<p class="has-line-data" data-line-start="106" data-line-end="107"><img src="configuration.png" alt=""></p>
+<p class="has-line-data" data-line-start="108" data-line-end="109">Records</p>
+<p class="has-line-data" data-line-start="110" data-line-end="111"><img src="backup.png" alt=""></p>
+<h2 class="code-line" data-line-start=112 data-line-end=113><a id="Backup_Modes_112"></a>Backup Modes</h2>
+<p class="has-line-data" data-line-start="114" data-line-end="115">Local</p>
+<p class="has-line-data" data-line-start="116" data-line-end="117"><img src="backup_local.png" alt=""></p>
+<p class="has-line-data" data-line-start="118" data-line-end="119">Remote</p>
+<p class="has-line-data" data-line-start="120" data-line-end="121"><img src="backup_remote.png" alt=""></p>
+<p class="has-line-data" data-line-start="122" data-line-end="123">Google Drive</p>
+<p class="has-line-data" data-line-start="124" data-line-end="125"><img src="backup_drive.png" alt=""></p>
+<p class="has-line-data" data-line-start="126" data-line-end="127">Dropbox</p>
+<p class="has-line-data" data-line-start="128" data-line-end="129"><img src="backup_dropbox.png" alt=""></p>
+<p class="has-line-data" data-line-start="130" data-line-end="131">Amazon S3</p>
+<p class="has-line-data" data-line-start="132" data-line-end="133"><img src="backup_amazon_s3.png" alt=""></p>
+</body>
+</html>

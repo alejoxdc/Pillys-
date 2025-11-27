@@ -1,0 +1,60 @@
+# Backup Automático SCP
+
+![Logo](icon.png)
+
+## 🎯 Descripción
+Módulo completo para realizar backups automáticos de Odoo cada 8 horas y enviarlos directamente por SCP a servidor remoto.
+
+## ✨ Características
+- ⏰ Backup cada 8 horas automático
+- 🚀 Envío directo por SCP (sin espacio local)  
+- 🔐 Autenticación SSH automática
+- 📊 Interfaz web completa
+- 📈 Estadísticas detalladas
+- 🎮 Backup manual disponible
+
+## 📸 Capturas de pantalla
+
+### Vista Kanban - Panel de control
+![Vista Kanban](screenshot_kanban.png)
+
+### Vista Formulario - Configuración
+![Vista Form](screenshot_form.png)
+
+### Vista Lista - Historial
+![Vista Tree](screenshot_tree.png)
+
+## 🛠️ Instalación rápida
+
+1. **Instalar dependencias**:
+```bash
+sudo apt-get install sshpass curl
+```
+
+2. **Instalar módulo** en Odoo Apps
+
+3. **Configurar servidor SSH** y activar
+
+## ⚙️ Configuración
+
+- **Servidor**: 5.78.131.185 (por defecto)
+- **Protocolo**: SCP sobre SSH
+- **Frecuencia**: Cada 8 horas
+- **Formato**: ZIP comprimido
+
+## 🎮 Uso
+
+1. Crear nueva configuración
+2. Completar datos del servidor SSH  
+3. Hacer clic en "🟢 Activar Backup"
+4. ¡Listo! Los backups se ejecutarán automáticamente
+
+## 🛡️ Seguridad
+
+- Conexión SSH cifrada
+- No almacena archivos localmente
+- Autenticación automática segura
+- Logs detallados de operaciones
+
+---
+**Versión**: 1.0.0 | **Odoo**: 17.0 | **Licencia**: LGPL-3

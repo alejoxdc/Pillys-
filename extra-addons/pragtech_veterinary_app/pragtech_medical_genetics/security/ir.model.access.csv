@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_genetic_risk,medical.genetic.risk,model_medical_genetic_risk,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_medical_family_diseases,medical.family.diseases,model_medical_family_diseases,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_medical_disease_gene,access_medical_disease_gene,model_medical_disease_gene,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_medical_imaging_test_request,access_medical_imaging_test_request,model_medical_imaging_test_request,pragtech_veterinary_app.group_medical_user,1,1,1,1

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="patient_medications_document">
+        <t t-call="web.external_layout">
+            <t t-set="doc" t-value="doc.with_context({'lang':doc.partner_id.lang})"/>
+            <t t-foreach="docs" t-as="doc">
+                <div class="page">
+                    <div class="oe_structure"/>
+                    <div class="row mt32 mb32">
+                        <div style="font-size: 30px; font-weight: bold;margin: 0px 200px 0px;">
+                            <strong>PATIENT MEDICATION HISTORY</strong>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-1"/>
+                        <div class="col-4">
+                            <strong class="px-1">Patient</strong>
+                            <strong class="px-2">:</strong>
+                            <span t-field="doc.partner_id.name"/>
+                        </div>
+                        <div class="col-4">
+                            <strong class="px-1">Patient ID</strong>
+                            <strong class="px-2">:</strong>
+                            <span t-field="doc.patient_id"/>
+                        </div>
+                        <div class="col-2">
+                            <strong class="px-1">Sex</strong>
+                            <strong class="px-2">:</strong>
+                            <span t-field="doc.sex"/>
+                        </div>
+                    </div>
+                    <br/>
+                    <br/>
+                    <div class="row">
+                        <div class="col-1"/>
+                        <div class="col-4">
+                            <strong class="px-1">Date</strong>
+                            <strong class="px-2">:</strong>
+                            <span t-field="doc.report_date"/>
+                        </div>
+                        <div class="col-4">
+                            <strong>Age</strong>
+                            <strong class="px-2">:</strong>
+                            <span t-field="doc.age"/>
+                        </div>
+                    </div>
+
+                    <br/>
+                    <br/>
+                    <table class="table table-condensed" style="border: 1px solid black;">
+                        <thead>
+                            <tr class="table-dark" style="background-color: #006DCC;color: white;">
+                                <th style="color: black;border: 1px solid black;">MEDICAMENT</th>
+                                <th style="color: black;border: 1px solid black;">INDICATION</th>
+                                <th style="color: black;border: 1px solid black;">START</th>
+                                <th style="color: black;border: 1px solid black;">END</th>
+<!--                                <th style="color: black;border: 1px solid black;">ACTION</th>-->
+                                <th style="color: black;border: 1px solid black;">DOCTOR</th>
+                            </tr>
+                        </thead>
+                        <tbody class="sale_tbody">
+                            <t t-foreach="doc.medications" t-as="l">
+                                <tr style="border: 1px solid black;">
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="l.medicament.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="l.indication.name"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="l.start_treatment"/>
+                                    </td>
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="l.end_treatment"/>
+                                    </td>
+<!--                                    <td style="border: 1px solid black;">-->
+<!--                                        <span t-field="l.is_active"/>-->
+<!--                                    </td>-->
+                                    <td style="border: 1px solid black;">
+                                        <span t-field="l.doctor.res_partner_physician_id.name"/>
+                                    </td>
+
+                                </tr>
+                            </t>
+                        </tbody>
+                    </table>
+
+                </div>
+            </t>
+
+        </t>
+    </template>
+    <template id="patient_medications">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="doc">
+                <t t-call="pragtech_veterinary_app.patient_medications_document" t-lang="doc.partner_id.lang"/>
+            </t>
+        </t>
+    </template>
+</odoo>
+

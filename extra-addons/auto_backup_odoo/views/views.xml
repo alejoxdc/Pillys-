@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_auto_backup_config_form" model="ir.ui.view">
+            <field name="name">Configure Backup</field>
+            <field name="model">auto.backup</field>
+            <field name="arch" type="xml">
+                <form string="Backups">
+                    <header>
+                        <field name="state" widget="statusbar" statusbar_visible="active, inactive" />
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only" />
+                            <h1>
+                                <field name="name" placeholder="Reference" nolabel="1" />
+                            </h1>
+                            <field name="active" invisible="1" />
+                        </div>
+                        <!--                        <separator string="Backup Mode" />-->
+                        <group string="Backup Mode">
+                            <field name="backup_mode" nolabel="1" widget="radio" options="{'horizontal': true}" />
+                        </group>
+                        <separator string="Database Settings" colspan="4" />
+                        <group>
+                            <group>
+                                <field name="db" />
+                                <field name="host" />
+                            </group>
+                            <group>
+                                <field name="user" password="True" />
+                                <field name="db_password" password="True" />
+                            </group>
+
+                            <group>
+                                <field name="backup_dir" />
+                            </group>
+                            <group>
+                                <field name="format" />
+                            </group>
+                        </group>
+                        <separator string="FileStore" colspan="4" invisible="format == 'd'" />
+                        <group invisible="format == 'd'">
+                            <group>
+                                <field name="backup_dir_filestore"
+                                       invisible="format == 'd'" required="format != 'd'" />
+                            </group>
+                            <group>
+                                <field name="filestore_path" readonly="1" />
+                            </group>
+                        </group>
+                        <separator string="SFTP" colspan="4" invisible="backup_mode != 'remote'" />
+                        <group invisible="backup_mode != 'remote'">
+                            <group>
+                                <field name="remote_host"
+                                       invisible="backup_mode != 'remote'" required="backup_mode == 'remote'" />
+                                <field name="remote_user"
+                                       invisible="backup_mode != 'remote'" required="backup_mode == 'remote'" />
+                            </group>
+                            <group>
+                                <field name="remote_password"
+                                       invisible="backup_mode != 'remote'" required="backup_mode == 'remote'"
+                                       password="True" />
+                            </group>
+                            <div colspan="12">
+                                <mark>Test and make sure your connection is working.</mark>
+                                <button name="test_sftp" type="object" string="Test Connection" icon="fa-television"
+                                        class="btn btn-outline-info" />
+                            </div>
+                        </group>
+                        <!--DropBox-->
+                        <separator string="Dropbox" colspan="12"
+                                   invisible="backup_mode != 'dropbox'" />
+                        <group invisible="backup_mode != 'dropbox'">
+                            <div colspan="12">
+                                <mark>Get an Dropbox authorization code and set it in the field below.</mark>
+                                <field name="dropbox_uri"
+                                       class="fa fa-arrow-right mt-1"
+                                       widget="url"
+                                       text="Get Authorization Code"
+                                       invisible="backup_mode != 'dropbox'"
+                                       nolabel="1" />
+                            </div>
+                        </group>
+                        <group invisible="backup_mode != 'dropbox'">
+                            <field name="dropbox_secret"
+                                   password="True" />
+                            <field name="dropbox_token"
+                                   readonly="1"
+                                   password="True"
+                                   force_save="1" />
+                        </group>
+                        <separator string="Amazon S3" colspan="4"
+
+                                   invisible="backup_mode != 's3'" />
+                        <group invisible="backup_mode != 's3'">
+                            <div colspan="12">
+                                <mark>Get AWS access key &amp; secret key from
+                                    <a href="https://console.aws.amazon.com/iam/home?#/security_credentials$access_key">
+                                        here
+                                    </a>
+                                    and set it in the field below.
+                                </mark>
+                            </div>
+                        </group>
+                        <group invisible="backup_mode != 's3'">
+                            <field name="aws_access_key_id"
+                                   password="True" />
+                            <field name="aws_secret_key_id"
+                                   password="True" />
+                            <field name="bucket_name" />
+                        </group>
+                        <separator />
+                        <separator string="Google Drive" colspan="4"
+                                   invisible="backup_mode != 'drive'" />
+                        <group invisible="backup_mode != 'drive'">
+                            <div colspan="12">
+                                <mark>Get Google Drive Client ID &amp; Secret ID from
+                                    <a href="https://console.developers.google.com/">
+                                        here
+                                    </a>
+                                    and set it in the field below.
+                                    Please check the help tab for more details
+                                </mark>
+                            </div>
+                            <group>
+                                <field name="drive_client_id"
+                                       required="backup_mode == 'drive'" />
+                                <field name="drive_secret_id" required="backup_mode == 'drive'"
+                                       password="True" />
+                            </group>
+                        </group>
+                        <group invisible="backup_mode != 'drive'">
+                            <group>
+                                <div colspan="12">
+                                    <mark>Please go to the following URL and grant access:</mark>
+                                    <field name="drive_uri"
+                                           class="fa fa-arrow-right mt-1"
+                                           widget="url"
+                                           text="Get Authorization Code"
+                                           invisible="backup_mode != 'drive'"
+                                           nolabel="1" />
+                                </div>
+                            </group>
+                            <group colspan="12">
+                                <field name="drive_auth_code"
+                                       readonly="1"
+                                       password="True" />
+                                <field name="drive_refresh_token"
+                                       readonly="1"
+                                       password="True" invisible="1" />
+                            </group>
+                        </group>
+                        <!---->
+                        <separator string="Automatic Clean Up" />
+                        <group>
+                            <div colspan="12">
+                                <h3 style="color: #e01951;">Specify the number of days to remove the old backup files
+                                    automatically.
+                                </h3>
+                                <!--                            <div>-->
+                                <field name="x_days" class="oe_inline" nolabel="1" />
+                                <b>Days</b>
+                                <!--                            </div>-->
+                            </div>
+                        </group>
+                        <!--Help Me :(-->
+                        <notebook>
+                            <page string="Help" name="help">
+                                <div class="oe_edit_only">
+                                    <p invisible="backup_mode != 'drive'">
+                                        <h4>To Configure Google Drive Client Key &amp; Secret Key:</h4>
+                                    </p>
+                                    <p invisible="backup_mode != 'drive'">
+                                        <mark>To get started with the Google Drive API, you will need to:
+                                            Set up a Google Cloud Platform project and enable the Drive API for
+                                            your
+                                            project.
+                                            <br />To set up a Google Cloud Platform (GCP) project and enable the Drive
+                                            API, follow these steps:
+                                            <ul>
+                                                <li>
+                                                    Go to the Google API Console
+                                                    <code>(https://console.developers.google.com/)</code>.
+                                                </li>
+                                                <li>If you don't already have a project, click the "Create Project"
+                                                    button. If you have an existing project, select it from the project
+                                                    drop-down menu.
+                                                </li>
+                                                <li>Once you have a project, click the "Enable APIs and Services"
+                                                    button.
+                                                </li>
+                                                <li>In the search box, type "Google Drive API" and press enter.
+                                                    Click on the "Google Drive API" result that appears.
+                                                    Click the "Enable" button to enable the Google Drive API for your
+                                                    project.
+                                                </li>
+                                                <li>Once the API is enabled, click the "Create Credentials" button.
+                                                    On the "Add credentials to your project" page, select the "OAuth 2.0
+                                                    client ID" option.
+                                                </li>
+                                                <li>Select the appropriate application type (e.g. "Web application" or
+                                                    "Desktop application") and click the "Create" button.
+                                                </li>
+                                                <li>On the "Create client ID" page, you will be prompted to configure
+                                                    the consent screen. Fill in the necessary information and click the
+                                                    "Save" button.
+                                                </li>
+                                                <li>After the consent screen is configured, you will be presented with
+                                                    your client ID and client secret. You will need these credentials to
+                                                    authenticate your API requests.
+                                                </li>
+                                            </ul>
+                                        </mark>
+                                        <mark>
+                                            The client ID is a unique identifier that is generated when you create a new
+                                            OAuth 2.0 client in the Google API Console. It is used to identify your
+                                            application when you request access to a user's Google account.
+
+                                            To find your client ID &amp; Secret Key:
+                                            <ul>
+                                                <li>
+                                                    Go to the Google API Console
+                                                    (https://console.developers.google.com/).
+                                                </li>
+                                                <li>Select the project that you want to use with the Google Drive API.
+                                                </li>
+                                                <li>Click the "Credentials" tab on the left-hand side of the page.</li>
+                                                <li>Your client ID will be listed under the "OAuth 2.0 client IDs"
+                                                    section.
+                                                </li>
+                                            </ul>
+                                        </mark>
+
+                                    </p>
+                                    <p>
+                                        <h4>To Configure Backup Directories:</h4>
+                                    </p>
+                                    <p invisible="backup_mode != 'drive'">
+                                        <mark>Google Drive: The IDs of the parent folders which contain the file.
+                                            If not specified as part of a create request, the file will be placed
+                                            directly in
+                                            the user's My Drive
+                                            folder.
+                                            If not specified as part of a copy request, the file will inherit any
+                                            discoverable
+                                            parents of the
+                                            source file.
+                                            Update requests must use the addParents and removeParents parameters to
+                                            modify the
+                                            parents list.
+                                            <code>Eg:
+                                                https://drive.google.com/drive/u/0/folders/1vzEwZyIBBthjvgKK97OYiByWAI1u6k4
+                                            </code>
+                                        </mark>
+                                    </p>
+                                    <p invisible="backup_mode != 'local'">
+                                        <mark>Local: Local Backup Path. Eg: /opt/odoo/backups</mark>
+                                    </p>
+                                    <p invisible="backup_mode != 'remote'">
+                                        <mark>Remote: Remote Backup Path Eg: /opt/odoo/backups</mark>
+                                    </p>
+                                    <p invisible="backup_mode != 'dropbox'">
+                                        <mark>Dropbox: Path inside your app folder in dropbox. If you specify a path and
+                                            not
+                                            available, then
+                                            system will create a location. Eg: folder ODOO -> Backups -> DB =
+                                            /ODOO/Backups/DB
+                                            <br />
+                                        </mark>
+                                    </p>
+                                    <p invisible="backup_mode != 's3'">
+                                        <mark>Amazon S3 Storage:
+                                            <br />
+                                            You can create the credential file yourself. By default, its location is at
+                                            ~/.aws/credentials
+                                            <br />
+                                            File content should be:
+                                            <br />
+                                            <code>
+                                                [default]
+                                                <br />
+                                                aws_access_key_id = YOUR_ACCESS_KEY
+                                                <br />
+                                                aws_secret_access_key = YOUR_SECRET_KEY
+                                            </code>
+                                            <br />
+                                            Or, you need to fill AWS access key and secret key in the Amazon S3 Key,
+                                            secret key section in this form.
+                                        </mark>
+                                    </p>
+                                </div>
+                                <p>
+                                    <h4>To Configure Database Settings:</h4>
+                                </p>
+                                <p>
+                                    <mark>Database role is the <code>db_user</code> parameter value from your odoo conf
+                                        file.
+                                        <br />
+                                        Password is the <code>db_password</code>parameter value from your odoo conf
+                                        file.
+                                        <br />
+                                        Eg:
+                                        <ul>
+                                            [options]
+                                            <li>
+                                                <code>admin_passwd</code>
+                                                = mysupersecretpassword
+                                            </li>
+                                            <li>
+                                                <code>db_host</code>
+                                                = 192.168.1.2
+                                            </li>
+                                            <li>
+                                                <code>db_port</code>
+                                                = 5432
+                                            </li>
+                                            <li>
+                                                <code>db_user</code>
+                                                = odoo
+                                            </li>
+                                            <li>
+                                                <code>db_password</code>
+                                                = pwd
+                                            </li>
+                                            <li>
+                                                <code>dbfilter</code>
+                                                = ^mycompany.*$
+                                            </li>
+                                        </ul>
+                                    </mark>
+                                    <mark>
+                                        The output format can be one of the following:
+                                        <br />
+                                        <ul>
+                                            <li>
+                                                <code>plain:</code>
+                                                Output a plain-text SQL script file (the default). This format is
+                                                useful
+                                                for very small databases with a minimal number of objects, but it should
+                                                generally be avoided for larger databases.
+                                            </li>
+
+                                            <li>
+                                                <code>custom:</code>
+                                                Output a custom archive suitable for input into pg_restore. This
+                                                is the
+                                                most flexible format, as it allows for the reordering and definition of
+                                                objects
+                                                when restoring the database. It is also compressed by default, using
+                                                gzip (ie,
+                                                test.gz). We recommend using this format, as it allows you to restore
+                                                single
+                                                objects from a backup.
+                                            </li>
+
+                                            <li>
+                                                <code>tar:</code>
+                                                Output a tar archive suitable for input into pg_restore. This
+                                                archive
+                                                format allows for the reordering and exclusion of database objects
+                                                during
+                                                restoration, as well as the ability to limit which data is reloaded. It
+                                                is used
+                                                with gzip compression.
+                                            </li>
+
+                                            <li>
+                                                <code>Dump With Filestore:</code>
+                                                Output a backup zipped with the filestore. This
+                                                option is
+                                                not recommended for larger databases, as it can be difficult to restore
+                                                from
+                                                this view.
+                                            </li>
+
+                                            Please select the desired output format from the list above.
+                                        </ul>
+                                    </mark>
+                                </p>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids" widget="mail_followers" />
+                        <field name="activity_ids" widget="mail_activity" />
+                        <field name="message_ids" widget="mail_thread" />
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <record id="view_auto_backup_config_tree" model="ir.ui.view">
+            <field name="name">Configure Backup</field>
+            <field name="model">auto.backup</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Backups">
+                    <field name="name" />
+                    <field name="backup_mode" />
+                    <field name="x_days" string="No: of days to remove" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_auto_backup_config_search" model="ir.ui.view">
+            <field name="name">Configure Backup</field>
+            <field name="model">auto.backup</field>
+            <field name="type">search</field>
+            <field name="arch" type="xml">
+                <search string="Search options">
+                    <field name="name" />
+                    <field name="backup_mode" />
+                    <field name="x_days" string="No: of days to remove" />
+                </search>
+            </field>
+        </record>
+
+        <record id="action_auto_backup_odoo_config" model="ir.actions.act_window">
+            <field name="name">Configure Backup</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">auto.backup</field>
+        </record>
+
+        <record id="action_auto_backup_odoo_config_view_tree_bind" model="ir.actions.act_window.view">
+            <field eval="1" name="sequence" />
+            <field name="view_mode">tree</field>
+            <field name="view_id" ref="view_auto_backup_config_tree" />
+            <field name="act_window_id" ref="action_auto_backup_odoo_config" />
+        </record>
+
+        <record id="action_auto_backup_odoo_config_view_form_bind" model="ir.actions.act_window.view">
+            <field eval="2" name="sequence" />
+            <field name="view_mode">form</field>
+            <field name="view_id" ref="view_auto_backup_config_form" />
+            <field name="act_window_id" ref="action_auto_backup_odoo_config" />
+        </record>
+
+
+        <menuitem id="menu_auto_backup_db_psql_config_parent"
+                  name="Backup"
+                  parent="base.menu_administration" sequence="0" />
+
+        <menuitem id="menu_auto_backup_db_psql_config"
+                  parent="menu_auto_backup_db_psql_config_parent"
+                  action="action_auto_backup_odoo_config"
+        />
+    </data>
+</odoo>

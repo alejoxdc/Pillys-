@@ -1,0 +1,277 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Recreational Drugs -->
+
+    <record model="ir.ui.view" id="medical_drugs_recreational_view">
+        <field name="name">Recreational Drugs</field>
+        <field name="model">medical.drugs_recreational</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Recreational Drugs">
+                <group string="General Information">
+                    <group>
+                        <field name="name" required="True"/>
+                        <field name="street_name"/>
+                        <newline/>
+                        <field name="toxicity"/>
+                        <field name="addiction_level"/>
+                        <field name="legal_status"/>
+                        <field name="category"/>
+                    </group>
+                </group>
+                <newline/>
+                <separator col="4" string="DEA Schedule Level"/>
+                <newline/>
+                <group>
+                    <field name="dea_schedule_i"/>
+                    <field name="dea_schedule_ii"/>
+                    <field name="dea_schedule_iii"/>
+                    <field name="dea_schedule_iv"/>
+                    <field name="dea_schedule_v"/>
+                </group>
+                <newline/>
+                <separator col="4" string="Henningfield Rating"/>
+                <newline/>
+                <group>
+                    <field name="withdrawal_level"/>
+                    <field name="reinforcement_level"/>
+                    <field name="tolerance_level"/>
+                    <field name="dependence_level"/>
+                    <field name="intoxication_level"/>
+                </group>
+                <separator colspan="4" string="Administration Routes"/>
+                <group>
+                    <group>
+                        <field name="route_oral"/>
+                        <field name="route_popping"/>
+                        <field name="route_injection"/>
+                    </group>
+                    <group>
+                        <field name="route_inhaling"/>
+                        <field name="route_sniffing"/>
+                    </group>
+                </group>
+                <newline/>
+                <separator colspan="4" string="Additional Info and Effects"/>
+                <field name="info" nolabel="1" colspan='4'/>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_drugs_recreational_tree">
+        <field name="name">Recreational Drugs List</field>
+        <field name="model">medical.drugs_recreational</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Recreational Drugs'>
+                <field name="name"/>
+                <field name="category"/>
+                <field name="toxicity"/>
+                <field name="addiction_level"/>
+                <field name="street_name"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.actions.act_window" id="medical_action_drugs_recreational">
+        <field name="name">Recreational Drugs</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.drugs_recreational</field>
+        <field name="view_id" ref="medical_drugs_recreational_tree"/>
+    </record>
+
+
+    <record id="view_medical_recreational_drugs_search" model="ir.ui.view">
+        <field name="name">medical.drugs_recreational.select</field>
+        <field name="model">medical.drugs_recreational</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Search Recreational Drugs">
+
+                <separator orientation="vertical"/>
+                <field name="name"/>
+                <field name="street_name"/>
+                <field name="toxicity"/>
+                <field name="addiction_level"/>
+
+                <newline/>
+
+            </search>
+        </field>
+    </record>
+
+    <menuitem action="medical_action_drugs_recreational" id="medical_conf_drugs_recreational"
+              parent="pragtech_veterinary_app.medical_conf_misc"/>
+
+
+    <!-- Include the Lifestyle page into the Patient Chart -->
+
+    <record model="ir.ui.view" id="medical_patient_view_inherit_lifestyle">
+        <field name="name">Patient</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_view"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="Lifestyle">
+                    <notebook>
+                        <page string="Diet and Excersice">
+                            <group string="Physical Excersise">
+                                <group>
+                                    <field name="excercise"/>
+                                </group>
+                                <group>
+                                    <field name="excercise_minutes_day"/>
+                                </group>
+                            </group>
+                            <group string="Sleep">
+                                <group>
+                                    <field name="sleep_hours"/>
+                                </group>
+                                <group>
+                                    <field name="sleep_during_daytime"/>
+                                </group>
+                            </group>
+                            <group col="4" string="Diet info">
+                                <group>
+                                    <field name="number_of_meals"/>
+                                </group>
+                                <group>
+                                    <field name="eats_alone"/>
+                                </group>
+                                <group>
+                                    <field name="soft_drinks"/>
+                                </group>
+                                <group>
+                                    <field name="salt"/>
+                                </group>
+                                <field name="coffee"/>
+                                <field name="coffee_cups"/>
+                                <field name="diet"/>
+                                <field name="diet_info"/>
+                            </group>
+                            <separator colspan="8" string="Lifestyle Information"/>
+                            <field name="lifestyle_info" nolabel="1"/>
+                        </page>
+
+                        <!--
+                                                    <page string="Addictions">
+                                                        <notebook>
+                                                            <page string="Main">
+                                                                <group colspan="4" col="8">
+                                                                    <field name="smoking"/>
+                                                                    <field name="smoking_number"/>
+                                                                    <field name="ex_smoker"/>
+                                                                    <field name="second_hand_smoker"/>
+                                                                    <field name="age_start_smoking"/>
+                                                                    <field name="age_quit_smoking"/>
+                                                                    <field name="drug_usage"/>
+                                                                    <field name="drug_iv"/>
+                                                                    <field name="ex_drug_addict"/>
+                                                                    <field name="age_start_drugs"/>
+                                                                    <field name="age_quit_drugs"/>
+                                                                </group>
+                                                            </page>
+                                                            <page string="Alcohol">
+                                                                <group colspan="4" col="8">
+                                                                    <field name="alcohol" />
+                                                                    <field name="ex_alcoholic" />
+                                                                    <field name="age_start_drinking"/>
+                                                                    <field name="age_quit_drinking"/>
+                                                                    <field name="alcohol_beer_number"/>
+                                                                    <field name="alcohol_wine_number"/>
+                                                                    <field name="alcohol_liquor_number"/>
+                                                                </group>
+                                                                <field name="cage"/>
+                                                            </page>
+                                                            <page string="Recreational Drugs">
+
+                                                                <group colspan="4" col="10">
+
+                                                                    <field colspan="10" name="drugs" nolabel="1" widget="many2many"/>
+                                                                </group>
+                                                            </page>
+                                                        </notebook>
+                                                    </page>
+                                                    <page string="Sexuality">
+                                                        <group colspan="4" col="6">
+                                                                <field name="sexual_preferences"/>
+                                                                <field name="sexual_partners"/>
+                                                                <field name="sexual_partners_number"/>
+                                                                <field name="first_sexual_encounter"/>
+                                                                <field name="sexual_practices"/>
+                                                                <field name="anticonceptive"/>
+                                                        </group>
+                                                        <newline/>
+                                                        <group colspan="2" string="Other sexual practices">
+                                                            <group>
+                                                            <field name="sex_oral"/>
+                                                            <field name="sex_anal"/>
+                                                            </group>
+                                                            <group>
+                                                                <field name="prostitute"/>
+                                                                <field name="sex_with_prostitutes"/>
+                                                            </group>
+                                                        </group>
+                                                        <group colspan="2" string="Extra info about the patient sexuality">
+                                                            <field nolabel="1" name="sexuality_info"/>
+                                                        </group>
+                                                    </page>
+
+                                                    <page string="Safety">
+                                                        <group colspan="4" col="8" string="Drive and Home Safety">
+                                                            <field name="motorcycle_rider"/>
+                                                            <field name="helmet"/>
+                                                            <field name="traffic_laws"/>
+                                                            <field name="car_revision"/>
+                                                            <field name="car_seat_belt"/>
+                                                            <field name="car_child_safety"/>
+                                                            <field name="home_safety"/>
+                                                        </group>
+
+                                                    </page>
+                                                     -->
+
+                    </notebook>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_cage_view">
+        <field name="name">Patient CAGE Questionnaire</field>
+        <field name="model">medical.patient.cage</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient CAGE SCORE">
+                <group>
+                    <field name="evaluation_date"/>
+                    <field name="cage_c"/>
+                    <field name="cage_a"/>
+                    <field name="cage_g"/>
+                    <field name="cage_e"/>
+                    <field name="cage_score"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_cage_tree">
+        <field name="name">gnuhealth.patient.cage</field>
+        <field name="model">medical.patient.cage</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Patient CAGE SCORE'>
+                <field name="evaluation_date"/>
+                <field name="cage_c"/>
+                <field name="cage_a"/>
+                <field name="cage_g"/>
+                <field name="cage_e"/>
+                <field name="cage_score"/>
+            </tree>
+        </field>
+    </record>
+</odoo>

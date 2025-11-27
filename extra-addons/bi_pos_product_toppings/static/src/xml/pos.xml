@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+	
+	<t owl="1" t-name="bi_pos_product_toppings.ToppingsButton">
+		<div class="control-button customer-button btn rounded-0 fw-bolder text-truncate" t-attf-class="{{this.partner ? 'btn-primary' : 'btn-light'}}"
+         t-on-click="() => this.onClick()">
+            <i class="fa fa-plus me-1" role="img" aria-label="Toppings" title="Toppings" />
+            <span> </span>
+            Toppings
+        </div>
+
+		
+   </t>
+
+   <t t-name="bi_pos_product_toppings.ToppingPopup" owl="1">
+   		<div class="popup popup-import">
+            <div class="modal-header">
+                <h4 class="modal-title title drag-handle" style="color: #714b67;font-weight: bold;">
+                    Toppings
+                </h4>
+            </div>
+            <main class="body modal-body">
+                <div style="overflow : auto">
+					<t t-if="toppingProducts.length > 0">
+						<div  class="product-list d-grid p-1" style="max-height: 360px;overflow: auto;">
+							<t t-foreach="toppingProducts" t-as="product" t-key="product.id">
+								<article style="background: #eeeeee;" class="product-list d-grid gap-1 p-1" tabindex="0"
+									t-on-click="() => this.add_product_toppings(product)"
+									t-att-data-product-id="product.id"
+									t-attf-aria-labelledby="article_product_{{product.id}}"
+									>
+									<div class="product-img">
+										<img t-att-src="imageUrl" t-att-alt="product.display_name" />
+									</div>
+									<div class="product-content">
+										<div class="product-name" t-attf-id="article_product_{{product.id}}">
+											<t t-esc="product.display_name" />
+										</div>
+										<span class="price-tag">
+											<t t-esc="price" />
+										</span>
+									</div>
+								</article>
+							 </t>
+						</div>
+					</t>
+					<t t-else="">
+						<p>No Toppings Products are added.</p>
+					</t>
+				</div>
+            </main>
+            <footer class="footer modal-footer">
+                <div class="button cancel btn btn-lg btn-primary" t-on-click="confirm">
+                    Ok
+                </div>
+            </footer>
+        </div>
+	</t>
+
+	
+
+	<t t-name="Orderline" t-inherit="point_of_sale.Orderline" t-inherit-mode="extension" owl="1">
+		<xpath expr="//li[hasclass('orderline')]" position="inside">
+			<ul class="info-list">
+				<t t-set="td" t-value="line.toppingsData" />
+				<t t-foreach="td" t-as="ln" t-key="ln.id">
+					<li>
+						<table style="width: 100%;">
+							<tr>
+								<td>
+									<t t-if="env.services.pos.mainScreen.component.name == 'ProductScreen'">
+					                    <button class="remove-selected-line-button" t-on-click="() => env.services.pos.get_order().deleteLine(ln)" >
+					                        <i class="oe_link_icon fa fa-trash-o oe_icon oe_red" />
+					                    </button>
+					                </t>
+
+								</td>
+								<t t-if="env.services.pos.mainScreen.component.name == 'ProductScreen'">
+									<td style="width: 45%;">
+										<t t-esc="ln.name"/>
+									</td>
+									<td style="text-align;">
+										<t t-esc="ln.qty"/> <t t-esc="ln.uom"/> at
+										<t t-esc="env.utils.formatCurrency(ln.rate)"/>
+									</td>
+									<td style="text-align: right;">
+										<t t-esc="env.utils.formatCurrency(ln.total)"/>
+									</td>
+								</t>
+								<t t-else="">
+									<td style="width: 45%;">
+										<t t-esc="ln.name"/>
+									</td>
+									<td style="text-align;">
+										<t t-esc="ln.qty"/> x
+										<t t-esc="env.utils.formatCurrency(ln.rate)"/>
+									</td>
+									<td style="text-align: right;">
+										<t t-esc="env.utils.formatCurrency(ln.total)"/>
+									</td>
+								</t>
+							</tr>
+						</table>
+					  
+					</li>
+				</t>
+				
+			</ul>
+		</xpath>
+	</t>
+</templates>
+
+

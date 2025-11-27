@@ -1,0 +1,684 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_lab
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:20+0000\n"
+"PO-Revision-Date: 2015-09-10 10:20+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+#: report:patient.labtest.report:0
+msgid "Age :"
+msgstr "Âge :"
+
+#. module: medical_lab
+#: report:patient.labtest.report:0
+msgid "Analyte"
+msgstr "Analyte"
+
+#. module: medical_lab
+#: code:addons/medical_lab/medical_lab.py:215
+#: code:addons/medical_lab/wizard/wizard_create_lab_test.py:44
+#, python-format
+msgid "At least one of the selected record Test Record is already created."
+msgstr "At least one of the selected record Test Record is already created."
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_stoolexaminationcharges1_product_template
+msgid "BACTEC Culture Analysis Charges"
+msgstr "BACTEC Culture Analysis Charges"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_bloodcounttestcharges0_product_template
+msgid "Blood count test charges"
+msgstr "Hémogramme"
+
+#. module: medical_lab
+#: view:medical.lab.test.create:medical_lab.view_lab_make_test
+#: selection:medical.patient.lab.test,state:0
+#: view:wizard.multiple.test.request:medical_lab.multi_request_wizard_form
+msgid "Cancel"
+msgstr "Annulé"
+
+#. module: medical_lab
+#: field:medical.lab.test.units,code:0
+#: field:medical.test_type,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.action_create_lab_test
+#: view:medical.lab.test.create:medical_lab.view_lab_make_test
+#: view:medical.patient.lab.test:medical_lab.medical_lab_test_request_form
+msgid "Create Lab Test"
+msgstr "Créer Analyse"
+
+#. module: medical_lab
+#: view:medical.lab.test.create:medical_lab.view_lab_make_test
+msgid "Create Lab Tests"
+msgstr "Créer test de laboratoire"
+
+#. module: medical_lab
+#: view:medical.lab.test.create:medical_lab.view_lab_make_test
+msgid "Create Tests"
+msgstr "Créer tests"
+
+#. module: medical_lab
+#: view:wizard.multiple.test.request:medical_lab.multi_request_wizard_form
+msgid "Create lab Test"
+msgstr "Create lab Test"
+
+#. module: medical_lab
+#: field:medical.lab,create_uid:0
+#: field:medical.lab.test.create,create_uid:0
+#: field:medical.lab.test.units,create_uid:0
+#: field:medical.patient.lab.test,create_uid:0
+#: field:medical.test_type,create_uid:0
+#: field:medical_test.critearea,create_uid:0
+#: field:wizard.multiple.test.request,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_lab
+#: field:medical.lab,create_date:0
+#: field:medical.lab.test.create,create_date:0
+#: field:medical.lab.test.units,create_date:0
+#: field:medical.patient.lab.test,create_date:0
+#: field:medical.test_type,create_date:0
+#: field:medical_test.critearea,create_date:0
+#: field:wizard.multiple.test.request,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_lab
+#: field:medical.patient.lab.test,date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+#: report:patient.labtest.report:0
+msgid "Date :"
+msgstr "Date :"
+
+#. module: medical_lab
+#: field:medical.lab,date_analysis:0
+msgid "Date of the Analysis"
+msgstr "Date de l'analyse"
+
+#. module: medical_lab
+#: field:medical.lab,date_requested:0
+msgid "Date requested"
+msgstr "Date de la requête"
+
+#. module: medical_lab
+#: field:medical.test_type,info:0
+msgid "Description"
+msgstr "Description"
+
+#. module: medical_lab
+#: field:medical.lab,diagnosis:0
+msgid "Diagnosis"
+msgstr "Diagnostic"
+
+#. module: medical_lab
+#: view:medical.lab.test.create:medical_lab.view_lab_make_test
+msgid "Do you want to generate the test(s) ?"
+msgstr "Voulez-vous générer le(s) test(s) ?"
+
+#. module: medical_lab
+#: field:medical.patient.lab.test,doctor_id:0
+#: field:wizard.multiple.test.request,phy_id:0
+msgid "Doctor"
+msgstr "Docteur"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+msgid "Doctor :"
+msgstr "Docteur :"
+
+#. module: medical_lab
+#: help:medical.patient.lab.test,doctor_id:0
+msgid "Doctor who Request the lab test."
+msgstr "Docteur qui a prescrit le test"
+
+#. module: medical_lab
+#: help:medical.lab,requestor:0
+msgid "Doctor who requested the test"
+msgstr "Docteur qui a prescrit le test"
+
+#. module: medical_lab
+#: report:patient.labtest.report:0
+msgid "Doctor:"
+msgstr "Docteur : "
+
+#. module: medical_lab
+#: selection:medical.patient.lab.test,state:0
+msgid "Draft"
+msgstr "Brouillon"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_action_draft_lab_test_request
+#: model:ir.ui.menu,name:medical_lab.medical_draft_labtest_request
+msgid "Draft Requests"
+msgstr "Draft Requests"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_endocrinology0_product_template
+msgid "Endocrinology"
+msgstr "Endocrinologie"
+
+#. module: medical_lab
+#: field:medical_test.critearea,excluded:0
+msgid "Excluded"
+msgstr "Excluded"
+
+#. module: medical_lab
+#: view:medical.lab:medical_lab.medical_lab_view
+#: view:medical.test_type:medical_lab.medical_test_view
+msgid "Extra Info"
+msgstr "Info complémentaire"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_bloodcounttestcharges1_product_template
+msgid "Fluorescent Bacilloscopy Analysis Charges"
+msgstr "Fluorescent Bacilloscopy Analysis Charges"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_urineanalysischarges1_product_template
+msgid "HIV ELISA Analysis Charges"
+msgstr "HIV ELISA Analysis Charges"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_haematologycharges0_product_template
+msgid "Haematology Charges"
+msgstr "Frais d'hématologie"
+
+#. module: medical_lab
+#: field:medical.lab,id:0
+#: field:medical.lab,name:0
+#: field:medical.lab.test.create,id:0
+#: field:medical.lab.test.units,id:0
+#: field:medical.patient.lab.test,id:0
+#: field:medical.test_type,id:0
+#: field:medical_test.critearea,id:0
+#: field:wizard.multiple.test.request,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_lab
+#: report:patient.labtest.report:0
+msgid "LABORATORY REPORT"
+msgstr "Rapport de laboratoire"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+msgid "LABORATORY RESULTS"
+msgstr "Resultats de laboratoire"
+
+#. module: medical_lab
+#: model:ir.actions.report.xml,name:medical_lab.report_patient_labtest_report
+msgid "Lab Report"
+msgstr "Rapport de laboratoire"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.act_patient_lab_history
+msgid "Lab Reports"
+msgstr "Rapports de laboratoire"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_action_lab_test_request
+#: model:ir.ui.menu,name:medical_lab.medical_labtest_request
+msgid "Lab Requests"
+msgstr "Demande de test"
+
+#. module: medical_lab
+#: model:product.category,name:medical_lab.product_category_labservices0
+#: model:product.category,name:medical_lab.product_category_labservices011
+msgid "Lab Services"
+msgstr "Services de laboratoire"
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_lab
+#: view:medical.test_type:medical_lab.medical_test_view
+msgid "Lab Test"
+msgstr "Test de laboratoire"
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_test_critearea
+msgid "Lab Test Critearea"
+msgstr "Critères de test du laboratoire"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_action_lab_unit
+#: model:ir.ui.menu,name:medical_lab.medical_labtest_unit
+msgid "Lab Testing Units"
+msgstr "Unités des tests de laboratoire"
+
+#. module: medical_lab
+#: model:ir.actions.report.xml,name:medical_lab.report_patient_labtest
+#: view:medical.patient:medical_lab.medical_patient_view_lab_test
+msgid "Lab Tests"
+msgstr "Tests de laboratoire"
+
+#. module: medical_lab
+#: field:medical.patient,lab_test_ids:0
+msgid "Lab Tests Required"
+msgstr "Tests de laboratoires obligatoire"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_action_tree_lab
+#: model:ir.ui.menu,name:medical_lab.medical_action_lab_tree
+msgid "Lab Tests Results"
+msgstr "Résultats d'analyse"
+
+#. module: medical_lab
+#: help:medical.lab,name:0
+msgid "Lab result ID"
+msgstr "ID du résultat du test de laboratoire "
+
+#. module: medical_lab
+#: view:medical.lab:medical_lab.medical_lab_tree
+#: help:medical.lab,test:0
+#: view:medical.test_type:medical_lab.medical_test_tree
+msgid "Lab test type"
+msgstr "Type du test de laboratoire"
+
+#. module: medical_lab
+#: model:ir.ui.menu,name:medical_lab.medical_conf_laboratory
+#: model:ir.ui.menu,name:medical_lab.medical_laboratory_menu
+msgid "Laboratory"
+msgstr "Laboratoire"
+
+#. module: medical_lab
+#: view:medical.lab:medical_lab.medical_lab_view
+msgid "Laboratory Test"
+msgstr "Test de laboratoire"
+
+#. module: medical_lab
+#: field:medical.lab,write_uid:0
+#: field:medical.lab.test.create,write_uid:0
+#: field:medical.lab.test.units,write_uid:0
+#: field:medical.patient.lab.test,write_uid:0
+#: field:medical.test_type,write_uid:0
+#: field:medical_test.critearea,write_uid:0
+#: field:wizard.multiple.test.request,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_lab
+#: field:medical.lab,write_date:0
+#: field:medical.lab.test.create,write_date:0
+#: field:medical.lab.test.units,write_date:0
+#: field:medical.patient.lab.test,write_date:0
+#: field:medical.test_type,write_date:0
+#: field:medical_test.critearea,write_date:0
+#: field:wizard.multiple.test.request,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_liverfunctiontestcharges0_product_template
+msgid "Liver Function test charges"
+msgstr "Test des fonctions hépatiques"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_liverfunctiontestcharges1_product_template
+msgid "Lowenstein-Jensen Culture Analysis Charges"
+msgstr "Lowenstein-Jensen Culture Analysis Charges"
+
+#. module: medical_lab
+#: field:medical_test.critearea,lower_limit:0
+msgid "Lower Limit"
+msgstr "Lower Limit"
+
+#. module: medical_lab
+#: view:medical.lab:medical_lab.medical_lab_view
+#: view:medical.test_type:medical_lab.medical_test_view
+msgid "Main Info"
+msgstr "Information principale"
+
+#. module: medical_lab
+#: view:wizard.multiple.test.request:medical_lab.multi_request_wizard_form
+msgid "Multiple Request Wizard"
+msgstr "Multiple Request Wizard"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.multi_request_wizard_act
+#: model:ir.ui.menu,name:medical_lab.multi_request_wizard_act_form
+msgid "Multiple Tests Wizard"
+msgstr "Multiple Tests Wizard"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_action_form_test
+msgid "New Type of Lab test"
+msgstr "Nouveau type de test de laboratoire"
+
+#. module: medical_lab
+#: code:addons/medical_lab/wizard/wizard_create_lab_pos.py:77
+#, python-format
+msgid "No Lab test exist for selected Dr."
+msgstr "Aucun test de labarotoire pour le docteur sélectionné"
+
+#. module: medical_lab
+#: help:medical_test.critearea,result_text:0
+msgid "Non-numeric results. For example qualitative values, morphological, colors ..."
+msgstr "Non-numeric results. For example qualitative values, morphological, colors ..."
+
+#. module: medical_lab
+#: field:medical_test.critearea,normal_range:0
+#: report:patient.labtest.report:0
+msgid "Normal Range"
+msgstr "Valeurs normales"
+
+#. module: medical_lab
+#: field:medical.lab,pathologist:0
+#: help:medical.lab,pathologist:0
+msgid "Pathologist"
+msgstr "Pathologiste"
+
+#. module: medical_lab
+#: report:patient.labtest.report:0
+msgid "Pathologist :"
+msgstr "Pathologiste"
+
+#. module: medical_lab
+#: field:medical.lab,patient:0
+#: field:medical.patient.lab.test,patient_id:0
+#: field:wizard.multiple.test.request,patient_id:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+#: report:patient.labtest.report:0
+msgid "Patient :"
+msgstr "Patient :"
+
+#. module: medical_lab
+#: help:medical.lab,patient:0
+msgid "Patient ID"
+msgstr "ID du patient"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+#: report:patient.labtest.report:0
+msgid "Patient ID :"
+msgstr "ID du patient :"
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_patient
+msgid "Patient related information"
+msgstr "Renseignements sur le patient"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_peripheralsmearexaminationcharges0_product_template
+msgid "Peripheral Smear Examination Charges"
+msgstr "Frais de dépistage du frottis"
+
+#. module: medical_lab
+#: field:medical.lab,requestor:0
+msgid "Physician"
+msgstr "Médecins"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_haematologycharges1_product_template
+msgid "Purified Protein Derivative - PPD Analysis Charges"
+msgstr "Purified Protein Derivative - PPD Analysis Charges"
+
+#. module: medical_lab
+#: field:medical_test.critearea,remark:0
+msgid "Remark"
+msgstr "Remark"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_renalfunctiontestcharges0_product_template
+msgid "Renal Function test charges"
+msgstr "Test des fonctions rénales"
+
+#. module: medical_lab
+#: field:medical.patient.lab.test,request:0
+msgid "Request"
+msgstr "Request"
+
+#. module: medical_lab
+#: field:wizard.multiple.test.request,r_date:0
+msgid "Request Date"
+msgstr "Request Date"
+
+#. module: medical_lab
+#: field:medical_test.critearea,result:0
+#: report:patient.labtest.report:0
+msgid "Result"
+msgstr "Résultat"
+
+#. module: medical_lab
+#: field:medical_test.critearea,result_text:0
+msgid "Result - Text"
+msgstr "Result - Text"
+
+#. module: medical_lab
+#: field:medical.lab,results:0
+msgid "Results"
+msgstr "Résultats"
+
+#. module: medical_lab
+#: view:medical.test_type:medical_lab.view_medical_lab_test_type_search
+msgid "Search Lab Test Types"
+msgstr "Recherche type de test de laboratoire"
+
+#. module: medical_lab
+#: view:medical.lab.test.units:medical_lab.view_medical_lab_test_unit_search
+msgid "Search Lab Test Units"
+msgstr "Recherche unités tests de laboratoire "
+
+#. module: medical_lab
+#: view:medical.patient.lab.test:medical_lab.view_medical_lab_test_filter
+msgid "Search Lab Tests Requests"
+msgstr "Recherche de demande de test"
+
+#. module: medical_lab
+#: view:medical.lab:medical_lab.view_medical_lab_test_results_filter
+msgid "Search Lab Tests Results"
+msgstr "Recherche résultats de laboratoire"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_semenanalysischarges0_product_template
+msgid "Semen Analysis Charges"
+msgstr "Frais de spermogramme"
+
+#. module: medical_lab
+#: field:medical_test.critearea,sequence:0
+msgid "Sequence"
+msgstr "Séquence"
+
+#. module: medical_lab
+#: field:medical.test_type,product_id:0
+msgid "Service"
+msgstr "Service"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+#: report:patient.labtest.report:0
+msgid "Sex :"
+msgstr "Sexe :"
+
+#. module: medical_lab
+#: help:medical.test_type,code:0
+msgid "Short name - code for the test"
+msgstr "Nom court - code pour un test"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+msgid "Sign :"
+msgstr "Sign : "
+
+#. module: medical_lab
+#: report:patient.labtest.report:0
+msgid "Signature : ____________________________"
+msgstr "Signature: ____________________________"
+
+#. module: medical_lab
+#: field:medical.patient.lab.test,state:0
+msgid "State"
+msgstr "État"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_stoolexaminationcharges0_product_template
+msgid "Stool Examination Charges"
+msgstr "Frais d'examen des selles"
+
+#. module: medical_lab
+#: field:medical.test_type,name:0
+#: field:medical_test.critearea,name:0
+msgid "Test"
+msgstr "Test"
+
+#. module: medical_lab
+#: view:medical.lab:medical_lab.medical_lab_view
+#: field:medical.lab,critearea:0
+#: view:medical.test_type:medical_lab.medical_test_view
+#: field:medical.test_type,critearea:0
+#: field:medical_test.critearea,medical_lab_id:0
+msgid "Test Cases"
+msgstr "Cas de tests"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+msgid "Test Names"
+msgstr "Noms du test"
+
+#. module: medical_lab
+#: view:medical.patient.lab.test:medical_lab.medical_lab_test_request_form
+#: view:medical.patient.lab.test:medical_lab.medical_lab_test_request_tree
+msgid "Test Requests"
+msgstr "Demandes de test"
+
+#. module: medical_lab
+#: field:medical.patient.lab.test,name:0
+msgid "Test Type"
+msgstr "Type du test"
+
+#. module: medical_lab
+#: view:medical.lab.test.units:medical_lab.medical_lab_unit_form
+#: view:medical.lab.test.units:medical_lab.medical_lab_unit_tree
+msgid "Test Unit"
+msgstr "Unité de test"
+
+#. module: medical_lab
+#: field:medical.lab,test:0
+#: field:medical_test.critearea,test_type_id:0
+msgid "Test type"
+msgstr "Type de test"
+
+#. module: medical_lab
+#: help:medical.test_type,name:0
+msgid "Test type, eg X-Ray, hemogram,biopsy..."
+msgstr "Type de test, eg Rayon-X, hémogramme, biopsie, etc."
+
+#. module: medical_lab
+#: selection:medical.patient.lab.test,state:0
+msgid "Tested"
+msgstr "A été testé"
+
+#. module: medical_lab
+#: sql_constraint:medical.test_type:0
+msgid "The Lab Test code must be unique"
+msgstr "The Lab Test code must be unique"
+
+#. module: medical_lab
+#: sql_constraint:medical.lab.test.units:0
+msgid "The Unit name must be unique"
+msgstr "The Unit name must be unique"
+
+#. module: medical_lab
+#: sql_constraint:medical.lab:0
+msgid "The test ID code must be unique"
+msgstr "The test ID code must be unique"
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_wizard_multiple_test_request
+msgid "This is form for view of tender"
+msgstr "This is form for view of tender"
+
+#. module: medical_lab
+#: model:ir.actions.act_window,name:medical_lab.medical_action_today_draft_lab_test_request
+#: model:ir.ui.menu,name:medical_lab.medical_today_draft_labtest_request
+msgid "Today's Draft Requests"
+msgstr "Today's Draft Requests"
+
+#. module: medical_lab
+#: model:ir.model,name:medical_lab.model_medical_test_type
+msgid "Type of Lab test"
+msgstr "Type de test de laboratoire"
+
+#. module: medical_lab
+#: field:medical.lab.test.units,name:0
+msgid "Unit"
+msgstr "Unité"
+
+#. module: medical_lab
+#: field:medical_test.critearea,units:0
+#: report:patient.labtest.report:0
+msgid "Units"
+msgstr "Unités"
+
+#. module: medical_lab
+#: field:medical_test.critearea,upper_limit:0
+msgid "Upper Limit"
+msgstr "Upper Limit"
+
+#. module: medical_lab
+#: field:medical.patient.lab.test,urgent:0
+#: field:wizard.multiple.test.request,urgent:0
+msgid "Urgent"
+msgstr "Urgent"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_urineanalysischarges0_product_template
+msgid "Urine Analysis charges"
+msgstr "Frais d'analyse d'urine"
+
+#. module: medical_lab
+#: code:addons/medical_lab/medical_lab.py:215
+#: code:addons/medical_lab/wizard/wizard_create_lab_pos.py:77
+#: code:addons/medical_lab/wizard/wizard_create_lab_test.py:44
+#, python-format
+msgid "UserError"
+msgstr "Erreur de l'utilisateur"
+
+#. module: medical_lab
+#: field:medical_test.critearea,warning:0
+msgid "Warning"
+msgstr "Warning"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_peripheralsmearexaminationcharges1_product_template
+msgid "Western Blot Analysis Charges"
+msgstr "Western Blot Analysis Charges"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_renalfunctiontestcharges1_product_template
+msgid "Xpert MTB-RIF Analysis Charges"
+msgstr "Xpert MTB-RIF Analysis Charges"
+
+#. module: medical_lab
+#: model:product.template,name:medical_lab.product_product_semenanalysischarges1_product_template
+msgid "Ziehl Neelsen Bacilloscopy Analysis Charges"
+msgstr "Ziehl Neelsen Bacilloscopy Analysis Charges"
+
+#. module: medical_lab
+#: report:patient.labtest:0
+msgid "____________________________"
+msgstr "____________________________"
+

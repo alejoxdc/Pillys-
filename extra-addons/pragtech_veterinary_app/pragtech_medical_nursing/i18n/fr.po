@@ -1,0 +1,470 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_nursing
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:24+0000\n"
+"PO-Revision-Date: 2015-09-10 10:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_nursing
+#: model:ir.model,name:medical_nursing.model_medical_ambulatory_care_procedure
+msgid "Ambulatory Care Procedure"
+msgstr "Ambulatory Care Procedure"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,base_condition:0
+msgid "Base Condition"
+msgstr "Base Condition"
+
+#. module: medical_nursing
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+msgid "Basic Info"
+msgstr "Basic Info"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,glycemia:0
+#: help:medical.patient.rounding,glycemia:0
+msgid "Blood Glucose level"
+msgstr "Blood Glucose level"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,proximity:0
+msgid "Check if personal items, water, alarm, ... are not in easy reach"
+msgstr "Check if personal items, water, alarm, ... are not in easy reach"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,pain:0
+msgid "Check if the patient is in pain"
+msgstr "Check if the patient is in pain"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,position:0
+msgid "Check if the patient needs to be repositioned or is unconfortable"
+msgstr "Check if the patient needs to be repositioned or is unconfortable"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,potty:0
+msgid "Check if the patient needs to urinate / defecate"
+msgstr "Check if the patient needs to urinate / defecate"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,personal_needs:0
+msgid "Check if the patient requests anything"
+msgstr "Check if the patient requests anything"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,pump:0
+msgid "Check if there is any issues with the pumps - IVs ... "
+msgstr "Check if there is any issues with the pumps - IVs ... "
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,warning:0
+msgid "Check this box to alert the supervisor about this patient rounding. It will be shown in red in the rounding list"
+msgstr "Check this box to alert the supervisor about this patient rounding. It will be shown in red in the rounding list"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,warning:0
+msgid "Check this box to alert the supervisor about this session. It will be shown in red in the session list"
+msgstr "Check this box to alert the supervisor about this session. It will be shown in red in the session list"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,depression:0
+msgid "Check this if the patient shows signs of depression"
+msgstr "Check this if the patient shows signs of depression"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,evolution:0
+#: help:medical.patient.rounding,evolution:0
+msgid "Check your judgement of current patient condition"
+msgstr "Check your judgement of current patient condition"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,procedure:0
+#: field:medical.rounding_procedure,procedure:0
+msgid "Code"
+msgstr "Code"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,comments:0
+msgid "Comments"
+msgstr "Comments"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,create_uid:0
+#: field:medical.patient.ambulatory_care,create_uid:0
+#: field:medical.patient.rounding,create_uid:0
+#: field:medical.rounding_procedure,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,create_date:0
+#: field:medical.patient.ambulatory_care,create_date:0
+#: field:medical.patient.rounding,create_date:0
+#: field:medical.rounding_procedure,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,depression:0
+msgid "Depression signs"
+msgstr "Depression signs"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,diastolic:0
+#: field:medical.patient.rounding,diastolic:0
+msgid "Diastolic Pressure"
+msgstr "Diastolic Pressure"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,diuresis:0
+msgid "Diuresis"
+msgstr "Diuresis"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,session_end:0
+#: field:medical.patient.rounding,evaluation_end:0
+msgid "End"
+msgstr "End"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,pain_level:0
+msgid "Enter the pain level, from 1 to 10"
+msgstr "Enter the pain level, from 1 to 10"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,environmental_assessment:0
+msgid "Environment"
+msgstr "Environment"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,environmental_assessment:0
+msgid "Environment assessment . State any disorder in the room."
+msgstr "Environment assessment . State any disorder in the room."
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,evolution:0
+#: field:medical.patient.rounding,evolution:0
+msgid "Evolution"
+msgstr "Evolution"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,glycemia:0
+#: field:medical.patient.rounding,glycemia:0
+msgid "Glycemia"
+msgstr "Glycemia"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,health_professional:0
+#: field:medical.patient.rounding,health_professional:0
+msgid "Health Professional"
+msgstr "Health Professional"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,bpm:0
+#: field:medical.patient.rounding,bpm:0
+msgid "Heart Rate"
+msgstr "Heart Rate"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,bpm:0
+#: help:medical.patient.rounding,bpm:0
+msgid "Heart rate expressed in beats per minute"
+msgstr "Heart rate expressed in beats per minute"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,id:0
+#: field:medical.patient.ambulatory_care,id:0
+#: field:medical.patient.ambulatory_care,name:0
+#: field:medical.patient.rounding,id:0
+#: field:medical.rounding_procedure,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_nursing
+#: selection:medical.patient.ambulatory_care,evolution:0
+#: selection:medical.patient.rounding,evolution:0
+msgid "Improving"
+msgstr "Improving"
+
+#. module: medical_nursing
+#: selection:medical.patient.ambulatory_care,evolution:0
+msgid "Initial"
+msgstr "Initial"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,write_uid:0
+#: field:medical.patient.ambulatory_care,write_uid:0
+#: field:medical.patient.rounding,write_uid:0
+#: field:medical.rounding_procedure,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,write_date:0
+#: field:medical.patient.ambulatory_care,write_date:0
+#: field:medical.patient.rounding,write_date:0
+#: field:medical.rounding_procedure,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,procedures:0
+msgid "List of the procedures in this rounding. Please enter the first one as the main procedure"
+msgstr "List of the procedures in this rounding. Please enter the first one as the main procedure"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,procedures:0
+msgid "List of the procedures in this session. Please enter the first one as the main procedure"
+msgstr "List of the procedures in this session. Please enter the first one as the main procedure"
+
+#. module: medical_nursing
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+msgid "Main"
+msgstr "Main"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,next_session:0
+msgid "Next Session"
+msgstr "Next Session"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,session_notes:0
+#: field:medical.rounding_procedure,notes:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: medical_nursing
+#: model:ir.ui.menu,name:medical_nursing.medical_nursing_menu
+msgid "Nursing"
+msgstr "Nursing"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,ordering_professional:0
+msgid "Ordering Physician"
+msgstr "Ordering Physician"
+
+#. module: medical_nursing
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+msgid "Other"
+msgstr "Other"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,osat:0
+#: field:medical.patient.rounding,osat:0
+msgid "Oxygen Saturation"
+msgstr "Oxygen Saturation"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,osat:0
+#: help:medical.patient.rounding,osat:0
+msgid "Oxygen Saturation(arterial)."
+msgstr "Oxygen Saturation(arterial)."
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,pain:0
+#: field:medical.patient.rounding,pain_level:0
+msgid "Pain"
+msgstr "Pain"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,patient:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_nursing
+#: model:ir.actions.act_window,name:medical_nursing.medical_patient_ambulatory_care_action
+#: model:ir.model,name:medical_nursing.model_medical_patient_ambulatory_care
+#: model:ir.ui.menu,name:medical_nursing.medical_patient_ambulatory_care_menu
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_tree
+msgid "Patient Ambulatory Care"
+msgstr "Patient Ambulatory Care"
+
+#. module: medical_nursing
+#: model:ir.model,name:medical_nursing.model_medical_patient_rounding
+msgid "Patient Rounding"
+msgstr "Patient Rounding"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,personal_needs:0
+msgid "Personal needs"
+msgstr "Personal needs"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,position:0
+msgid "Position"
+msgstr "Position"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,potty:0
+msgid "Potty"
+msgstr "Potty"
+
+#. module: medical_nursing
+#: help:medical.ambulatory_care_procedure,procedure:0
+#: help:medical.rounding_procedure,procedure:0
+msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
+msgstr "Procedure Code, for example ICD-10-PCS Code 7-character string"
+
+#. module: medical_nursing
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+#: field:medical.patient.ambulatory_care,procedures:0
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+#: field:medical.patient.rounding,procedures:0
+msgid "Procedures"
+msgstr "Procedures"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,proximity:0
+msgid "Proximity"
+msgstr "Proximity"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,pump:0
+msgid "Pumps"
+msgstr "Pumps"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,name:0
+msgid "Registration Code"
+msgstr "Registration Code"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,evaluation:0
+msgid "Related Evaluation"
+msgstr "Related Evaluation"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,respiratory_rate:0
+#: field:medical.patient.rounding,respiratory_rate:0
+msgid "Respiratory Rate"
+msgstr "Respiratory Rate"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,respiratory_rate:0
+#: help:medical.patient.rounding,respiratory_rate:0
+msgid "Respiratory rate expressed in breaths per minute"
+msgstr "Respiratory rate expressed in breaths per minute"
+
+#. module: medical_nursing
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+#: field:medical.patient.rounding,round_summary:0
+msgid "Round Summary"
+msgstr "Round Summary"
+
+#. module: medical_nursing
+#: field:medical.rounding_procedure,name:0
+msgid "Rounding"
+msgstr "Rounding"
+
+#. module: medical_nursing
+#: model:ir.model,name:medical_nursing.model_medical_rounding_procedure
+msgid "Rounding - Procedure"
+msgstr "Rounding - Procedure"
+
+#. module: medical_nursing
+#: view:medical.ambulatory_care_procedure:medical_nursing.medical_ambulatory_care_procedure_form
+#: view:medical.ambulatory_care_procedure:medical_nursing.medical_ambulatory_care_procedure_tree
+#: view:medical.rounding_procedure:medical_nursing.medical_rounding_procedure_form
+#: view:medical.rounding_procedure:medical_nursing.medical_rounding_procedure_tree
+msgid "Rounding Procedure"
+msgstr "Rounding Procedure"
+
+#. module: medical_nursing
+#: model:ir.actions.act_window,name:medical_nursing.medical_patient_rounding_action
+#: model:ir.ui.menu,name:medical_nursing.medical_patient_rounding_menu
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_tree
+msgid "Roundings"
+msgstr "Roundings"
+
+#. module: medical_nursing
+#: field:medical.ambulatory_care_procedure,name:0
+msgid "Session"
+msgstr "Session"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,session_number:0
+msgid "Session #"
+msgstr "Session #"
+
+#. module: medical_nursing
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+msgid "Six P's"
+msgstr "Six P's"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,session_start:0
+#: field:medical.patient.rounding,evaluation_start:0
+msgid "Start"
+msgstr "Start"
+
+#. module: medical_nursing
+#: selection:medical.patient.ambulatory_care,evolution:0
+#: selection:medical.patient.rounding,evolution:0
+msgid "Status Quo"
+msgstr "Status Quo"
+
+#. module: medical_nursing
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+msgid "Summary"
+msgstr "Summary"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,systolic:0
+#: field:medical.patient.rounding,systolic:0
+msgid "Systolic Pressure"
+msgstr "Systolic Pressure"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,temperature:0
+#: field:medical.patient.rounding,temperature:0
+msgid "Temperature"
+msgstr "Temperature"
+
+#. module: medical_nursing
+#: help:medical.patient.ambulatory_care,temperature:0
+#: help:medical.patient.rounding,temperature:0
+msgid "Temperature in celsius"
+msgstr "Temperature in celsius"
+
+#. module: medical_nursing
+#: field:medical.patient.rounding,urinary_catheter:0
+msgid "Urinary Catheter"
+msgstr "Urinary Catheter"
+
+#. module: medical_nursing
+#: view:medical.patient.ambulatory_care:medical_nursing.medical_patient_ambulatory_care_form
+#: view:medical.patient.rounding:medical_nursing.medical_patient_rounding_form
+msgid "Vital Signs"
+msgstr "Vital Signs"
+
+#. module: medical_nursing
+#: field:medical.patient.ambulatory_care,warning:0
+#: field:medical.patient.rounding,warning:0
+msgid "Warning"
+msgstr "Warning"
+
+#. module: medical_nursing
+#: selection:medical.patient.ambulatory_care,evolution:0
+#: selection:medical.patient.rounding,evolution:0
+msgid "Worsening"
+msgstr "Worsening"
+
+#. module: medical_nursing
+#: help:medical.patient.rounding,diuresis:0
+msgid "volume in ml"
+msgstr "volume in ml"
+

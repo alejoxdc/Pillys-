@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_users_form_inherit_whatsapp" model="ir.ui.view">
+        <field name="name">res.users.form.inherit.whatsapp</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <notebook position="inside">
+                <page string="Configuração WhatsApp" name="whatsapp_config">
+                    <field name="whatsapp_settings_id" context="{'default_user_id': active_id}"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+
+    <record id="view_whatsapp_user_settings_form" model="ir.ui.view">
+        <field name="name">blue.whatsapp.user.settings.form</field>
+        <field name="model">blue.whatsapp.user.settings</field>
+        <field name="arch" type="xml">
+            <form>
+                <group>
+                    <field name="use_company_whatsapp"/>
+                    <field name="evolution_api_url" attrs="{'invisible': [('use_company_whatsapp', '=', True)]}"/>
+                    <field name="evolution_global_token" attrs="{'invisible': [('use_company_whatsapp', '=', True)]}"/>
+                    <field name="evolution_api_instance" attrs="{'invisible': [('use_company_whatsapp', '=', True)]}"/>
+                </group>
+            </form>
+        </field>
+    </record>
+</odoo>

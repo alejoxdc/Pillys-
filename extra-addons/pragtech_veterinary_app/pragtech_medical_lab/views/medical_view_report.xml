@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <record id="medical_viewreport" model="ir.actions.report">
+        <field name="name">Lab Tests</field>
+        <field name="model">medical.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.lab_test_demo</field>
+        <field name="report_file">pragtech_veterinary_app.lab_test_demo</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+
+
+    <record id="medical_lab_result_report" model="ir.actions.report">
+        <field name="name">Lab Record</field>
+        <field name="model">medical.lab</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.lab_result_demo</field>
+        <field name="report_file">pragtech_veterinary_app.lab_result_demo</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_lab"/>
+        <field name="binding_type">report</field>
+    </record>
+</odoo>

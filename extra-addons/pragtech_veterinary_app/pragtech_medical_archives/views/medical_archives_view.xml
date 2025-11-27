@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Archive" id="medical_conf_paper_archive" parent="pragtech_veterinary_app.main_menu_medical_surgery"
+              sequence="3"/>
+
+    <record model="ir.ui.view" id="medical_paper_archive_type_form">
+        <field name="name">Archive</field>
+        <field name="model">medical.paper.archive</field>
+        <field name="arch" type="xml">
+            <form string="Archive">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="legacy"/>
+                        <field name="hc_status"/>
+                        <field name="requested_by"/>
+                        <field name="return_date"/>
+                    </group>
+                    <group>
+                        <field name="identification_code"/>
+                        <field name="location"/>
+                        <field name="current_location"/>
+                        <field name="request_date"/>
+                    </group>
+                    <field name="comments" colspan="4" nolabel="1" placeholder="Comments....."/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_paper_archive_type_tree">
+        <field name="name">Archive</field>
+        <field name="model">medical.paper.archive</field>
+        <field name="arch" type="xml">
+            <tree string="Archive">
+                <field name="name"/>
+                <field name="identification_code"/>
+                <field name="legacy"/>
+                <field name="location"/>
+                <field name="hc_status"/>
+                <field name="location"/>
+                <field name="requested_by"/>
+                <field name="request_date"/>
+                <field name="return_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_medical_paper_archive_type">
+        <field name="name">Archive</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.paper.archive</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_medical_paper_archive_type" id="menu_medical_paper_archive_type"
+              parent="medical_conf_paper_archive"/>
+</odoo>

@@ -1,0 +1,488 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!-- Patient hospitalization and bed registration (in-patient registration) -->
+    <record model="ir.ui.view" id="medical_inpatient_registration_view">
+        <field name="name">Inpatient Registration</field>
+        <field name="model">medical.inpatient.registration</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Inpatient Registration Information">
+                <header>
+                    <button name="registration_confirm" invisible="state != 'free'" string="Confirm Registration" type="object"/>
+                    <button name="registration_cancel" invisible="state != 'confirmed'" string="Cancel Registration" type="object"/>
+                    <button name="registration_admission" invisible="state != 'confirmed'" string="Patient Admission" type="object"/>
+                    <button name="patient_discharge" invisible="state != 'hospitalized'" string="Discharge Patient" type="object"/>
+                    <field name="state" readonly="1" widget="statusbar"
+                           statusbar_visible="free,confirmed,hospitalized"/>
+                </header>
+                <sheet>
+                    <notebook>
+                        <page string="Administrative data">
+                            <group col="3">
+                                <group>
+                                    <field name="name"/>
+                                </group>
+                                <group>
+                                    <field name="patient"/>
+                                </group>
+                                <group>
+                                    <field name="bed"/>
+                                </group>
+                            </group>
+                            <group>
+                                <group>
+                                    <field name="hospitalization_date"/>
+                                    <field name="attending_physician"/>
+                                    <field name="admission_type"/>
+                                </group>
+                                <group>
+                                    <field name="discharge_date"/>
+                                    <field name="operating_physician"/>
+                                    <field name="admission_reason"/>
+                                </group>
+                            </group>
+                            <label for="info" string="Extra Info"/>
+                            <field name="info"/>
+                            <label for="bed_transfers" string="Transfer History"/>
+                            <field name="bed_transfers" colspan="4"/>
+                        </page>
+                        <page string="Nutrition">
+                            <group>
+                                <group>
+                                    <field name="diet_belief"/>
+                                </group>
+                                <group>
+                                    <field name="diet_vegetarian"/>
+                                </group>
+                            </group>
+                            <label for="therapeutic_diets" string="Therapeutic Diets"/>
+                            <field name="therapeutic_diets" colspan="4"/>
+                            <label for="nutrition_notes" string="Nutrition notes / directions"/>
+                            <field name="nutrition_notes" colspan="4"/>
+                        </page>
+                        <page string="Medication">
+                            <field name="medications" nolabel="1" colspan="4"/>
+                        </page>
+                        <page string="Care Plan">
+                            <group>
+                                <group>
+                                    <field name="nursing_plan"/>
+                                </group>
+                                <group>
+                                    <field name="discharge_plan"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_inpatient_registration_tree">
+        <field name="name">Patient Registration Info</field>
+        <field name="model">medical.inpatient.registration</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <!--<tree colors="red:admission_type=='emergency';blue:admission_type=='maternity'" string='Inpatient Registration Info'>-->
+            <tree string='Inpatient Registration Info'>
+                <field name="name"></field>
+                <field name="patient"></field>
+                <field name="hospitalization_date"></field>
+                <field name="discharge_date"></field>
+                <field name="bed"></field>
+                <field name="admission_type"></field>
+                <field name="state"></field>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="view_medical_inpatient_registration_filter" model="ir.ui.view">
+        <field name="name">medical.inpatient.registration.select</field>
+        <field name="model">medical.inpatient.registration</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Search Hospitalizations">
+
+                <separator orientation="vertical"/>
+                <field name="name" select="1"/>
+                <field name="patient" select="1"/>
+                <field name="hospitalization_date" select="1"/>
+                <field name="admission_type" select="1"/>
+                <field name="bed" select="1"/>
+                <newline/>
+
+            </search>
+        </field>
+    </record>
+
+    <record id="view_medical_inpatient" model="ir.ui.view">
+        <field name="name">medical.inpatient.calendar</field>
+        <field name="model">medical.inpatient.registration</field>
+        <field name="type">calendar</field>
+        <field name="arch" type="xml">
+            <calendar string="Hospitalizations" color="patient" date_start="hospitalization_date"
+                      date_stop="discharge_date">
+                <field name="bed"/>
+                <field name="patient"/>
+            </calendar>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_action_form_inpatient">
+        <field name="name">Patient Hospitalization Administration</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.inpatient.registration</field>
+        <field name="view_mode">tree,form,calendar</field>
+
+        <field name="view_id" ref="medical_inpatient_registration_tree"/>
+    </record>
+
+    <!-- 	<menuitem action="medical_action_form_inpatient" id="medical_conf_inpatient_add" parent="medical_inpatient_menu" sequence="1"/> -->
+
+
+    <!-- Add the patient hospitalization registration code to the appointment view -->
+
+    <record model="ir.ui.view" id="medical_appointment_view_new_inht">
+        <field name="name">medical.appointment</field>
+        <field name="model">medical.appointment</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_appointment_view"/>
+        <field name="type">form</field>
+
+        <field name="arch" type="xml">
+            <field name="institution" position="after">
+                <field name="inpatient_registration_code" invisible="1"></field>
+            </field>
+
+        </field>
+    </record>
+
+
+    <!-- Add the patient Hospitalization Status to the partner form -->
+
+    <record id="view_patient_form_inherited" model="ir.ui.view">
+        <field name="name">medical.patient.form</field>
+        <field name="model">medical.patient</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_view"/>
+        <field name="arch" type="xml">
+            <field name="family_code" position="after">
+                <newline/>
+                <field name="deceased" invisible="1"/>
+                <!-- <field name="patient_status" attrs="{'invisible':[('deceased','=',True)]}"/> -->
+                <field name="patient_status" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Add the patient Hospitalization Status to the tree -->
+
+    <record id="medical_patient_extd_tree" model="ir.ui.view">
+        <field name="name">Patient List</field>
+        <field name="model">medical.patient</field>
+        <field name="type">tree</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_tree"/>
+        <field name="arch" type="xml">
+            <field name="patient_id" position="after">
+                <field name="patient_status" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <!-- Bed Transfer -->
+
+    <record model="ir.ui.view" id="bed_transfer_view">
+        <field name="name">Directions</field>
+        <field name="model">bed.transfer</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Bed Transfer History">
+                <group>
+                    <group>
+                        <field name="transfer_date" required="1"></field>
+                        <field name="bed_from"></field>
+                    </group>
+                    <group>
+                        <field name="bed_to"/>
+                        <field name="reason"></field>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="bed_transfer_tree">
+        <field name="name">Plan</field>
+        <field name="model">bed.transfer</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Bed Transfer History'>
+                <field name="transfer_date"/>
+                <field name="bed_from"></field>
+                <field name="bed_to"/>
+                <field name="reason"></field>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Therapeutic Diets -->
+
+    <record model="ir.ui.view" id="medical_inpatient_diet_view">
+        <field name="name">Inpatient Diet</field>
+        <field name="model">medical.inpatient.diet</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Inpatient Diet">
+                <group>
+                    <group>
+                        <field name="diet"/>
+                    </group>
+                    <group>
+                        <field name="remarks"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_inpatient_diet_tree">
+        <field name="name">Inpatient Diet</field>
+        <field name="model">medical.inpatient.diet</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Inpatient Diet'>
+                <field name="diet"/>
+                <field name="remarks"/>
+            </tree>
+        </field>
+    </record>
+
+    <!--Diet by therapeutic -->
+
+    <record model="ir.ui.view" id="medical_diet_therapeutic_view">
+        <field name="name">Therapeutic Diet</field>
+        <field name="model">medical.diet.therapeutic</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Therapeutic Diet">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="code"/>
+                    </group>
+                    <label for="description"/>
+                    <field name="description" colspan="4"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_diet_therapeutic_tree">
+        <field name="name">Therapeutic Diet</field>
+        <field name="model">medical.diet.therapeutic</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Therapeutic Diet'>
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- inPatient Medications -->
+
+    <record model="ir.ui.view" id="medical_inpatient_medication_view">
+        <field name="name">Medication</field>
+        <field name="model">medical.inpatient.medication</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medication">
+                <notebook>
+                    <page string="General Info">
+                        <group>
+                            <group>
+                                <field name="medicament" required="1"/>
+                                <field name="start_treatment" required="1"/>
+                            </group>
+                            <group>
+                                <field name="indication"/>
+                                <field name="end_treatment"/>
+                            </group>
+                        </group>
+                        <group string="Admnistration">
+                            <group>
+                                <field name="form" required="1"/>
+                            </group>
+                            <group>
+                                <field name="route" required="1"/>
+                            </group>
+                        </group>
+                        <group col="4" string="Dosage">
+                            <group>
+                                <field name="dose" required="1"/>
+                            </group>
+                            <group>
+                                <field name="dose_unit" required="1"/>
+                            </group>
+                            <group>
+                                <field name="qty" required="1"/>
+                            </group>
+                            <group>
+                                <field name="common_dosage"/>
+                            </group>
+                        </group>
+                        <field name="admin_times" nolabel="1" colspan="4"/>
+                    </page>
+                    <page string="Extra Info">
+                        <group>
+                            <group>
+                                <field name="course_completed"/>
+                                <field name="is_active"/>
+                            </group>
+                            <group>
+                                <field name="discontinued"/>
+                            </group>
+                        </group>
+                        <separator string="Adverse Reactions / Notes"/>
+                        <field name="adverse_reaction" colspan="4" nolabel="1"/>
+                        <separator string="Log History"/>
+                        <field name="log_history" nolabel="1" colspan="4"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_inpatient_medication_tree">
+        <field name="name">Medication</field>
+        <field name="model">medical.inpatient.medication</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Medication'>
+                <field name="medicament"></field>
+                <field name="start_treatment"></field>
+                <field name="end_treatment"></field>
+                <field name="course_completed"></field>
+                <field name="discontinued"></field>
+                <field name="is_active"></field>
+
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_inpatient_medication_log_view">
+        <field name="name">Medication Log</field>
+        <field name="model">medical.inpatient.medication.log</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medication">
+                <group>
+                    <group>
+                        <field name="admin_time"/>
+                        <field name="dose"/>
+                        <field name="remarks"/>
+                    </group>
+                    <group>
+                        <field name="health_professional"/>
+                        <field name="dose_unit"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_inpatient_medication_log_tree">
+        <field name="name">Medication Log</field>
+        <field name="model">medical.inpatient.medication.log</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Medication'>
+                <field name="admin_time"></field>
+                <field name="health_professional"></field>
+                <field name="dose"></field>
+                <field name="dose_unit"></field>
+                <field name="remarks"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_inpatient_medication_admin_time_view">
+        <field name="name">Inpatient Medication Admin Times</field>
+        <field name="model">medical.inpatient.medication.admin.time</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medication Admin Times">
+               <group>
+                    <group>
+                        <field name="admin_time"/>
+                        <field name="dose"/>
+                        <field name="remarks"/>
+                    </group>
+                    <group>
+                        <field name="health_professional"/>
+                        <field name="dose_unit"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_inpatient_medication_admin_time_tree">
+        <field name="name">Admin Times</field>
+        <field name="model">medical.inpatient.medication.admin.time</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Medication Admin Times'>
+                <field name="admin_time"></field>
+                <field name="health_professional"></field>
+                <field name="dose"></field>
+                <field name="dose_unit"></field>
+                <field name="remarks"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_action_form_inpatient_log">
+        <field name="name">Patient Administration log</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.inpatient.medication.log</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+
+    <!-- 	<menuitem action="medical_action_form_inpatient_log" id="medical_conf_inpatient_add_log" parent="medical_inpatient_menu" sequence="1"/> -->
+
+
+    <record model="ir.actions.act_window" id="medical_action_form_inpatient_time">
+        <field name="name">Patient Administration Time</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.inpatient.medication.admin.time</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!--		<record model="ir.actions.act_window" id="medical_action_form_bed_tranfer">-->
+    <!--			<field name="name">Bed Tranfer</field>-->
+    <!--			<field name="type">ir.actions.act_window</field>-->
+    <!--			<field name="res_model">bed.transfer</field>-->
+    <!--			<field name="view_mode">tree,form</field>-->
+
+    <!--			<field name="view_id" ref="bed_transfer_tree"/>-->
+    <!--		</record>-->
+
+
+    <menuitem name="Inpatient" id="medical_inpatient_menu" parent="pragtech_veterinary_app.medical_menu" sequence="2"/>
+    <menuitem name="Inpatient Administration" id="medical_inpatient_menu1" parent="medical_inpatient_menu"
+              sequence="3" action="medical_action_form_inpatient"/>
+    <!--		<menuitem name="Bed Transfer" id="medical_inpatient_bed_tranfer" parent="medical_inpatient_menu"-->
+    <!--				  sequence="4" action="medical_action_form_bed_tranfer"/>-->
+</odoo>

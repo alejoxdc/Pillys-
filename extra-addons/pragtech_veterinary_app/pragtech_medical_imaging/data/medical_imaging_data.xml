@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+
+        <record id="product_product_dental_imaging" model="product.product">
+            <field name="name">X-Ray</field>
+            <field name="categ_id" ref="product.product_category_all"/>
+            <field name="standard_price">400</field>
+            <field name="list_price">900</field>
+            <field name="type">service</field>
+            <field name="uom_id" ref="uom.product_uom_unit"/>
+            <field name="uom_po_id" ref="uom.product_uom_unit"/>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_1">
+            <field name="name">Dental x-rays</field>
+            <field name="code">Dental</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_2">
+            <field name="name">Abdominal x-ray</field>
+            <field name="code">Abdominal</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_3">
+            <field name="name">Barium x-ray</field>
+            <field name="code">Barium</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_4">
+            <field name="name">Bone x-ray</field>
+            <field name="code">Bone</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_5">
+            <field name="name">Chest x-ray</field>
+            <field name="code">Chest</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_6">
+            <field name="name">Extremity x-ray</field>
+            <field name="code">Extremity</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_7">
+            <field name="name">Hand x-ray</field>
+            <field name="code">Hand</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_8">
+            <field name="name">Joint x-ray</field>
+            <field name="code">Joint</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_9">
+            <field name="name">Neck x-ray</field>
+            <field name="code">Neck</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_10">
+            <field name="name">Pelvis x-ray</field>
+            <field name="code">Pelvis</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_11">
+            <field name="name">Sinus x-ray</field>
+            <field name="code">Sinus</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_12">
+            <field name="name">Skull x-ray</field>
+            <field name="code">Skull</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_13">
+            <field name="name">Thoracic spine x-ray</field>
+            <field name="code">Thoracic Spine</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_14">
+            <field name="name">Upper GI and small bowel series</field>
+            <field name="code">GI</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_15">
+            <field name="name">Lubosacral Spine x-ray</field>
+            <field name="code">Lubosacral Spine</field>
+        </record>
+
+        <record model="medical.imaging.test.type" id="type_16">
+            <field name="name">Skeleton x-ray</field>
+            <field name="code">Skeleton</field>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_1">
+            <field name="name">Bite-wing x-rays</field>
+            <field name="code">Bite-wing</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_2">
+            <field name="name">Periapical x-rays</field>
+            <field name="code">Periapical</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_3">
+            <field name="name">Occlusal x-rays</field>
+            <field name="code">Occlusal</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_4">
+            <field name="name">Panoramic x-rays</field>
+            <field name="code">Panoramic</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_5">
+            <field name="name">Tomograms x-rays</field>
+            <field name="code">Tomograms</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_6">
+            <field name="name">Cephalometric projections x-rays</field>
+            <field name="code">Cephalometric</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_7">
+            <field name="name">Sialogram x-rays</field>
+            <field name="code">Sialogram</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_8">
+            <field name="name">Dental Computed Tomography</field>
+            <field name="code">CT</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_9">
+            <field name="name">Cone Beam CT</field>
+            <field name="code">CB CT</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_10">
+            <field name="name">Digital Imaging</field>
+            <field name="code">DI</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+        <record model="medical.imaging.test" id="imaging_test_11">
+            <field name="name">MRI imaging</field>
+            <field name="code">MRI</field>
+            <field name="product_id" ref="product_product_dental_imaging"/>
+            <field name="test_type_id" ref="type_1"/>
+        </record>
+
+    </data>
+</odoo>

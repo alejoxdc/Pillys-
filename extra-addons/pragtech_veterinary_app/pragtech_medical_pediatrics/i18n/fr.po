@@ -1,0 +1,922 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_pediatrics
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:24+0000\n"
+"PO-Revision-Date: 2015-09-10 10:24+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_pulse:0
+msgid "< 100"
+msgstr "< 100"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_pulse:0
+msgid "> 100"
+msgstr "> 100"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,apgar1:0
+msgid "APGAR 1st minute"
+msgstr "APGAR 1ère minute"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,apgar5:0
+msgid "APGAR 5th minute"
+msgstr "APGAR 5ème minute"
+
+#. module: medical_pediatrics
+#: view:medical.neonatal.apgar:medical_pediatrics.medical_neonatal_apgar_form
+#: view:medical.neonatal.apgar:medical_pediatrics.medical_neonatal_apgar_tree
+#: field:medical.neonatal.apgar,apgar_score:0
+msgid "APGAR Score"
+msgstr "APGAR Score"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,apgar_scores:0
+msgid "APGAR scores"
+msgstr "APGAR scores"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_pulse:0
+#: selection:medical.neonatal.apgar,apgar_respiration:0
+msgid "Absent"
+msgstr "Absent"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_absent_from_school:0
+msgid "Absent from school"
+msgstr "Absent from school"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,apgar_activity:0
+msgid "Activity"
+msgstr "Activity"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_acts_as_driven_by_motor:0
+msgid "Acts as if driven by a motor"
+msgstr "Acts as if driven by a motor"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_act_as_younger:0
+msgid "Acts younger than children his or her age"
+msgstr "Acts younger than children his or her age"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_ambiguous_genitalia:0
+msgid "Ambiguous Genitalia"
+msgstr "Ambiguous Genitalia"
+
+#. module: medical_pediatrics
+#: selection:medical.newborn,sex:0
+msgid "Ambiguous genitalia"
+msgstr "Ambiguous genitalia"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,apgar_appearance:0
+msgid "Appearance"
+msgstr "Appearance"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,evaluation_date:0
+msgid "Appointment"
+msgstr "Appointment"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.medical_action_tobeinvoiced_appointment
+msgid "Appointments"
+msgstr "Rendez vous"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,reanimation_aspiration:0
+msgid "Aspiration"
+msgstr "Aspiration"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,test_audition:0
+msgid "Audition"
+msgstr "Audition"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_babinski_reflex:0
+msgid "Babinski Reflex"
+msgstr "Babinski Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,newborn_name:0
+msgid "Baby's name"
+msgstr "Baby's name"
+
+#. module: medical_pediatrics
+#: view:medical.patient.psc:medical_pediatrics.medical_patient_psc_form
+msgid "Basic Info"
+msgstr "Basic Info"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,test_billirubin:0
+msgid "Billirubin"
+msgstr "Bilirubine"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_blames_others:0
+msgid "Blames others for his or her troubles"
+msgstr "Blames others for his or her troubles"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_blink_reflex:0
+msgid "Blink Reflex"
+msgstr "Blink Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,cod:0
+msgid "Cause of death"
+msgstr "Cause du décès"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,cephalic_perimeter:0
+msgid "Cephalic Perimeter"
+msgstr "Périmètre céphalique"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,test_chagas:0
+msgid "Chagas"
+msgstr "Trypanosomiase américaine"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_aches_pains:0
+msgid "Complains of aches and pains"
+msgstr "Complains of aches and pains"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,congenital_diseases:0
+msgid "Congenital diseases"
+msgstr "maladies congénitales"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,create_uid:0
+#: field:medical.newborn,create_uid:0
+#: field:medical.patient.psc,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,create_date:0
+#: field:medical.newborn,create_date:0
+#: field:medical.patient.psc,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.view_medical_newborn_filter
+#: field:medical.patient.psc,evaluation_start:0
+msgid "Date"
+msgstr "Date"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,birth_date:0
+msgid "Date of Birth"
+msgstr "Date de naissance"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_daydreams_too_much:0
+msgid "Daydreams too much"
+msgstr "Daydreams too much"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+msgid "Deceased"
+msgstr "Défunt"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,died_at_delivery:0
+msgid "Died at delivery room"
+msgstr "Mort en salle d'accouchement"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,died_at_the_hospital:0
+msgid "Died at the hospital"
+msgstr "Décédé à l'hôpital"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,died_being_transferred:0
+msgid "Died being transferred"
+msgstr "Décédé en cours de transfert"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,dismissed:0
+msgid "Discharged"
+msgstr "Discharged"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_patient_disease
+msgid "Disease info"
+msgstr "Info Maladie"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_distracted_easily:0
+msgid "Distracted easily"
+msgstr "Distracted easily"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,responsible:0
+msgid "Doctor in charge"
+msgstr "Médecin en charge"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_does_not_get_people_feelings:0
+msgid "Does not get people feelings"
+msgstr "Does not get people feelings"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_does_not_listen_to_rules:0
+msgid "Does not listen to rules"
+msgstr "Does not listen to rules"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_does_not_show_feelings:0
+msgid "Does not show feelings"
+msgstr "Does not show feelings"
+
+#. module: medical_pediatrics
+#: help:medical.patient.psc,evaluation_date:0
+msgid "Enter or select the date / ID of the appointment related to this evaluation"
+msgstr "Enter or select the date / ID of the appointment related to this evaluation"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_erbs_palsy:0
+msgid "Erbs Palsy"
+msgstr "Erbs Palsy"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_feels_is_bad_child:0
+msgid "Feels he or she is bad"
+msgstr "Feels he or she is bad"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_feels_hopeless:0
+msgid "Feels hopeless"
+msgstr "Feels hopeless"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_sad_unhappy:0
+msgid "Feels sad, unhappy"
+msgstr "Feels sad, unhappy"
+
+#. module: medical_pediatrics
+#: selection:medical.newborn,sex:0
+msgid "Female"
+msgstr "Femme"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_fidgety:0
+msgid "Fidgety, unable to sit still"
+msgstr "Fidgety, unable to sit still"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_fights_with_others:0
+msgid "Fights with other children"
+msgstr "Fights with other children"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+msgid "Findings and Tests"
+msgstr "Findings and Tests"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_gets_hurt_often:0
+msgid "Gets hurt frequently"
+msgstr "Gets hurt frequently"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_grasp_reflex:0
+msgid "Grasp Reflex"
+msgstr "Grasp Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,apgar_grimace:0
+msgid "Grimace"
+msgstr "Grimace"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.view_medical_newborn_filter
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_trouble_concentrating:0
+msgid "Has trouble concentrating"
+msgstr "Has trouble concentrating"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_trouble_sleeping:0
+msgid "Has trouble sleeping"
+msgstr "Has trouble sleeping"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_trouble_with_teacher:0
+msgid "Has trouble with teacher"
+msgstr "Has trouble with teacher"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,user_id:0
+msgid "Healh Professional"
+msgstr "Healh Professional"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_hematoma:0
+msgid "Hematomas"
+msgstr "Hematomas"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_hernia:0
+msgid "Hernia"
+msgstr "Hernia"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,id:0
+#: field:medical.newborn,id:0
+#: field:medical.patient.psc,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,reanimation_intubation:0
+msgid "Intubation"
+msgstr "Intubation"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_afraid_of_new_situations:0
+msgid "Is afraid of new situations"
+msgstr "Is afraid of new situations"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_down_on_self:0
+msgid "Is down on him or herself"
+msgstr "Is down on him or herself"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_irritable_angry:0
+msgid "Is irritable, angry"
+msgstr "Is irritable, angry"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,write_uid:0
+#: field:medical.newborn,write_uid:0
+#: field:medical.patient.psc,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,write_date:0
+#: field:medical.newborn,write_date:0
+#: field:medical.patient.psc,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,length:0
+msgid "Length"
+msgstr "Longueur"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_less_interested_in_friends:0
+msgid "Less interested in friends"
+msgstr "Less interested in friends"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_less_interest_in_school:0
+msgid "Less interested in school"
+msgstr "Less interested in school"
+
+#. module: medical_pediatrics
+#: selection:medical.newborn,sex:0
+msgid "Male"
+msgstr "Masculin"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,reanimation_mask:0
+msgid "Mask"
+msgstr "Masque"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,meconium:0
+msgid "Meconium"
+msgstr "Méconium"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,medication_ids:0
+msgid "Medication"
+msgstr "Medication"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,test_metabolic:0
+msgid "Metabolic (\"heel stick screening\")"
+msgstr "Metabolic (\"heel stick screening\")"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,apgar_minute:0
+msgid "Minute"
+msgstr "Minute"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_moro_reflex:0
+msgid "Moro Reflex"
+msgstr "Moro Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,mother:0
+msgid "Mother"
+msgstr "Mother"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_neonatal_apgar
+msgid "Neonatal APGAR Score"
+msgstr "Neonatal APGAR Score"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+msgid "Neonatal Reflex Check"
+msgstr "Neonatal Reflex Check"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+msgid "Neonatal Signs and Symptoms"
+msgstr "Neonatal Signs and Symptoms"
+
+#. module: medical_pediatrics
+#: selection:medical.patient.psc,psc_absent_from_school:0
+#: selection:medical.patient.psc,psc_aches_pains:0
+#: selection:medical.patient.psc,psc_act_as_younger:0
+#: selection:medical.patient.psc,psc_acts_as_driven_by_motor:0
+#: selection:medical.patient.psc,psc_afraid_of_new_situations:0
+#: selection:medical.patient.psc,psc_blames_others:0
+#: selection:medical.patient.psc,psc_daydreams_too_much:0
+#: selection:medical.patient.psc,psc_distracted_easily:0
+#: selection:medical.patient.psc,psc_does_not_get_people_feelings:0
+#: selection:medical.patient.psc,psc_does_not_listen_to_rules:0
+#: selection:medical.patient.psc,psc_does_not_show_feelings:0
+#: selection:medical.patient.psc,psc_down_on_self:0
+#: selection:medical.patient.psc,psc_feels_hopeless:0
+#: selection:medical.patient.psc,psc_feels_is_bad_child:0
+#: selection:medical.patient.psc,psc_fidgety:0
+#: selection:medical.patient.psc,psc_fights_with_others:0
+#: selection:medical.patient.psc,psc_gets_hurt_often:0
+#: selection:medical.patient.psc,psc_having_less_fun:0
+#: selection:medical.patient.psc,psc_irritable_angry:0
+#: selection:medical.patient.psc,psc_less_interest_in_school:0
+#: selection:medical.patient.psc,psc_less_interested_in_friends:0
+#: selection:medical.patient.psc,psc_refuses_to_share:0
+#: selection:medical.patient.psc,psc_sad_unhappy:0
+#: selection:medical.patient.psc,psc_school_grades_dropping:0
+#: selection:medical.patient.psc,psc_spend_time_alone:0
+#: selection:medical.patient.psc,psc_takes_things_from_others:0
+#: selection:medical.patient.psc,psc_takes_unnecesary_risks:0
+#: selection:medical.patient.psc,psc_teases_others:0
+#: selection:medical.patient.psc,psc_tires_easily:0
+#: selection:medical.patient.psc,psc_trouble_concentrating:0
+#: selection:medical.patient.psc,psc_trouble_sleeping:0
+#: selection:medical.patient.psc,psc_trouble_with_teacher:0
+#: selection:medical.patient.psc,psc_visit_doctor_finds_ok:0
+#: selection:medical.patient.psc,psc_wants_to_be_with_parents:0
+#: selection:medical.patient.psc,psc_worries_a_lot:0
+msgid "Never"
+msgstr "Never"
+
+#. module: medical_pediatrics
+#: model:ir.ui.menu,name:medical_pediatrics.medical_newborn_menu
+msgid "Newborn"
+msgstr "Newborn"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,name:0
+#: field:medical.newborn,name:0
+#: field:medical.patient.disease,newborn_id:0
+#: field:medical.patient.medication,newborn_id:0
+msgid "Newborn ID"
+msgstr "Newborn ID"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.medical_newborn_action
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+#: view:medical.newborn:medical_pediatrics.medical_newborn_tree
+msgid "Newborn Info"
+msgstr "Info nouveau-né"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_newborn
+msgid "Newborn Information"
+msgstr "Newborn Information"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_grimace:0
+msgid "No response to stimulation"
+msgstr "No response to stimulation"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_activity:0
+msgid "None"
+msgstr "None"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+#: field:medical.newborn,notes:0
+#: field:medical.patient.psc,notes:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: medical_pediatrics
+#: selection:medical.patient.psc,psc_absent_from_school:0
+#: selection:medical.patient.psc,psc_aches_pains:0
+#: selection:medical.patient.psc,psc_act_as_younger:0
+#: selection:medical.patient.psc,psc_acts_as_driven_by_motor:0
+#: selection:medical.patient.psc,psc_afraid_of_new_situations:0
+#: selection:medical.patient.psc,psc_blames_others:0
+#: selection:medical.patient.psc,psc_daydreams_too_much:0
+#: selection:medical.patient.psc,psc_distracted_easily:0
+#: selection:medical.patient.psc,psc_does_not_get_people_feelings:0
+#: selection:medical.patient.psc,psc_does_not_listen_to_rules:0
+#: selection:medical.patient.psc,psc_does_not_show_feelings:0
+#: selection:medical.patient.psc,psc_down_on_self:0
+#: selection:medical.patient.psc,psc_feels_hopeless:0
+#: selection:medical.patient.psc,psc_feels_is_bad_child:0
+#: selection:medical.patient.psc,psc_fidgety:0
+#: selection:medical.patient.psc,psc_fights_with_others:0
+#: selection:medical.patient.psc,psc_gets_hurt_often:0
+#: selection:medical.patient.psc,psc_having_less_fun:0
+#: selection:medical.patient.psc,psc_irritable_angry:0
+#: selection:medical.patient.psc,psc_less_interest_in_school:0
+#: selection:medical.patient.psc,psc_less_interested_in_friends:0
+#: selection:medical.patient.psc,psc_refuses_to_share:0
+#: selection:medical.patient.psc,psc_sad_unhappy:0
+#: selection:medical.patient.psc,psc_school_grades_dropping:0
+#: selection:medical.patient.psc,psc_spend_time_alone:0
+#: selection:medical.patient.psc,psc_takes_things_from_others:0
+#: selection:medical.patient.psc,psc_takes_unnecesary_risks:0
+#: selection:medical.patient.psc,psc_teases_others:0
+#: selection:medical.patient.psc,psc_tires_easily:0
+#: selection:medical.patient.psc,psc_trouble_concentrating:0
+#: selection:medical.patient.psc,psc_trouble_sleeping:0
+#: selection:medical.patient.psc,psc_trouble_with_teacher:0
+#: selection:medical.patient.psc,psc_visit_doctor_finds_ok:0
+#: selection:medical.patient.psc,psc_wants_to_be_with_parents:0
+#: selection:medical.patient.psc,psc_worries_a_lot:0
+msgid "Often"
+msgstr "Often"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+msgid "Other"
+msgstr "Autres"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,reanimation_oxygen:0
+msgid "Oxygen"
+msgstr "Oxygène"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_total:0
+msgid "PSC Total"
+msgstr "PSC Total"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,patient:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_patient_medication
+msgid "Patient Medication"
+msgstr "Traitement du patient"
+
+#. module: medical_pediatrics
+#: model:ir.model,name:medical_pediatrics.model_medical_patient
+msgid "Patient related information"
+msgstr "Renseignements sur le patient"
+
+#. module: medical_pediatrics
+#: view:medical.appointment:medical_pediatrics.medical_invoice_appointment_view
+msgid "Pediatric"
+msgstr "Pediatric"
+
+#. module: medical_pediatrics
+#: field:medical.appointment,ped_id1:0
+msgid "Pediatric Symptoms"
+msgstr "Pediatric Symptoms"
+
+#. module: medical_pediatrics
+#: model:ir.actions.act_window,name:medical_pediatrics.medical_patient_psc_action
+#: model:ir.model,name:medical_pediatrics.model_medical_patient_psc
+#: model:ir.ui.menu,name:medical_pediatrics.medical_patient_psc_menu
+#: view:medical.appointment:medical_pediatrics.medical_invoice_appointment_view
+#: field:medical.patient,psc:0
+#: view:medical.patient.psc:medical_pediatrics.medical_patient_psc_form
+#: view:medical.patient.psc:medical_pediatrics.medical_patient_psc_tree
+msgid "Pediatric Symptoms Checklist"
+msgstr "Pediatric Symptoms Checklist"
+
+#. module: medical_pediatrics
+#: model:ir.ui.menu,name:medical_pediatrics.medical_pediatrics_menu
+msgid "Pediatrics"
+msgstr "Pediatrics"
+
+#. module: medical_pediatrics
+#: help:medical.newborn,cephalic_perimeter:0
+#: help:medical.newborn,length:0
+msgid "Perimeter in centimeters (cm)"
+msgstr "Perimeter in centimeters (cm)"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,photo:0
+msgid "Picture"
+msgstr "Image"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_polydactyly:0
+msgid "Polydactyly"
+msgstr "Polydactyly"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_barlow:0
+msgid "Positive Barlow"
+msgstr "Positive Barlow"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_ortolani:0
+msgid "Positive Ortolani"
+msgstr "Positive Ortolani"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,apgar_pulse:0
+msgid "Pulse"
+msgstr "Pulse"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_refuses_to_share:0
+msgid "Refuses to share"
+msgstr "Refuses to share"
+
+#. module: medical_pediatrics
+#: field:medical.neonatal.apgar,apgar_respiration:0
+msgid "Respiration"
+msgstr "Respiration"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_rooting_reflex:0
+msgid "Rooting Reflex"
+msgstr "Rooting Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_school_grades_dropping:0
+msgid "School grades dropping"
+msgstr "School grades dropping"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.view_medical_newborn_filter
+msgid "Search Newborn"
+msgstr "Search Newborn"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_having_less_fun:0
+msgid "Seems to be having less fun"
+msgstr "Seems to be having less fun"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,sex:0
+msgid "Sex"
+msgstr "Sexe"
+
+#. module: medical_pediatrics
+#: help:medical.newborn,responsible:0
+msgid "Signed by the health professional"
+msgstr "Signé par le professionnel de santé"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_activity:0
+msgid "Some flexion"
+msgstr "Some flexion"
+
+#. module: medical_pediatrics
+#: selection:medical.patient.psc,psc_absent_from_school:0
+#: selection:medical.patient.psc,psc_aches_pains:0
+#: selection:medical.patient.psc,psc_act_as_younger:0
+#: selection:medical.patient.psc,psc_acts_as_driven_by_motor:0
+#: selection:medical.patient.psc,psc_afraid_of_new_situations:0
+#: selection:medical.patient.psc,psc_blames_others:0
+#: selection:medical.patient.psc,psc_daydreams_too_much:0
+#: selection:medical.patient.psc,psc_distracted_easily:0
+#: selection:medical.patient.psc,psc_does_not_get_people_feelings:0
+#: selection:medical.patient.psc,psc_does_not_listen_to_rules:0
+#: selection:medical.patient.psc,psc_does_not_show_feelings:0
+#: selection:medical.patient.psc,psc_down_on_self:0
+#: selection:medical.patient.psc,psc_feels_hopeless:0
+#: selection:medical.patient.psc,psc_feels_is_bad_child:0
+#: selection:medical.patient.psc,psc_fidgety:0
+#: selection:medical.patient.psc,psc_fights_with_others:0
+#: selection:medical.patient.psc,psc_gets_hurt_often:0
+#: selection:medical.patient.psc,psc_having_less_fun:0
+#: selection:medical.patient.psc,psc_irritable_angry:0
+#: selection:medical.patient.psc,psc_less_interest_in_school:0
+#: selection:medical.patient.psc,psc_less_interested_in_friends:0
+#: selection:medical.patient.psc,psc_refuses_to_share:0
+#: selection:medical.patient.psc,psc_sad_unhappy:0
+#: selection:medical.patient.psc,psc_school_grades_dropping:0
+#: selection:medical.patient.psc,psc_spend_time_alone:0
+#: selection:medical.patient.psc,psc_takes_things_from_others:0
+#: selection:medical.patient.psc,psc_takes_unnecesary_risks:0
+#: selection:medical.patient.psc,psc_teases_others:0
+#: selection:medical.patient.psc,psc_tires_easily:0
+#: selection:medical.patient.psc,psc_trouble_concentrating:0
+#: selection:medical.patient.psc,psc_trouble_sleeping:0
+#: selection:medical.patient.psc,psc_trouble_with_teacher:0
+#: selection:medical.patient.psc,psc_visit_doctor_finds_ok:0
+#: selection:medical.patient.psc,psc_wants_to_be_with_parents:0
+#: selection:medical.patient.psc,psc_worries_a_lot:0
+msgid "Sometimes"
+msgstr "Sometimes"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_spend_time_alone:0
+msgid "Spends more time alone"
+msgstr "Spends more time alone"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_stepping_reflex:0
+msgid "Stepping Reflex"
+msgstr "Stepping Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,bd:0
+msgid "Stillbirth"
+msgstr "Stillbirth"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,reanimation_stimulation:0
+msgid "Stimulation"
+msgstr "Stimulation"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_sucking_reflex:0
+msgid "Sucking Reflex"
+msgstr "Sucking Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_swimming_reflex:0
+msgid "Swimming Reflex"
+msgstr "Swimming Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_syndactyly:0
+msgid "Syndactyly"
+msgstr "Syndactyly"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_takes_things_from_others:0
+msgid "Takes things that do not belong to him or her"
+msgstr "Takes things that do not belong to him or her"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_takes_unnecesary_risks:0
+msgid "Takes unnecessary risks"
+msgstr "Takes unnecessary risks"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_talipes_equinovarus:0
+msgid "Talipes Equinovarus"
+msgstr "Talipes Equinovarus"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_teases_others:0
+msgid "Teases others"
+msgstr "Teases others"
+
+#. module: medical_pediatrics
+#: help:medical.newborn,test_metabolic:0
+msgid "Test for Fenilketonuria, Congenital Hypothyroidism, Quistic Fibrosis, Galactosemia"
+msgstr "Test pour phénilketonuria, hypothyroïdie congénitale, fibrose kystique, galactosémie"
+
+#. module: medical_pediatrics
+#: view:medical.newborn:medical_pediatrics.medical_newborn_form
+msgid "Tests"
+msgstr "Tests"
+
+#. module: medical_pediatrics
+#: sql_constraint:medical.patient.psc:0
+msgid "The Appointment must be unique"
+msgstr "The Appointment must be unique"
+
+#. module: medical_pediatrics
+#: help:medical.newborn,died_being_transferred:0
+msgid "The baby died being transferred to another health institution"
+msgstr "Bébé mort en cours de transfert vers un autre établissement de santé"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,tod:0
+msgid "Time of Death"
+msgstr "Heure du décés"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_tires_easily:0
+msgid "Tires easily, has little energy"
+msgstr "Tires easily, has little energy"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_tonic_neck_reflex:0
+msgid "Tonic Neck Reflex"
+msgstr "Tonic Neck Reflex"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,test_toxo:0
+msgid "Toxoplasmosis"
+msgstr "Toxoplasmose"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,neonatal_palmar_crease:0
+msgid "Transversal Palmar Crease"
+msgstr "Transversal Palmar Crease"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,test_vdrl:0
+msgid "VDRL"
+msgstr "VDRL (Venereal Disease Research Laboratory )"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_visit_doctor_finds_ok:0
+msgid "Visits the doctor with doctor finding nothing wrong"
+msgstr "Visits the doctor with doctor finding nothing wrong"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_wants_to_be_with_parents:0
+msgid "Wants to be with you more than before"
+msgstr "Wants to be with you more than before"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_respiration:0
+msgid "Weak / Irregular"
+msgstr "Weak / Irregular"
+
+#. module: medical_pediatrics
+#: field:medical.newborn,weight:0
+msgid "Weight"
+msgstr "Poids"
+
+#. module: medical_pediatrics
+#: help:medical.newborn,weight:0
+msgid "Weight in grams (g)"
+msgstr "Weight in grams (g)"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,psc_worries_a_lot:0
+msgid "Worries a lot"
+msgstr "Worries a lot"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_appearance:0
+msgid "acrocyanosis"
+msgstr "acrocyanosis"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_appearance:0
+msgid "central cyanosis"
+msgstr "central cyanosis"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_grimace:0
+msgid "cry or pull away when stimulated"
+msgstr "cry or pull away when stimulated"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_activity:0
+msgid "flexed arms and legs"
+msgstr "flexed arms and legs"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_grimace:0
+msgid "grimace when stimulated"
+msgstr "grimace when stimulated"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_appearance:0
+msgid "no cyanosis"
+msgstr "no cyanosis"
+
+#. module: medical_pediatrics
+#: field:medical.patient.psc,ped_id:0
+msgid "pediatric"
+msgstr "pediatric"
+
+#. module: medical_pediatrics
+#: selection:medical.neonatal.apgar,apgar_respiration:0
+msgid "strong"
+msgstr "strong"
+

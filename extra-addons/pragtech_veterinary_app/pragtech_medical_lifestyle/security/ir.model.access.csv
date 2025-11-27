@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_drugs_recreational,medical.drugs_recreational,model_medical_drugs_recreational,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_medical_patient_cage,access_medical_patient_cage,model_medical_patient_cage,pragtech_veterinary_app.group_medical_user,1,1,1,1
+

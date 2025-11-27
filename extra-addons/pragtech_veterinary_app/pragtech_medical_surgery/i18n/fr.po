@@ -1,0 +1,499 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_surgery
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:33+0000\n"
+"PO-Revision-Date: 2015-09-10 10:33+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_asa:0
+msgid "ASA PS"
+msgstr "ASA PS"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_asa:0
+msgid "ASA pre-operative Physical Status"
+msgstr "ASA pre-operative Physical Status"
+
+#. module: medical_surgery
+#: view:medical.surgery:medical_surgery.medical_surgery_view
+#: field:medical.surgery,anesthesia_report:0
+msgid "Anesthesia Report"
+msgstr "Anesthesia Report"
+
+#. module: medical_surgery
+#: field:medical.surgery,anesthetist:0
+msgid "Anesthetist"
+msgstr "Anesthetist"
+
+#. module: medical_surgery
+#: help:medical.surgery,anesthetist:0
+msgid "Anesthetist in charge"
+msgstr "Anesthetist in charge"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_antibiotics:0
+msgid "Antibiotic Prophylaxis"
+msgstr "Antibiotic Prophylaxis"
+
+#. module: medical_surgery
+#: help:medical.surgery,pathology:0
+msgid "Base Condition / Reason"
+msgstr "Condition de base / Raison"
+
+#. module: medical_surgery
+#: field:medical.surgery,pathology:0
+msgid "Base condition"
+msgstr "Condition de base"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_bleeding_risk:0
+msgid "Check this box if patient has a risk of loosing more than 500 ml in adults of over 7ml/kg in infants. If so, make sure that intravenous access and fluids are available"
+msgstr "Check this box if patient has a risk of loosing more than 500 ml in adults of over 7ml/kg in infants. If so, make sure that intravenous access and fluids are available"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_oximeter:0
+msgid "Check this box when verified the pulse oximeter is in place and functioning"
+msgstr "Check this box when verified the pulse oximeter is in place and functioning"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_mallampati:0
+msgid "Class 1: Full visibility of tonsils, uvula and soft palate"
+msgstr "Class 1: Full visibility of tonsils, uvula and soft palate"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_mallampati:0
+msgid "Class 2: Visibility of hard and soft palate, upper portion of tonsils and uvula"
+msgstr "Class 2: Visibility of hard and soft palate, upper portion of tonsils and uvula"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_mallampati:0
+msgid "Class 3: Soft and hard palate and base of the uvula are visible"
+msgstr "Class 3: Soft and hard palate and base of the uvula are visible"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_mallampati:0
+msgid "Class 4: Only Hard Palate visible"
+msgstr "Class 4: Only Hard Palate visible"
+
+#. module: medical_surgery
+#: field:medical.operation,procedure:0
+#: field:medical.surgery,name:0
+msgid "Code"
+msgstr "Code"
+
+#. module: medical_surgery
+#: field:medical.operation,create_uid:0
+#: field:medical.rcri,create_uid:0
+#: field:medical.surgery,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_surgery
+#: field:medical.operation,create_date:0
+#: field:medical.rcri,create_date:0
+#: field:medical.surgery,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_surgery
+#: field:medical.surgery,date:0
+msgid "Date of the surgery"
+msgstr "Date de la chirurgie"
+
+#. module: medical_surgery
+#: field:medical.surgery,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: medical_surgery
+#: view:medical.surgery:medical_surgery.medical_surgery_view
+#: field:medical.surgery,extra_info:0
+msgid "Details/Incidents"
+msgstr "Details/Incidents"
+
+#. module: medical_surgery
+#: help:medical.rcri,rcri_diabetes_history:0
+msgid "Diabetes Mellitus requiring treatment with Insulin"
+msgstr "Diabetes Mellitus requiring treatment with Insulin"
+
+#. module: medical_surgery
+#: view:medical.surgery:medical_surgery.medical_surgery_view
+#: selection:medical.surgery,state:0
+msgid "Done"
+msgstr "Done"
+
+#. module: medical_surgery
+#: field:medical.surgery,surgery_length:0
+msgid "Duration"
+msgstr "Duration"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Emergency"
+msgstr "Emergency"
+
+#. module: medical_surgery
+#: field:medical.surgery,surgery_end_date:0
+msgid "End of the surgery"
+msgstr "End of the surgery"
+
+#. module: medical_surgery
+#: help:medical.surgery,name:0
+msgid "Health Center Unique code"
+msgstr "Health Center Unique code"
+
+#. module: medical_surgery
+#: help:medical.surgery,signed_by:0
+msgid "Health Professional that signed this surgery document"
+msgstr "Health Professional that signed this surgery document"
+
+#. module: medical_surgery
+#: field:medical.rcri,surgeon:0
+msgid "Health professional"
+msgstr "Health professional"
+
+#. module: medical_surgery
+#: help:medical.rcri,surgeon:0
+msgid "Health professional/Cardiologist who signed the assesment RCRI"
+msgstr "Health professional/Cardiologist who signed the assesment RCRI"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_high_risk_surgery:0
+msgid "High Risk surgery"
+msgstr "High Risk surgery"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_cerebrovascular_history:0
+msgid "History of Cerebrovascular disease"
+msgstr "History of Cerebrovascular disease"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_congestive_history:0
+msgid "History of congestive heart disease"
+msgstr "History of congestive heart disease"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_ischemic_history:0
+msgid "History of ischemic heart disease"
+msgstr "History of ischemic heart disease"
+
+#. module: medical_surgery
+#: field:medical.operation,id:0
+#: field:medical.rcri,id:0
+#: field:medical.surgery,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_surgery
+#: selection:medical.rcri,rcri_class:0
+msgid "II"
+msgstr "II"
+
+#. module: medical_surgery
+#: selection:medical.rcri,rcri_class:0
+msgid "III"
+msgstr "III"
+
+#. module: medical_surgery
+#: selection:medical.rcri,rcri_class:0
+msgid "IV"
+msgstr "IV"
+
+#. module: medical_surgery
+#: selection:medical.surgery,state:0
+msgid "In progress"
+msgstr "In progress"
+
+#. module: medical_surgery
+#: help:medical.rcri,rcri_high_risk_surgery:0
+msgid "Includes andy suprainguinal vascular, intraperitoneal, or intrathoracic procedures"
+msgstr "Includes andy suprainguinal vascular, intraperitoneal, or intrathoracic procedures"
+
+#. module: medical_surgery
+#: field:medical.operation,write_uid:0
+#: field:medical.rcri,write_uid:0
+#: field:medical.surgery,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_surgery
+#: field:medical.operation,write_date:0
+#: field:medical.rcri,write_date:0
+#: field:medical.surgery,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_surgery
+#: help:medical.surgery,procedures:0
+msgid "List of the procedures in the surgery. Please enter the first one as the main procedure"
+msgstr "List of the procedures in the surgery. Please enter the first one as the main procedure"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_mallampati:0
+msgid "Mallampati Score"
+msgstr "Mallampati Score"
+
+#. module: medical_surgery
+#: field:medical.operation,notes:0
+msgid "Notes"
+msgstr "Notes"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_sterility:0
+msgid "Nursing team has confirmed sterility of the devices and room"
+msgstr "Nursing team has confirmed sterility of the devices and room"
+
+#. module: medical_surgery
+#: field:medical.surgery,operating_room:0
+msgid "Operating Room"
+msgstr "Operating Room"
+
+#. module: medical_surgery
+#: view:medical.operation:medical_surgery.medical_operation_tree
+#: view:medical.operation:medical_surgery.medical_operation_view
+#: view:medical.rcri:medical_surgery.medical_rcri_tree
+msgid "Operation"
+msgstr "Operation"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Optional"
+msgstr "Facultatif"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_asa:0
+msgid "PS 1 : Normal healthy patient"
+msgstr "PS 1 : Normal healthy patient"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_asa:0
+msgid "PS 2 : Patients with mild systemic disease"
+msgstr "PS 2 : Patients with mild systemic disease"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_asa:0
+msgid "PS 3 : Patients with severe systemic disease"
+msgstr "PS 3 : Patients with severe systemic disease"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_asa:0
+msgid "PS 4 : Patients with severe systemic disease that is a constant threat to life "
+msgstr "PS 4 : Patients with severe systemic disease that is a constant threat to life "
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_asa:0
+msgid "PS 5 : Moribund patients who are not expected to survive without the operation"
+msgstr "PS 5 : Moribund patients who are not expected to survive without the operation"
+
+#. module: medical_surgery
+#: selection:medical.surgery,preop_asa:0
+msgid "PS 6 : A declared brain-dead patient who organs are being removed for donor purposes"
+msgstr "PS 6 : A declared brain-dead patient who organs are being removed for donor purposes"
+
+#. module: medical_surgery
+#: field:medical.rcri,patient_id:0
+#: field:medical.surgery,patient_id:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_surgery
+#: field:medical.surgery,age:0
+msgid "Patient Age"
+msgstr "Patient Age"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_rcri:0
+msgid "Patient Revised Cardiac Risk Index\n"
+"Points 0: Class I Very Low (0.4% complications)\n"
+"Points 1: Class II Low (0.9% complications)\n"
+"Points 2: Class III Moderate (6.6% complications)\n"
+"Points 3 or more : Class IV High (>11% complications)"
+msgstr "Patient Revised Cardiac Risk Index\n"
+"Points 0: Class I Very Low (0.4% complications)\n"
+"Points 1: Class II Low (0.9% complications)\n"
+"Points 2: Class III Moderate (6.6% complications)\n"
+"Points 3 or more : Class IV High (>11% complications)"
+
+#. module: medical_surgery
+#: help:medical.surgery,age:0
+#: help:medical.surgery,surgery_length:0
+msgid "Patient age at the moment of the surgery. Can be estimative"
+msgstr "Age du patient au moment de l'intervention - peut être approximatif"
+
+#. module: medical_surgery
+#: model:ir.model,name:medical_surgery.model_medical_patient
+msgid "Patient related information"
+msgstr "Renseignements sur le patient"
+
+#. module: medical_surgery
+#: help:medical.rcri,rcri_total:0
+msgid "Points 0: Class I Very Low (0.4% complications)\n"
+"Points 1: Class II Low (0.9% complications)\n"
+"Points 2: Class III Moderate (6.6% complications)\n"
+"Points 3 or more : Class IV High (>11% complications)"
+msgstr "Points 0: Class I Very Low (0.4% complications)\n"
+"Points 1: Class II Low (0.9% complications)\n"
+"Points 2: Class III Moderate (6.6% complications)\n"
+"Points 3 or more : Class IV High (>11% complications)"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_diabetes_history:0
+msgid "Preoperative Diabetes"
+msgstr "Preoperative Diabetes"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_kidney_history:0
+msgid "Preoperative Kidney disease"
+msgstr "Preoperative Kidney disease"
+
+#. module: medical_surgery
+#: help:medical.rcri,rcri_kidney_history:0
+msgid "Preoperative serum creatinine >2.0 mg/dL (177 mol/L)"
+msgstr "Preoperative serum creatinine >2.0 mg/dL (177 mol/L)"
+
+#. module: medical_surgery
+#: view:medical.procedure:medical_surgery.medical_procedure_tree
+#: view:medical.procedure:medical_surgery.medical_procedure_view
+msgid "Procedure"
+msgstr "Intervention"
+
+#. module: medical_surgery
+#: help:medical.operation,procedure:0
+msgid "Procedure Code, for example ICD-10-PCS Code 7-character string"
+msgstr "Procedure Code, for example ICD-10-PCS Code 7-character string"
+
+#. module: medical_surgery
+#: view:medical.surgery:medical_surgery.medical_surgery_view
+#: field:medical.surgery,procedures:0
+msgid "Procedures"
+msgstr "Procedures"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_antibiotics:0
+msgid "Prophylactic antibiotic treatment within the last 60 minutes"
+msgstr "Prophylactic antibiotic treatment within the last 60 minutes"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_oximeter:0
+msgid "Pulse Oximeter in place"
+msgstr "Pulse Oximeter in place"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_rcri:0
+msgid "RCRI"
+msgstr "RCRI"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_class:0
+msgid "RCRI Class"
+msgstr "RCRI Class"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_date:0
+msgid "RCRI Date"
+msgstr "RCRI Date"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Required"
+msgstr "Requis"
+
+#. module: medical_surgery
+#: model:ir.model,name:medical_surgery.model_medical_rcri
+#: view:medical.rcri:medical_surgery.medical_rcri_view
+msgid "Revised Cardiac Risk Index"
+msgstr "Revised Cardiac Risk Index"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_bleeding_risk:0
+msgid "Risk of Massive bleeding"
+msgstr "Risk of Massive bleeding"
+
+#. module: medical_surgery
+#: field:medical.rcri,rcri_total:0
+msgid "Score"
+msgstr "Score"
+
+#. module: medical_surgery
+#: field:medical.surgery,signed_by:0
+msgid "Signed by"
+msgstr "Signed by"
+
+#. module: medical_surgery
+#: field:medical.surgery,state:0
+msgid "State"
+msgstr "State"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_sterility:0
+msgid "Sterility confirmed"
+msgstr "Sterility confirmed"
+
+#. module: medical_surgery
+#: field:medical.surgery,surgeon:0
+msgid "Surgeon"
+msgstr "Chirurgien"
+
+#. module: medical_surgery
+#: help:medical.surgery,surgeon:0
+msgid "Surgeon who did the procedure"
+msgstr "Chirurgien qui a effectué l'intervention"
+
+#. module: medical_surgery
+#: view:medical.patient:medical_surgery.medical_patient_view
+#: field:medical.patient,surgery_ids:0
+msgid "Surgeries"
+msgstr "Chirurgies"
+
+#. module: medical_surgery
+#: model:ir.actions.act_window,name:medical_surgery.action_medical_surgery
+#: model:ir.model,name:medical_surgery.model_medical_surgery
+#: model:ir.ui.menu,name:medical_surgery.main_menu_medical_surgery
+#: model:ir.ui.menu,name:medical_surgery.menu_medical_surgery
+#: field:medical.operation,name:0
+#: view:medical.surgery:medical_surgery.medical_surgery_tree
+#: view:medical.surgery:medical_surgery.medical_surgery_view
+msgid "Surgery"
+msgstr "Chirurgie"
+
+#. module: medical_surgery
+#: field:medical.surgery,classification:0
+msgid "Surgery Classification"
+msgstr "Classification de l'intervention"
+
+#. module: medical_surgery
+#: view:medical.surgery:medical_surgery.medical_surgery_view
+msgid "Surgical Safety Checklist"
+msgstr "Surgical Safety Checklist"
+
+#. module: medical_surgery
+#: field:medical.surgery,preop_site_marking:0
+msgid "Surgical Site Marking"
+msgstr "Surgical Site Marking"
+
+#. module: medical_surgery
+#: help:medical.surgery,preop_site_marking:0
+msgid "The surgeon has marked the surgical incision"
+msgstr "The surgeon has marked the surgical incision"
+
+#. module: medical_surgery
+#: selection:medical.surgery,classification:0
+msgid "Urgent"
+msgstr "Urgent"
+
+#. module: medical_surgery
+#: help:medical.rcri,rcri_ischemic_history:0
+msgid "history of MI or a positive exercise test, current complaint of chest pain considered to be secondary to myocardial 	        ischemia, use of nitrate therapy, or ECG with pathological Q waves; do not count prior coronary revascularization procedure 	        unless one of the other criteria for ischemic heart disease is present"
+msgstr "history of MI or a positive exercise test, current complaint of chest pain considered to be secondary to myocardial 	        ischemia, use of nitrate therapy, or ECG with pathological Q waves; do not count prior coronary revascularization procedure 	        unless one of the other criteria for ischemic heart disease is present"
+

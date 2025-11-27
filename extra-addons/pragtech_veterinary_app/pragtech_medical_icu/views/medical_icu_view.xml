@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+
+    <!-- 	<menuitem name="Intensive Care" id="medical_icu_menu" parent="pragtech_veterinary_app.medical_inpatient_menu" sequence="2"/> -->
+
+    <record model="ir.ui.view" id="medical_inpatient_icu_form">
+        <field name="name">medical.inpatient.icu.form</field>
+        <field name="model">medical.inpatient.icu</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient ICU Info">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="admitted"/>
+                    </group>
+                </group>
+                <group col="4">
+                    <group>
+                        <field name="icu_admission_date"/>
+                    </group>
+                    <group>
+                        <field name="icu_stay"/>
+                    </group>
+                    <group>
+                        <field name="discharged_from_icu"/>
+                    </group>
+                    <group>
+                        <field name="icu_discharge_date"
+                               invisible="discharged_from_icu  == False"
+                               required="discharged_from_icu == True"
+                               />
+                    </group>
+                </group>
+                <group colspan="4" col="4" string="Mechanical Ventilation History">
+                    <field name="mv_history" colspan="4" nolabel="1"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_inpatient_icu_tree">
+        <field name="name">medical.inpatient.icu.tree</field>
+        <field name="model">medical.inpatient.icu</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Patient ICU Info">
+                <field name="name"/>
+                <field name="admitted"/>
+                <field name="icu_admission_date"/>
+                <field name="icu_stay"/>
+                <field name="discharged_from_icu"/>
+                <field name="icu_discharge_date"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_inpatient_icu_action">
+        <field name="name">Patient ICU Info</field>
+        <field name="res_model">medical.inpatient.icu</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="Patient ICU Info" id="medical_inpatient_icu_menu"
+        action="medical_inpatient_icu_action" parent="medical_icu_menu"/> -->
+
+    <!-- Patient Ventilation History -->
+
+    <record model="ir.ui.view" id="medical_inpatient_icu_ventilation_form">
+        <field name="name">medical.icu.ventilation.form</field>
+        <field name="model">medical.icu.ventilation</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient Ventilation History">
+                <group col="4">
+                    <group>
+                        <field name="current_mv"/>
+                    </group>
+                    <group>
+                        <field name="mv_start"/>
+                    </group>
+                    <group>
+                        <field name="mv_end"
+                               invisible="current_mv  == True" required="current_mv == False"
+                               />
+                    </group>
+                    <group>
+                        <field name="mv_period"/>
+                    </group>
+                </group>
+                <group col="3">
+                    <group>
+                        <field name="ventilation"/>
+                    </group>
+                    <group>
+                        <field name="ett_size" invisible="ventilation  == 'ett'"/>
+                    </group>
+                    <group>
+                        <field name="tracheostomy_size" invisible="ventilation  == 'tracheostomy'"/>
+                    </group>
+                </group>
+                <label for="remarks"/>
+                <field name="remarks"/>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_inpatient_icu_ventilation_tree">
+        <field name="name">medical.icu.ventilation.tree</field>
+        <field name="model">medical.icu.ventilation</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Patient Ventilation History">
+                <field name="current_mv"/>
+                <field name="ventilation"/>
+                <field name="mv_start"/>
+                <field name="mv_end"/>
+                <field name="mv_period"/>
+                <field name="remarks"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_inpatient_registration_view_inherit">
+        <field name="name">medical.inpatient.registration.inherits</field>
+        <field name="type">form</field>
+        <field name="model">medical.inpatient.registration</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_inpatient_registration_view"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//notebook/page[4]" position="after">
+                <page string="ICU">
+                    <group colspan="4" col="4">
+                        <field name="icu"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="icu_admissions" nolabel="1" colspan="4" invisible="icu  != True"
+                               />
+                    </group>
+                </page>
+            </xpath>
+
+            <!-- <page string = "Care Plan" position="after">
+                <page string = "ICU">
+                    <group colspan="4" col="4">
+                    <field name="icu"  />
+                    </group>
+                    <group colspan="4" col="4">
+                    <field name="icu_admissions" nolabel="1" colspan="4" readonly="1" attrs="{'invisible': [('icu','!=',True)]}"/>
+                    </group>
+                </page>
+            </page>	 -->
+        </field>
+    </record>
+
+    <!-- GCS Form -->
+
+    <record model="ir.ui.view" id="medical_icu_glasgow_form">
+        <field name="name">medical.icu.glasgow.form</field>
+        <field name="model">medical.icu.glasgow</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="GCS">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="evaluation_date"/>
+                    <field name="glasgow_eyes"/>
+                    <field name="glasgow_verbal"/>
+                    <field name="glasgow_motor"/>
+                    <field name="glasgow"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_icu_glasgow_tree">
+        <field name="name">medical.icu.glasgow.tree</field>
+        <field name="model">medical.icu.glasgow</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="GCS">
+                <field name="name"/>
+                <field name="evaluation_date"/>
+                <field name="glasgow_eyes"/>
+                <field name="glasgow_verbal"/>
+                <field name="glasgow_motor"/>
+                <field name="glasgow"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_icu_glasgow_action">
+        <field name="name">GCS</field>
+        <field name="res_model">medical.icu.glasgow</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="GCS" id="medical_icu_glasgow_submenu"
+        action="medical_icu_glasgow_action" parent="medical_icu_menu"/> -->
+
+    <!--  ECG  -->
+
+    <record model="ir.ui.view" id="medical_icu_ecg_form">
+        <field name="name">medical.icu.ecg.form</field>
+        <field name="model">medical.icu.ecg</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="ECG">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="lead"/>
+                    <field name="axis"/>
+                    <field name="rate"/>
+                    <field name="pacemaker"/>
+                    <field name="rhythm"/>
+                </group>
+                <group colspan="4" col="6">
+                    <field name="pr"/>
+                    <field name="qrs"/>
+                    <field name="qt"/>
+                </group>
+                <group colspan="4" col="4">
+                    <field name="st_segment"/>
+                    <field name="twave_inversion"/>
+                    <field name="interpretation"/>
+                </group>
+                <group string="Picture" colspan="4" rowspan="1">
+                    <field name="ecg_strip" nolabel="1" img_width="120" img_height="120" width="120" height="120"
+                           widget="image"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_icu_ecg_tree">
+        <field name="name">medical.icu.ecg.tree</field>
+        <field name="model">medical.icu.ecg</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="ECG" editable="top">
+                <field name="ecg_date"/>
+                <field name="name"/>
+                <field name="lead"/>
+                <field name="axis"/>
+                <field name="rate"/>
+                <field name="pacemaker"/>
+                <field name="rhythm"/>
+                <field name="pr"/>
+                <field name="qrs"/>
+                <field name="qt"/>
+                <field name="st_segment"/>
+                <field name="twave_inversion"/>
+                <field name="interpretation"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_icu_ecg_action">
+        <field name="name">ECG</field>
+        <field name="res_model">medical.icu.ecg</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="ECG" id="medical_icu_ecg_menu"
+        action="medical_icu_ecg_action" parent="medical_icu_menu"/> -->
+
+    <!-- APACHE II Score -->
+
+    <record model="ir.ui.view" id="medical_icu_apache_form">
+        <field name="name">medical.icu.apache2.form</field>
+        <field name="model">medical.icu.apache2</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="ECG">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="score_date"/>
+                    <field name="age"/>
+                </group>
+                <group colspan="4" col="4" string="Physiological">
+                    <field name="temperature"/>
+                    <field name="mean_ap"/>
+                    <field name="heart_rate"/>
+                    <field name="respiratory_rate"/>
+                    <field name="fio2"/>
+                    <field name="pao2"/>
+                    <field name="paco2"/>
+                    <field name="aado2"/>
+                    <field name="ph"/>
+                    <field name="serum_sodium"/>
+                    <field name="serum_potassium"/>
+                    <field name="serum_creatinine"/>
+                    <field name="hematocrit"/>
+                    <field name="wbc"/>
+                    <field name="arf"/>
+                </group>
+                <group colspan="4" col="4" string="Chronic">
+                    <field name="chronic_condition"/>
+                    <field name="hospital_admission_type"
+                           invisible="chronic_condition  == True" required="chronic_condition != False"
+                           />
+                </group>
+                <group colspan="4" col="4">
+                    <field name="apache_score"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_icu_apache_tree">
+        <field name="name">medical.icu.apache2.tree</field>
+        <field name="model">medical.icu.apache2</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="ECG">
+                <field name="name"/>
+                <field name="score_date"/>
+                <field name="apache_score"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_icu_apache_action">
+        <field name="name">APACHE II Score</field>
+        <field name="res_model">medical.icu.apache2</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- 	<menuitem name="APACHE II Score" id="medical_icu_apache_menu"
+            action="medical_icu_apache_action" parent="medical_icu_menu"/> -->
+
+    <!-- Rounding view -->
+    <!-- Update the existing rounding view with information about Intensive Care Unit - ICU -->
+
+    <record model="ir.ui.view" id="medical_rounding_procedure_form_inherit">
+        <field name="name">medical.patient.rounding.inherit</field>
+        <field name="type">form</field>
+        <field name="model">medical.patient.rounding</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_rounding_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='warning']" position="replace"/>
+
+            <xpath expr="//field[@name='environmental_assessment']" position="after">
+                <field name="icu_patient"/>
+                <field name="warning"/>
+            </xpath>
+
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="ICU">
+                    <group colspan="4" col="6" string="Neurologic">
+                        <field name="gcs"/>
+                        <field name="pupil_dilation"/>
+                        <newline/>
+                        <field name="right_pupil"/>
+                        <field name="left_pupil"/>
+                        <field name="anisocoria"/>
+                        <newline/>
+                        <field name="pupillary_reactivity"/>
+                        <field name="pupil_consensual_resp"/>
+                    </group>
+                    <group colspan="4" col="4" string="Respiratory">
+                        <group colspan="4" col="4">
+                            <field name="oxygen_mask"/>
+                            <field name="fio2"/>
+                            <field name="respiration_type"/>
+                            <field name="trachea_alignment"/>
+                            <field name="peep"/>
+                            <field name="peep_pressure"
+                                   invisible="peep  != True" required="peep != False"
+                                   />
+                            <field name="sce"/>
+                            <field name="oral_mucosa_lesion"/>
+                            <field name="lips_lesion"/>
+                            <newline/>
+                            <group string="Chest Expansion" colspan="6" col="6">
+                                <field name="chest_expansion"/>
+                                <field name="paradoxical_expansion"/>
+                                <field name="tracheal_tug"/>
+                            </group>
+                        </group>
+                        <group string="Xray">
+                            <field name="xray" img_width="120" img_height="120"
+                                   height="120" width="120" widget="image"/>
+                        </group>
+                    </group>
+                    <field name="chest_drainages" colspan="4"/>
+                    <newline/>
+                    <group colspan="4" string="Cardiovascular">
+                        <group colspan="4" col="4">
+                            <field name="ecg" colspan="3"/>
+                        </group>
+                        <newline/>
+                        <group colspan="6" col="6">
+                            <field name="venous_access"/>
+                            <field name="swan_ganz"/>
+                            <field name="arterial_access"/>
+                            <field name="dialysis"/>
+                            <field name="edema"/>
+                        </group>
+
+                    </group>
+
+                    <group string="Blood and Skin" colspan="6" col="6">
+                        <field name="bacteremia"/>
+                        <field name="ssi"/>
+                        <field name="wound_dehiscence"/>
+                        <field name="cellulitis"/>
+                        <field name="necrotizing_fasciitis"/>
+                    </group>
+
+                    <group string="Digestive and Abdomen" colspan="8" col="8">
+                        <field name="vomiting"/>
+                        <field name="bowel_sounds"/>
+                        <field name="stools"/>
+                        <field name="peritonitis"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Patient Chest Drainage Assesment -->
+
+    <record model="ir.ui.view" id="medical_icu_chest_drainage_form">
+        <field name="name">medical.icu.chest_drainage.form</field>
+        <field name="model">medical.icu.chest_drainage</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Chest Drainage Assessment">
+                <group colspan="4" col="4">
+                    <field name="location"/>
+                    <field name="suction"/>
+                    <field name="suction_pressure"
+                           invisible="suction  != True" required="suction != False"
+                           />
+                    <field name="fluid_volume"/>
+                    <field name="fluid_aspect"/>
+                    <field name="oscillation"/>
+                    <field name="air_leak"/>
+                    <field name="remarks"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_icu_chest_drainage_tree">
+        <field name="name">medical.icu.chest_drainage.tree</field>
+        <field name="model">medical.icu.chest_drainage</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Chest Drainage Assessment" editable="top">
+                <field name="location"/>
+                <field name="suction"/>
+                <field name="suction_pressure"/>
+                <field name="fluid_volume"/>
+                <field name="fluid_aspect"/>
+                <field name="oscillation"/>
+                <field name="air_leak"/>
+                <field name="remarks"/>
+            </tree>
+        </field>
+    </record>
+
+
+</odoo>

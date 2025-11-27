@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_bed_transfer_init" model="ir.ui.view">
+        <field name="name">Bed Transfer</field>
+        <field name="model">medical.bed.transfer.wizard</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Bed Transfer" version='7.0'>
+                <separator colspan="4" string="Please choose the new bed to allocate"/>
+                <group colspan="4" col="4">
+                    <field name="newbed"/>
+                    <field name="reason"/>
+                </group>
+                <footer>
+                    <button type="object" name="bed_transfer" icon="gtk-go-forward" string="Transfer"/>
+                    <button string="Cancel" class="btn-default" special="cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window name="Bed Transfer"
+                res_model="medical.bed.transfer.wizard"
+                binding_model="medical.inpatient.registration"
+                view_mode="form"
+                target="new"
+                id="action_bed_transfer_init"/>
+
+    <!--<record id="action_bed_transfer_init" model="ir.actions.act_window">
+        <field name="name">Bed Transfer</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.bed.transfer.wizard</field>
+        <field name="src_model">medical.inpatient.registration</field>
+        <field name="view_mode">form</field>
+        <field name="view_id" ref="view_bed_transfer_init"/>
+        <field name="context">{}</field>
+        <field name="target">new</field>
+    </record>-->
+</odoo>

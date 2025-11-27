@@ -1,0 +1,45 @@
+.zone-attention {
+   background-color: lavender;
+   color: gray;
+}
+
+.zone-attention-container {
+   min-height: 300px;
+}
+
+.zone-attention-chats {
+    max-height: 280px;
+    overflow-y: scroll;
+}
+
+.zone-no-attention-chats {
+    max-height: 700px;
+    overflow-y: scroll;
+}
+
+.warning-indicator{
+    width: 10px;
+    height: 10px;
+    background-color: gold; 
+    border-radius: 50%; 
+    margin-left: 2px; 
+    min-width: 10px;
+}
+
+.danger-indicator{
+    width: 10px;
+    height: 10px;
+    background-color: red; 
+    border-radius: 50%; 
+    margin-left: 2px; 
+    min-width: 10px;
+}
+
+.success-indicator{
+    width: 10px;
+    height: 10px;
+    background-color: green; 
+    border-radius: 50%; 
+    margin-left: 2px; 
+    min-width: 10px;
+}

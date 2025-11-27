@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_pet_type,access_pet_type,model_pet_type,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_pet_breed,access_pet_breed,model_pet_breed,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_pet_blood_group,access_pet_blood_group,model_pet_blood_group,pragtech_veterinary_app.group_medical_user,1,1,1,1
+access_medical_prescription_invoice,access_medical_prescription_invoice,model_medical_prescription_invoice,base.group_user,1,1,1,1
+access_medical_lab_test_invoice,medical.lab.test.invoice,model_medical_lab_test_invoice,pragtech_veterinary_app.group_medical_user,1,1,1,1

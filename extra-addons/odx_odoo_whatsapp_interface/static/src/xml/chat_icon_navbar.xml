@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="odx_odoo_whatsapp_interface.ActivityMenus">
+        <div class="toggle-icon" role="button" t-on-click="on_click">
+            <i style='color:green;padding:4px;cursor:pointer;font-weight:600;' class="fa fa-lg fa-whatsapp" role="img" aria-label="Whatsapp"/>
+        </div>
+    </t>
+</templates>

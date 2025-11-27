@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="True">
+        <record model="product.product" id="product_2">
+            <field name="name">* TRIFEXIS 1620MG DISCOUN DROP</field>
+            <field name="Category_id" model="product.category">Flea Tic & Fly Prds - Oral</field>
+            <field name="is_medicament">1</field>
+        </record>
+
+
+    </data>
+</odoo>

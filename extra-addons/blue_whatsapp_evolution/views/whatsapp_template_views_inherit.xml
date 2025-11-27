@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="whatsapp_template_view_form_inherit_evolution" model="ir.ui.view">
+        <field name="name">whatsapp.template.view.form.inherit.evolution</field>
+        <field name="model">whatsapp.template</field>
+        <field name="inherit_id" ref="whatsapp.whatsapp_template_view_form"/>
+        <field name="arch" type="xml">
+            <field name="wa_account_id" position="after">
+                <field name="use_evolution_api"/>
+            </field>
+        </field>
+    </record>
+</odoo>

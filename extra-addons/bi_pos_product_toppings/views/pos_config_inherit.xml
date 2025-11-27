@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="pos_config_settings_item_count">
+            <field name="name">res.config.setting.pos.item.form.view</field>
+            <field name="model">res.config.settings</field>
+            <field name="inherit_id" ref="point_of_sale.res_config_settings_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//block[@id='pos_interface_section']" position="after">
+                    <h2 name="order">POS Toppings Configuration</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-xs-12 col-md-6 o_setting_box" id="activate_toppings">
+                            <div class="o_setting_left_pane">
+                                <field name="activate_toppings"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="activate_toppings" string='Enable Toppings' />
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6 o_setting_box" invisible="not activate_toppings">
+                            <div class="o_setting_left_pane">
+                                <field name="add_topping_default"/>
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <label for="add_topping_default"  />
+                            </div>
+                        </div>
+                    </div>
+
+                </xpath>
+            </field>
+        </record>
+
+
+        <record id="topping_groups_tree_view" model="ir.ui.view">
+            <field name="name">topping.groups.tree.view</field>
+            <field name="model">topping.groups</field>
+            <field name="arch" type="xml">
+                <tree string="Toppings Groups">
+                    <field name="name"/>
+                    <field name='topping_ids' widget="many2many_tags" options="{'no_create': True}"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="topping_groups_form_view" model="ir.ui.view">
+            <field name="name">topping.groups.form.view</field>
+            <field name="model">topping.groups</field>
+            <field name="arch" type="xml">
+                <form string="Toppings Groups">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name='topping_ids' widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_topping_groups">
+            <field name="name">Pos Toppings Groups</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">topping.groups</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem 
+            parent="point_of_sale.menu_point_config_product" 
+            action="action_topping_groups" 
+            id="menu_product_toppings_groups_setting"
+            sequence="30" name="Toppings Groups"/>
+
+        <record id="inherit_pos_category_form" model="ir.ui.view">
+            <field name="name">inherit_pos_order</field>
+            <field name="model">pos.category</field>
+            <field name="inherit_id" ref="point_of_sale.product_pos_category_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='sequence']" position="after">
+                    <field name='topping_ids' widget="many2many_tags" options="{'no_create': True}"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_normal_form_view_inherit" model="ir.ui.view">
+            <field name="name">product.product.topping</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view" />
+            <field name="arch" type="xml">
+                <xpath expr="//div[@name='options']" position="inside">
+                    <div>
+                        <field name="is_topping"/>  
+                        <label for="is_topping"/> 
+                    </div>
+                </xpath>
+                <xpath expr="//page[@name='inventory']" position="after">
+                    <page string='Toppings' invisible="is_topping" name="toppings_product">
+                        <group>
+                            <field name="topping_group_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                            <field name="topping_ids" widget="many2many_tags" options="{'no_create': True}"/>
+                        </group>
+                        
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="custom_pos_order_extended_form_view">
+            <field name="name">pos.order.form.extended.view</field>
+            <field name="model">pos.order</field>
+            <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='full_product_name']" position="after">
+                    <field name="line_topping_ids" widget="many2many_tags"/>
+                </xpath>
+            </field>
+        </record>
+        
+    </data>
+</odoo>

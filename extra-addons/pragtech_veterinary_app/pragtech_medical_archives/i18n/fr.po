@@ -1,0 +1,152 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_archives
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-10-05 09:13+0000\n"
+"PO-Revision-Date: 2015-10-05 09:13+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_archives
+#: model:ir.actions.act_window,name:medical_archives.action_medical_paper_archive_type
+#: model:ir.ui.menu,name:medical_archives.medical_conf_paper_archive
+#: model:ir.ui.menu,name:medical_archives.menu_medical_paper_archive_type
+#: view:medical.paper.archive:medical_archives.medical_paper_archive_type_form
+#: view:medical.paper.archive:medical_archives.medical_paper_archive_type_tree
+msgid "Archive"
+msgstr "Archive"
+
+#. module: medical_archives
+#: selection:medical.paper.archive,hc_status:0
+msgid "Archived"
+msgstr "Archived"
+
+#. module: medical_archives
+#: selection:medical.paper.archive,hc_status:0
+msgid "Borrowed"
+msgstr "Borrowed"
+
+#. module: medical_archives
+#: field:medical.paper.archive,identification_code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: medical_archives
+#: field:medical.paper.archive,comments:0
+msgid "Comments"
+msgstr "Comments"
+
+#. module: medical_archives
+#: view:medical.paper.archive:medical_archives.medical_paper_archive_type_form
+msgid "Comments....."
+msgstr "Comments....."
+
+#. module: medical_archives
+#: field:medical.paper.archive,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_archives
+#: field:medical.paper.archive,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_archives
+#: field:medical.paper.archive,current_location:0
+msgid "Current Location"
+msgstr "Current Location"
+
+#. module: medical_archives
+#: field:medical.paper.archive,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_archives
+#: help:medical.paper.archive,legacy:0
+msgid "If existing, please enter the old / legacy code associated to this Clinical History"
+msgstr "If existing, please enter the old / legacy code associated to this Clinical History"
+
+#. module: medical_archives
+#: field:medical.paper.archive,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_archives
+#: field:medical.paper.archive,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_archives
+#: field:medical.paper.archive,legacy:0
+msgid "Legacy Code"
+msgstr "Legacy Code"
+
+#. module: medical_archives
+#: help:medical.paper.archive,current_location:0
+#: help:medical.paper.archive,location:0
+msgid "Location / Unit where this clinical history document should reside."
+msgstr "Location / Unit where this clinical history document should reside."
+
+#. module: medical_archives
+#: model:ir.model,name:medical_archives.model_medical_paper_archive
+msgid "Location of PAPER Patient Clinical History"
+msgstr "Location of PAPER Patient Clinical History"
+
+#. module: medical_archives
+#: selection:medical.paper.archive,hc_status:0
+msgid "Lost"
+msgstr "Lost"
+
+#. module: medical_archives
+#: field:medical.paper.archive,name:0
+msgid "Patient ID"
+msgstr "Patient ID"
+
+#. module: medical_archives
+#: help:medical.paper.archive,requested_by:0
+msgid "Person who last requested the document"
+msgstr "Person who last requested the document"
+
+#. module: medical_archives
+#: field:medical.paper.archive,request_date:0
+msgid "Request Date"
+msgstr "Request Date"
+
+#. module: medical_archives
+#: field:medical.paper.archive,requested_by:0
+msgid "Requested by"
+msgstr "Requested by"
+
+#. module: medical_archives
+#: field:medical.paper.archive,return_date:0
+msgid "Returned Date"
+msgstr "Returned Date"
+
+#. module: medical_archives
+#: field:medical.paper.archive,hc_status:0
+msgid "Status"
+msgstr "Status"
+
+#. module: medical_archives
+#: sql_constraint:medical.paper.archive:0
+msgid "The History already exists !"
+msgstr "The History already exists !"
+
+#. module: medical_archives
+#: sql_constraint:medical.paper.archive:0
+msgid "The Patient History already exists !"
+msgstr "The Patient History already exists !"
+
+#. module: medical_archives
+#: field:medical.paper.archive,location:0
+msgid "Unit"
+msgstr "Unit"
+

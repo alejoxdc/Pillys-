@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates xml:space="preserve">
+    <t t-name="whatsapp.Message.inherit" t-inherit="mail.Message" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'o-mail-Message')]" position="attributes">
+                <attribute name="t-attf-class"
+                           add="{{ message.whatsappMessageType === 'outbound' and is_whatsapp === true ? 'cust-o-outbound' : ''}}"
+                           separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message')]" position="attributes">
+                <attribute name="t-attf-class"
+                           add="{{ message.whatsappMessageType !== 'outbound' and is_whatsapp === true ? 'cust-o-inbound' : ''}}"
+                           separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message-core')]//div[contains(@class, 'w-100')]//div[contains(@class, 'position-relative')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{ message.whatsappMessageType === 'outbound' and env.inChatWindow ? 'cust-justify-content-end' : ''}}"
+                       separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message-core')]//div[contains(@class, 'w-100')]//div[contains(@class, 'position-relative')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{ message.whatsappMessageType === 'outbound' and !env.inChatWindow and props.thread.type !== 'chatter'? 'cust-flex-direction' : ''}}"
+                       separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message-header')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{ message.whatsappMessageType === 'outbound' and !env.inChatWindow and props.thread.type !== 'chatter' ? 'cust-flex-direction' : ''}}"
+                       separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message-core')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{ message.whatsappMessageType === 'outbound' and !env.inChatWindow and props.thread.type !== 'chatter' ? 'cust-flex-direction' : ''}}"
+                       separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message-textContent position-relative d-flex')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{ message.whatsappMessageType === 'outbound' and !env.inChatWindow and props.thread.type !== 'chatter' ? 'cust-flex-direction' : ''}}"
+                       separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-Message-core')]//div[contains(@class, 'w-100')]//div[contains(@class, 'position-relative')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       remove="pe-4"
+                       add="{{ message.whatsappMessageType === 'outbound' and env.inChatWindow ? 'cust-ps-4' : ''}}"
+                       separator=" "/>
+        </xpath>
+    </t>
+    <t t-name="whatsapp.mail.ChatWindow.inherit" t-inherit="mail.ChatWindow" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'o-mail-ChatWindow-header')]" position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{thread.type === 'whatsapp' ? 'cust-bg-view cust-text-white' : ''}}"
+                       separator=" "/>
+        </xpath>
+        <xpath expr="//div[contains(@class, 'o-mail-ChatWindow')]//div[contains(@class, 'bg-view')]"
+               position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{thread.type === 'whatsapp' ? 'cust-wa-background-image' : ''}}"
+                       separator=" "/>
+        </xpath>
+    </t>
+
+    <t t-name="whatsapp.mail.MessageReactions.inherit" t-inherit="mail.MessageReactions" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'position-relative d-flex flex-wrap')]" position="attributes">
+            <attribute name="t-attf-class"
+                       add="{{ props.message.whatsappMessageType === 'outbound' and props.message.is_discussion === true? 'cust-flex-direction' : ''}}"
+                       separator=" "/>
+        </xpath>
+    </t>
+
+    <t t-name="whatsapp.mail.Discuss.inherit" t-inherit="mail.Discuss" t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'align-self-center')]//AutoresizeInput" position="before">
+            <t t-if="this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp' and thread.type === 'whatsapp' and thread.whatsapp_partner_name">
+                <img class="h-100 rounded" style="margin-right: 10px; width:36px;"
+                     t-att-src="thread.whatsapp_partner_img_url" alt="Thread Image"/>
+                <span class="'o-mail-Discuss-threadName lead fw-bold flex-shrink-1 cust-text-white py-0 o-partner-details'"
+                      t-on-click="openPartnerPopup"><t t-esc="thread.whatsapp_partner_name"/>
+                    | </span>
+            </t>
+        </xpath>
+<!--        /////////////////////////07/09/24///////////-->
+        <xpath expr="//div[@t-if=&quot;ui.isSmall and store.discuss.activeTab === 'main'&quot;]" position="replace">
+            <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'" >
+                 <div t-if="ui.isSmall and store.discuss.activeTab === 'main'" class="w-100 border-bottom d-none" t-call="mail.Discuss.mobileTopbar" t-ref="mobileTopbar"/>
+             </t>
+            <t t-else="">
+                <div t-if="ui.isSmall and store.discuss.activeTab === 'main'" class="w-100 border-bottom" t-call="mail.Discuss.mobileTopbar" t-ref="mobileTopbar"/>
+            </t>
+        </xpath>
+<!--        /////////////////////////////////-->
+    </t>
+    <t t-name="whatsapp.mail.DiscussSidebarChannel.inherit" t-inherit="mail.DiscussSidebarChannel"
+       t-inherit-mode="extension">
+        <xpath expr="//button[contains(@class, 'o-mail-DiscussSidebarChannel')]//span[contains(@class, 'text-truncate')]//t"
+               position="before">
+            <t t-if="this.__owl__.parent.component.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp' and thread.whatsapp_partner_name">
+                <t t-esc="thread.whatsapp_partner_name"/>
+                |
+            </t>
+        </xpath>
+        <xpath expr="//div[@t-if='counter > 0']" position="replace">
+            <t t-if="this.__owl__.parent.component.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">
+                <div t-if="counter > 0">
+                    <span t-attf-class="o-mail-DiscussSidebar-badge badge rounded-pill o-discuss-badge cust-o-discuss-badge ms-1 me-3 fw-bold {{thread.muteUntilDateTime ? 'o-muted' : ''}}"
+                          t-esc="counter"/>
+                </div>
+            </t>
+            <t t-else="">
+                 <div t-if="counter > 0">
+                    <span t-attf-class="o-mail-DiscussSidebar-badge badge rounded-pill o-discuss-badge ms-1 me-3 fw-bold {{thread.muteUntilDateTime ? 'o-muted' : ''}}"
+                          t-esc="counter"/>
+                </div>
+            </t>
+        </xpath>
+    </t>
+    <t t-name="whatsapp.mail.ChatWindow.headerContent.inherit" t-inherit="mail.ChatWindow.headerContent"
+       t-inherit-mode="extension">
+        <xpath expr="//div[contains(@class, 'text-truncate fw-bold border border-transparent me-1 my-0')]"
+               position="before">
+                <span t-if="thread.whatsapp_partner_name" style="margin-left: 5px;"><t t-esc="thread.whatsapp_partner_name"/>
+                    |</span>
+        </xpath>
+    </t>
+    <t t-name="whatsapp.mail.ChatWindow.inherit" t-inherit="mail.ChatWindow" t-inherit-mode="extension">
+        <xpath expr="//div[@t-if='thread and thread.needactionCounter > 0']" position="replace">
+            <t t-if="thread.type === 'whatsapp'">
+                <div t-if="thread and thread.needactionCounter > 0"
+                     class="o-mail-ChatWindow-counter mx-1 my-0 badge rounded-pill fw-bold o-discuss-badge cust-o-discuss-badge"
+                     t-ref="needactionCounter">
+                    <t t-out="thread.needactionCounter"/>
+                </div>
+            </t>
+            <t t-else="">
+                <div t-if="thread and thread.needactionCounter > 0"
+                     class="o-mail-ChatWindow-counter mx-1 my-0 badge rounded-pill fw-bold o-discuss-badge"
+                     t-ref="needactionCounter">
+                    <t t-out="thread.needactionCounter"/>
+                </div>
+            </t>
+        </xpath>
+    </t>
+    <t t-inherit="mail.Message" t-inherit-mode="extension">
+        <xpath expr="//div[hasclass('o-mail-Message-textContent')]/*[1]" position="before">
+            <t t-if="message.type === 'notification' or message.is_transient or message.trackingValues.length > 0" name="hasTrackingValue">
+                <div>
+                    <t t-if="message.subtype_description">
+                        <p class="mb-0">
+                            <t t-out="messageSearch?.highlight(message.subtype_description) ?? message.subtype_description"/>
+                        </p>
+                    </t>
+                    <t t-if="message.trackingValues.length">
+                        <ul class="mb-0 ps-4">
+                            <t name="trackingValues" t-foreach="message.trackingValues" t-as="trackingValue" t-key="trackingValue.id">
+                                <li class="o-mail-Message-tracking mb-1" role="group">
+                                    <span class="o-mail-Message-trackingOld me-1 px-1 text-muted fw-bold" t-esc="formatTrackingOrNone(trackingValue.fieldType, trackingValue.oldValue)"/>
+                                    <i class="o-mail-Message-trackingSeparator fa fa-long-arrow-right mx-1 text-600"/>
+                                    <span class="o-mail-Message-trackingNew me-1 fw-bold text-info" t-esc="formatTrackingOrNone(trackingValue.fieldType, trackingValue.newValue)"/>
+                                    <span class="o-mail-Message-trackingField ms-1 fst-italic text-muted">(<t t-esc="trackingValue.changedField"/>)</span>
+                                </li>
+                            </t>
+                        </ul>
+                    </t>
+                    <div t-if="message.body" class="o-mail-Message-body text-break mb-0 w-100" t-ref="body">
+                        <t t-out="messageSearch?.highlight(message.body) ?? message.body"/>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('o-mail-Message-avatarContainer')]" position="attributes">
+            <attribute name="t-att-class">{ 'cursor-pointer': hasAuthorClickable() }</attribute>
+            <attribute name="t-att-aria-label">getAuthorText()</attribute>
+            <attribute name="t-on-click">ev => this.onClickAuthor(ev)</attribute>
+        </xpath>
+        <xpath expr="//span[hasclass('o-mail-Message-author')]" position="attributes">
+            <attribute name="t-att-class">{ 'cursor-pointer': hasAuthorClickable() }</attribute>
+            <attribute name="t-att-aria-label">getAuthorText()</attribute>
+            <attribute name="t-on-click">ev => this.onClickAuthor(ev)</attribute>
+        </xpath>
+    </t>
+</templates>

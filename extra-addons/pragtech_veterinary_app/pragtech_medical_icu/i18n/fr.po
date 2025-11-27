@@ -1,0 +1,1222 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_icu
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:15+0000\n"
+"PO-Revision-Date: 2015-09-10 10:15+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_eyes:0
+msgid "1 : Does not Open Eyes"
+msgstr "1 : Does not Open Eyes"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_motor:0
+msgid "1 : Makes no movement"
+msgstr "1 : Makes no movement"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_verbal:0
+msgid "1 : Makes no sounds"
+msgstr "1 : Makes no sounds"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_motor:0
+msgid "2 : Extension to painful stimuli - decerebrate response -"
+msgstr "2 : Extension to painful stimuli - decerebrate response -"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_verbal:0
+msgid "2 : Incomprehensible sounds"
+msgstr "2 : Incomprehensible sounds"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_eyes:0
+msgid "2 : Opens eyes in response to painful stimuli"
+msgstr "2 : Opens eyes in response to painful stimuli"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_motor:0
+msgid "3 : Abnormal flexion to painful stimuli (decorticate response)"
+msgstr "3 : Abnormal flexion to painful stimuli (decorticate response)"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_eyes:0
+msgid "3 : Opens eyes in response to voice"
+msgstr "3 : Opens eyes in response to voice"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_verbal:0
+msgid "3 : Utters inappropriate words"
+msgstr "3 : Utters inappropriate words"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_verbal:0
+msgid "4 : Confused, disoriented"
+msgstr "4 : Confused, disoriented"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_motor:0
+msgid "4 : Flexion / Withdrawal to painful stimuli"
+msgstr "4 : Flexion / Withdrawal to painful stimuli"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_eyes:0
+msgid "4 : Opens eyes spontaneously"
+msgstr "4 : Opens eyes spontaneously"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_verbal:0
+msgid "5 : Oriented, converses normally"
+msgstr "5 : Oriented, converses normally"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_motor:0
+msgid "5 : localizes painful stimuli"
+msgstr "5 : localizes painful stimuli"
+
+#. module: medical_icu
+#: selection:medical.icu.glasgow,glasgow_motor:0
+msgid "6 : Obeys commands"
+msgstr "6 : Obeys commands"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,aado2:0
+msgid "A-a DO2"
+msgstr "A-a DO2"
+
+#. module: medical_icu
+#: model:ir.actions.act_window,name:medical_icu.medical_icu_apache_action
+#: model:ir.ui.menu,name:medical_icu.medical_icu_apache_menu
+msgid "APACHE II Score"
+msgstr "APACHE II Score"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,arf:0
+msgid "ARF"
+msgstr "ARF"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,bowel_sounds:0
+msgid "Absent"
+msgstr "Absent"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,arf:0
+msgid "Acute Renal Failure"
+msgstr "Acute Renal Failure"
+
+#. module: medical_icu
+#: field:medical.inpatient.icu,admitted:0
+msgid "Admitted"
+msgstr "Admitted"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,age:0
+msgid "Age"
+msgstr "Age"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,air_leak:0
+msgid "Air Leak"
+msgstr "Air Leak"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,edema:0
+msgid "Anasarca"
+msgstr "Anasarca"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,anisocoria:0
+msgid "Anisocoria"
+msgstr "Anisocoria"
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_icu_apache2
+msgid "Apache II scoring"
+msgstr "Apache II scoring"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,arterial_access:0
+msgid "Arterial Access"
+msgstr "Arterial Access"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,fluid_aspect:0
+msgid "Aspect"
+msgstr "Aspect"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,chest_expansion:0
+msgid "Asymmetrical"
+msgstr "Asymmetrical"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,pacemaker:0
+msgid "Atrioventricular"
+msgstr "Atrioventricular"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,axis:0
+msgid "Axis"
+msgstr "Axis"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,bacteremia:0
+msgid "Bacteremia"
+msgstr "Bacteremia"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Blood and Skin"
+msgstr "Blood and Skin"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,fluid_aspect:0
+msgid "Bloody"
+msgstr "Bloody"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,bowel_sounds:0
+msgid "Bowel Sounds"
+msgstr "Bowel Sounds"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,pupillary_reactivity:0
+msgid "Brisk"
+msgstr "Brisk"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Cardiovascular"
+msgstr "Cardiovascular"
+
+#. module: medical_icu
+#: view:medical.inpatient.registration:medical_icu.medical_inpatient_registration_view_inherit
+msgid "Care Plan"
+msgstr "Plan de soins"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,cellulitis:0
+msgid "Cellulitis"
+msgstr "Cellulitis"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,venous_access:0
+msgid "Central catheter"
+msgstr "Central catheter"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,icu_patient:0
+msgid "Check this box if this is an Intensive Care Unit rounding."
+msgstr "Check this box if this is an Intensive Care Unit rounding."
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_icu_chest_drainage
+msgid "Chest Drainage Asessment"
+msgstr "Chest Drainage Asessment"
+
+#. module: medical_icu
+#: view:medical.icu.chest_drainage:medical_icu.medical_icu_chest_drainage_form
+#: view:medical.icu.chest_drainage:medical_icu.medical_icu_chest_drainage_tree
+msgid "Chest Drainage Assessment"
+msgstr "Chest Drainage Assessment"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Chest Expansion"
+msgstr "Chest Expansion"
+
+#. module: medical_icu
+#: view:medical.icu.apache2:medical_icu.medical_icu_apache_form
+msgid "Chronic"
+msgstr "Chronic"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,chronic_condition:0
+msgid "Chronic condition"
+msgstr "Chronic condition"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,fluid_aspect:0
+msgid "Chylous"
+msgstr "Chylous"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,pupil_consensual_resp:0
+msgid "Consensual Response"
+msgstr "Consensual Response"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,stools:0
+msgid "Constipation"
+msgstr "Constipation"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,create_uid:0
+#: field:medical.icu.chest_drainage,create_uid:0
+#: field:medical.icu.ecg,create_uid:0
+#: field:medical.icu.glasgow,create_uid:0
+#: field:medical.icu.ventilation,create_uid:0
+#: field:medical.inpatient.icu,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,create_date:0
+#: field:medical.icu.chest_drainage,create_date:0
+#: field:medical.icu.ecg,create_date:0
+#: field:medical.icu.glasgow,create_date:0
+#: field:medical.icu.ventilation,create_date:0
+#: field:medical.inpatient.icu,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,serum_creatinine:0
+msgid "Creatinine"
+msgstr "Creatinine"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,current_mv:0
+msgid "Current"
+msgstr "Current"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,score_date:0
+#: field:medical.icu.ecg,ecg_date:0
+#: field:medical.icu.glasgow,evaluation_date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: medical_icu
+#: help:medical.icu.glasgow,evaluation_date:0
+msgid "Date / Time"
+msgstr "Date / Time"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,score_date:0
+msgid "Date of the score"
+msgstr "Date of the score"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,bowel_sounds:0
+msgid "Decreased"
+msgstr "Decreased"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,respiration_type:0
+msgid "Deep"
+msgstr "Deep"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,st_segment:0
+msgid "Depressed"
+msgstr "Depressed"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,trachea_alignment:0
+msgid "Deviated left"
+msgstr "Deviated left"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,trachea_alignment:0
+msgid "Deviated right"
+msgstr "Deviated right"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,dialysis:0
+msgid "Dialysis"
+msgstr "Dialysis"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,stools:0
+msgid "Diarrhea"
+msgstr "Diarrhea"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Digestive and Abdomen"
+msgstr "Digestive and Abdomen"
+
+#. module: medical_icu
+#: field:medical.inpatient.icu,icu_discharge_date:0
+msgid "Discharge"
+msgstr "Discharge"
+
+#. module: medical_icu
+#: field:medical.inpatient.icu,discharged_from_icu:0
+msgid "Discharged"
+msgstr "Discharged"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,chest_drainages:0
+msgid "Drainages"
+msgstr "Drainages"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,mv_period:0
+#: field:medical.inpatient.icu,icu_stay:0
+msgid "Duration"
+msgstr "Duration"
+
+#. module: medical_icu
+#: help:medical.icu.ecg,pr:0
+msgid "Duration of PR interval in milliseconds"
+msgstr "Duration of PR interval in milliseconds"
+
+#. module: medical_icu
+#: help:medical.icu.ecg,qrs:0
+msgid "Duration of QRS interval in milliseconds"
+msgstr "Duration of QRS interval in milliseconds"
+
+#. module: medical_icu
+#: help:medical.icu.ecg,qt:0
+msgid "Duration of QT interval in milliseconds"
+msgstr "Duration of QT interval in milliseconds"
+
+#. module: medical_icu
+#: model:ir.actions.act_window,name:medical_icu.medical_icu_ecg_action
+#: model:ir.model,name:medical_icu.model_medical_icu_ecg
+#: model:ir.ui.menu,name:medical_icu.medical_icu_ecg_menu
+#: view:medical.icu.apache2:medical_icu.medical_icu_apache_form
+#: view:medical.icu.apache2:medical_icu.medical_icu_apache_tree
+#: view:medical.icu.ecg:medical_icu.medical_icu_ecg_form
+#: view:medical.icu.ecg:medical_icu.medical_icu_ecg_tree
+#: field:medical.patient.rounding,ecg:0
+msgid "ECG"
+msgstr "ECG"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,ecg_strip:0
+msgid "ECG Strip"
+msgstr "ECG Strip"
+
+#. module: medical_icu
+#: selection:medical.icu.ventilation,ventilation:0
+msgid "ETT"
+msgstr "ETT"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,ett_size:0
+msgid "ETT Size"
+msgstr "ETT Size"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,edema:0
+msgid "Edema"
+msgstr "Edema"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,st_segment:0
+msgid "Elevated"
+msgstr "Elevated"
+
+#. module: medical_icu
+#: help:medical.icu.ventilation,mv_end:0
+msgid "End of Mechanical Ventilation"
+msgstr "End of Mechanical Ventilation"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,chest_expansion:0
+msgid "Expansion"
+msgstr "Expansion"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,axis:0
+msgid "Extreme right deviation"
+msgstr "Extreme right deviation"
+
+#. module: medical_icu
+#: field:medical.icu.glasgow,glasgow_eyes:0
+msgid "Eyes"
+msgstr "Eyes"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,fio2:0
+#: field:medical.patient.rounding,fio2:0
+msgid "FiO2"
+msgstr "FiO2"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,mv_start:0
+msgid "From"
+msgstr "From"
+
+#. module: medical_icu
+#: model:ir.actions.act_window,name:medical_icu.medical_icu_glasgow_action
+#: model:ir.ui.menu,name:medical_icu.medical_icu_glasgow_submenu
+#: view:medical.icu.glasgow:medical_icu.medical_icu_glasgow_form
+#: view:medical.icu.glasgow:medical_icu.medical_icu_glasgow_tree
+#: field:medical.patient.rounding,gcs:0
+msgid "GCS"
+msgstr "GCS"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,gcs:0
+msgid "GSC"
+msgstr "GSC"
+
+#. module: medical_icu
+#: field:medical.icu.glasgow,glasgow:0
+msgid "Glasgow"
+msgstr "Glasgow"
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_icu_glasgow
+msgid "Glasgow Coma Scale"
+msgstr "Glasgow Coma Scale"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,heart_rate:0
+msgid "Heart Rate"
+msgstr "Heart Rate"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,vomiting:0
+msgid "Hematemesis"
+msgstr "Hematemesis"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,hematocrit:0
+msgid "Hematocrit"
+msgstr "Hematocrit"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,hospital_admission_type:0
+msgid "Hospital Admission Type"
+msgstr "Hospital Admission Type"
+
+#. module: medical_icu
+#: view:medical.inpatient.registration:medical_icu.medical_inpatient_registration_view_inherit
+#: field:medical.inpatient.registration,icu:0
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+#: field:medical.patient.rounding,icu_patient:0
+msgid "ICU"
+msgstr "ICU"
+
+#. module: medical_icu
+#: field:medical.inpatient.icu,icu_admission_date:0
+msgid "ICU Admission"
+msgstr "ICU Admission"
+
+#. module: medical_icu
+#: help:medical.inpatient.icu,icu_admission_date:0
+msgid "ICU Admission Date"
+msgstr "ICU Admission Date"
+
+#. module: medical_icu
+#: field:medical.inpatient.registration,icu_admissions:0
+msgid "ICU Admissions"
+msgstr "ICU Admissions"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,id:0
+#: field:medical.icu.chest_drainage,id:0
+#: field:medical.icu.ecg,id:0
+#: field:medical.icu.glasgow,id:0
+#: field:medical.icu.ventilation,id:0
+#: field:medical.inpatient.icu,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "II"
+msgstr "II"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "III"
+msgstr "III"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,bowel_sounds:0
+msgid "Increased"
+msgstr "Increased"
+
+#. module: medical_icu
+#: model:ir.ui.menu,name:medical_icu.medical_icu_menu
+msgid "Intensive Care"
+msgstr "Intensive Care"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,respiration_type:0
+msgid "Intercostal"
+msgstr "Intercostal"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,interpretation:0
+msgid "Interpretation"
+msgstr "Interpretation"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,rhythm:0
+msgid "Irregular"
+msgstr "Irregular"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,respiration_type:0
+msgid "Labored"
+msgstr "Labored"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,gcs:0
+msgid "Last Glasgow Coma Scale You can use the GSC calculator from the Patient Evaluation Form."
+msgstr "Last Glasgow Coma Scale You can use the GSC calculator from the Patient Evaluation Form."
+
+#. module: medical_icu
+#: field:medical.icu.apache2,write_uid:0
+#: field:medical.icu.chest_drainage,write_uid:0
+#: field:medical.icu.ecg,write_uid:0
+#: field:medical.icu.glasgow,write_uid:0
+#: field:medical.icu.ventilation,write_uid:0
+#: field:medical.inpatient.icu,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,write_date:0
+#: field:medical.icu.chest_drainage,write_date:0
+#: field:medical.icu.ecg,write_date:0
+#: field:medical.icu.glasgow,write_date:0
+#: field:medical.icu.ventilation,write_date:0
+#: field:medical.inpatient.icu,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,lead:0
+msgid "Lead"
+msgstr "Lead"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,location:0
+msgid "Left Pleura"
+msgstr "Left Pleura"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,axis:0
+msgid "Left deviation"
+msgstr "Left deviation"
+
+#. module: medical_icu
+#: help:medical.icu.glasgow,glasgow:0
+msgid "Level of Consciousness - on Glasgow Coma Scale :  < 9 severe - 9-12 Moderate, > 13 minor"
+msgstr "Level of Consciousness - on Glasgow Coma Scale :  < 9 severe - 9-12 Moderate, > 13 minor"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,lips_lesion:0
+msgid "Lips lesion"
+msgstr "Lips lesion"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,location:0
+msgid "Location"
+msgstr "Location"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,mean_ap:0
+msgid "MAP"
+msgstr "MAP"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,mean_ap:0
+msgid "Mean Arterial Pressure"
+msgstr "Mean Arterial Pressure"
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_icu_ventilation
+#: view:medical.inpatient.icu:medical_icu.medical_inpatient_icu_form
+#: field:medical.inpatient.icu,mv_history:0
+msgid "Mechanical Ventilation History"
+msgstr "Mechanical Ventilation History"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,location:0
+msgid "Mediastinum"
+msgstr "Mediastinum"
+
+#. module: medical_icu
+#: selection:medical.icu.apache2,hospital_admission_type:0
+msgid "Medical or emergency postoperative"
+msgstr "Medical or emergency postoperative"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,stools:0
+msgid "Melena"
+msgstr "Melena"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,trachea_alignment:0
+msgid "Midline"
+msgstr "Midline"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,pupil_dilation:0
+msgid "Miosis"
+msgstr "Miosis"
+
+#. module: medical_icu
+#: field:medical.icu.glasgow,glasgow_motor:0
+msgid "Motor"
+msgstr "Motor"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,pupil_dilation:0
+msgid "Mydriasis"
+msgstr "Mydriasis"
+
+#. module: medical_icu
+#: help:medical.icu.ventilation,ventilation:0
+msgid "NPPV = Non-Invasive Positive Pressure Ventilation, BiPAP-CPAP \n"
+" ETT - Endotracheal Tube"
+msgstr "NPPV = Non-Invasive Positive Pressure Ventilation, BiPAP-CPAP \n"
+" ETT - Endotracheal Tube"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,necrotizing_fasciitis:0
+msgid "Necrotizing fasciitis"
+msgstr "Necrotizing fasciitis"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Neurologic"
+msgstr "Neurologic"
+
+#. module: medical_icu
+#: selection:medical.icu.ventilation,ventilation:0
+msgid "Non-Invasive Positive Pressure"
+msgstr "Non-Invasive Positive Pressure"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,edema:0
+#: selection:medical.patient.rounding,venous_access:0
+#: selection:medical.patient.rounding,vomiting:0
+msgid "None"
+msgstr "None"
+
+#. module: medical_icu
+#: selection:medical.icu.ventilation,ventilation:0
+msgid "None - Maintains Own"
+msgstr "None - Maintains Own"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,pupillary_reactivity:0
+msgid "Nonreactive"
+msgstr "Nonreactive"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,st_segment:0
+#: selection:medical.patient.rounding,bowel_sounds:0
+#: selection:medical.patient.rounding,pupil_dilation:0
+#: selection:medical.patient.rounding,stools:0
+msgid "Normal"
+msgstr "Normal"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,axis:0
+msgid "Normal Axis"
+msgstr "Normal Axis"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,oral_mucosa_lesion:0
+msgid "Oral mucosa lesion"
+msgstr "Oral mucosa lesion"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,chronic_condition:0
+msgid "Organ Failure or immunocompromised patient"
+msgstr "Organ Failure or immunocompromised patient"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,oscillation:0
+msgid "Oscillation"
+msgstr "Oscillation"
+
+#. module: medical_icu
+#: code:addons/medical_icu/medical_icu.py:100
+#: constraint:medical.inpatient.icu:0
+#, python-format
+msgid "Our records indicate that the patient is already admitted at ICU."
+msgstr "Our records indicate that the patient is already admitted at ICU."
+
+#. module: medical_icu
+#: constraint:medical.icu.ventilation:0
+msgid "Our records indicate that the patient is already on Mechanical Ventilation !"
+msgstr "Our records indicate that the patient is already on Mechanical Ventilation !"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,oxygen_mask:0
+msgid "Oxygen Mask"
+msgstr "Oxygen Mask"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,peep:0
+msgid "PEEP"
+msgstr "PEEP"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,pr:0
+msgid "PR"
+msgstr "PR"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,paco2:0
+msgid "PaCO2"
+msgstr "PaCO2"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,pao2:0
+msgid "PaO2"
+msgstr "PaO2"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,pacemaker:0
+msgid "Pacemaker"
+msgstr "Pacemaker"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,paradoxical_expansion:0
+msgid "Paradoxical"
+msgstr "Paradoxical"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,paradoxical_expansion:0
+msgid "Paradoxical Chest Expansion"
+msgstr "Paradoxical Chest Expansion"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,name:0
+msgid "Patient ICU Admission"
+msgstr "Patient ICU Admission"
+
+#. module: medical_icu
+#: model:ir.actions.act_window,name:medical_icu.medical_inpatient_icu_action
+#: model:ir.ui.menu,name:medical_icu.medical_inpatient_icu_menu
+#: view:medical.inpatient.icu:medical_icu.medical_inpatient_icu_form
+#: view:medical.inpatient.icu:medical_icu.medical_inpatient_icu_tree
+msgid "Patient ICU Info"
+msgstr "Patient ICU Info"
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_inpatient_icu
+msgid "Patient ICU Information"
+msgstr "Patient ICU Information"
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_patient_rounding
+msgid "Patient Rounding"
+msgstr "Patient Rounding"
+
+#. module: medical_icu
+#: view:medical.icu.ventilation:medical_icu.medical_inpatient_icu_ventilation_form
+#: view:medical.icu.ventilation:medical_icu.medical_inpatient_icu_ventilation_tree
+msgid "Patient Ventilation History"
+msgstr "Patient Ventilation History"
+
+#. module: medical_icu
+#: model:ir.model,name:medical_icu.model_medical_inpatient_registration
+msgid "Patient admission History"
+msgstr "Historique d'admission du patient"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,age:0
+msgid "Patient age in years"
+msgstr "Patient age in years"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,edema:0
+#: selection:medical.patient.rounding,venous_access:0
+msgid "Peripheral"
+msgstr "Peripheral"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,peritonitis:0
+msgid "Peritonitis signs"
+msgstr "Peritonitis signs"
+
+#. module: medical_icu
+#: view:medical.icu.apache2:medical_icu.medical_icu_apache_form
+msgid "Physiological"
+msgstr "Physiological"
+
+#. module: medical_icu
+#: view:medical.icu.ecg:medical_icu.medical_icu_ecg_form
+msgid "Picture"
+msgstr "Picture"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,serum_potassium:0
+msgid "Potassium"
+msgstr "Potassium"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,peep_pressure:0
+msgid "Pressure"
+msgstr "Pressure"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Procedures"
+msgstr "Procedures"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,swan_ganz:0
+msgid "Pulmonary Artery Catheterization - PAC -"
+msgstr "Pulmonary Artery Catheterization - PAC -"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,pupil_dilation:0
+msgid "Pupil Dilation"
+msgstr "Pupil Dilation"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,pupil_consensual_resp:0
+msgid "Pupillary Consensual Response"
+msgstr "Pupillary Consensual Response"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,pupillary_reactivity:0
+msgid "Pupillary Reactivity"
+msgstr "Pupillary Reactivity"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,pacemaker:0
+msgid "Purkinje"
+msgstr "Purkinje"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,fluid_aspect:0
+msgid "Purulent"
+msgstr "Purulent"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,qrs:0
+msgid "QRS"
+msgstr "QRS"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,qt:0
+msgid "QT"
+msgstr "QT"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,rate:0
+msgid "Rate"
+msgstr "Rate"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,temperature:0
+msgid "Rectal temperature"
+msgstr "Rectal temperature"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,name:0
+#: field:medical.icu.ecg,name:0
+#: field:medical.icu.glasgow,name:0
+#: field:medical.inpatient.icu,name:0
+msgid "Registration Code"
+msgstr "Registration Code"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,rhythm:0
+#: selection:medical.patient.rounding,respiration_type:0
+msgid "Regular"
+msgstr "Regular"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,remarks:0
+#: field:medical.icu.ventilation,remarks:0
+msgid "Remarks"
+msgstr "Remarks"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,respiration_type:0
+msgid "Respiration"
+msgstr "Respiration"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+msgid "Respiratory"
+msgstr "Respiratory"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,respiratory_rate:0
+msgid "Respiratory Rate"
+msgstr "Respiratory Rate"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,rhythm:0
+msgid "Rhythm"
+msgstr "Rhythm"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,location:0
+msgid "Right Pleura"
+msgstr "Right Pleura"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,axis:0
+msgid "Right deviation"
+msgstr "Right deviation"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,name:0
+msgid "Rounding"
+msgstr "Rounding"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,sce:0
+msgid "SCE"
+msgstr "SCE"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,st_segment:0
+msgid "ST Segment"
+msgstr "ST Segment"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,apache_score:0
+msgid "Score"
+msgstr "Score"
+
+#. module: medical_icu
+#: selection:medical.icu.chest_drainage,fluid_aspect:0
+msgid "Serous"
+msgstr "Serous"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,respiration_type:0
+msgid "Shallow"
+msgstr "Shallow"
+
+#. module: medical_icu
+#: help:medical.inpatient.registration,icu:0
+msgid "Shows if patient was admitted to the Intensive Care Unit during the hospitalization period"
+msgstr "Shows if patient was admitted to the Intensive Care Unit during the hospitalization period"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,pacemaker:0
+msgid "Sinus Node"
+msgstr "Sinus Node"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,pupillary_reactivity:0
+msgid "Sluggish"
+msgstr "Sluggish"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,serum_sodium:0
+msgid "Sodium"
+msgstr "Sodium"
+
+#. module: medical_icu
+#: help:medical.icu.ventilation,mv_start:0
+msgid "Start of Mechanical Ventilation"
+msgstr "Start of Mechanical Ventilation"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,stools:0
+msgid "Stools"
+msgstr "Stools"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,sce:0
+msgid "Subcutaneous Emphysema"
+msgstr "Subcutaneous Emphysema"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,suction:0
+msgid "Suction"
+msgstr "Suction"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,ssi:0
+msgid "Surgery Site Infection"
+msgstr "Surgery Site Infection"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,swan_ganz:0
+msgid "Swan Ganz"
+msgstr "Swan Ganz"
+
+#. module: medical_icu
+#: selection:medical.patient.rounding,chest_expansion:0
+msgid "Symmetrical"
+msgstr "Symmetrical"
+
+#. module: medical_icu
+#: field:medical.icu.ecg,twave_inversion:0
+msgid "T wave inversion"
+msgstr "T wave inversion"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,temperature:0
+msgid "Temperature"
+msgstr "Temperature"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,mv_end:0
+msgid "To"
+msgstr "To"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,tracheal_tug:0
+msgid "Tracheal Tug"
+msgstr "Tracheal Tug"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,trachea_alignment:0
+msgid "Tracheal alignment"
+msgstr "Tracheal alignment"
+
+#. module: medical_icu
+#: selection:medical.icu.ventilation,ventilation:0
+msgid "Tracheostomy"
+msgstr "Tracheostomy"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,tracheostomy_size:0
+msgid "Tracheostomy size"
+msgstr "Tracheostomy size"
+
+#. module: medical_icu
+#: field:medical.icu.ventilation,ventilation:0
+msgid "Type"
+msgstr "Type"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "V1"
+msgstr "V1"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "V2"
+msgstr "V2"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "V3"
+msgstr "V3"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "V4"
+msgstr "V4"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "V5"
+msgstr "V5"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "V6"
+msgstr "V6"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,venous_access:0
+msgid "Venous Access"
+msgstr "Venous Access"
+
+#. module: medical_icu
+#: field:medical.icu.glasgow,glasgow_verbal:0
+msgid "Verbal"
+msgstr "Verbal"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,fluid_volume:0
+msgid "Volume"
+msgstr "Volume"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,vomiting:0
+#: selection:medical.patient.rounding,vomiting:0
+msgid "Vomiting"
+msgstr "Vomiting"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,wbc:0
+msgid "WBC"
+msgstr "WBC"
+
+#. module: medical_icu
+#: code:addons/medical_icu/medical_icu.py:99
+#, python-format
+msgid "Warning!"
+msgstr "Warning!"
+
+#. module: medical_icu
+#: help:medical.icu.apache2,wbc:0
+msgid "White blood cells x 1000 - if you want to input 4500 wbc / ml, type in 4.5"
+msgstr "White blood cells x 1000 - if you want to input 4500 wbc / ml, type in 4.5"
+
+#. module: medical_icu
+#: help:medical.inpatient.icu,admitted:0
+msgid "Will be set when the patient is currently admitted at ICU"
+msgstr "Will be set when the patient is currently admitted at ICU"
+
+#. module: medical_icu
+#: field:medical.patient.rounding,wound_dehiscence:0
+msgid "Wound Dehiscence"
+msgstr "Wound Dehiscence"
+
+#. module: medical_icu
+#: view:medical.patient.rounding:medical_icu.medical_rounding_procedure_form_inherit
+#: field:medical.patient.rounding,xray:0
+msgid "Xray"
+msgstr "Xray"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "aVF"
+msgstr "aVF"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "aVL"
+msgstr "aVL"
+
+#. module: medical_icu
+#: selection:medical.icu.ecg,lead:0
+msgid "aVR"
+msgstr "aVR"
+
+#. module: medical_icu
+#: field:medical.icu.chest_drainage,suction_pressure:0
+#: field:medical.patient.rounding,peep_pressure:0
+msgid "cm H2O"
+msgstr "cm H2O"
+
+#. module: medical_icu
+#: selection:medical.icu.apache2,hospital_admission_type:0
+msgid "elective postoperative"
+msgstr "elective postoperative"
+
+#. module: medical_icu
+#: field:medical.icu.apache2,ph:0
+msgid "pH"
+msgstr "pH"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,left_pupil:0
+msgid "size in mm of left pupil"
+msgstr "size in mm of left pupil"
+
+#. module: medical_icu
+#: help:medical.patient.rounding,right_pupil:0
+msgid "size in mm of right pupil"
+msgstr "size in mm of right pupil"
+

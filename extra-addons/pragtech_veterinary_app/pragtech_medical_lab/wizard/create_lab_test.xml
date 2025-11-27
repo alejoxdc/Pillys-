@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_lab_make_test" model="ir.ui.view">
+        <field name="name">Create Lab Test</field>
+        <field name="model">medical.lab.test.create</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Create Lab Tests">
+                <separator colspan="4" string="Do you want to generate the test(s) ?"/>
+                <footer>
+                    <button special="cancel" string="Cancel" icon="gtk-cancel"/>
+                    <button name="create_lab_test" string="Create Lab Test" type="object" icon="gtk-ok"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <act_window id="action_create_lab_test"
+                name="Create Lab Test"
+                res_model="medical.lab.test.create" binding_model="medical.patient.lab.test"
+                view_mode="form" target="new"/>
+</odoo>

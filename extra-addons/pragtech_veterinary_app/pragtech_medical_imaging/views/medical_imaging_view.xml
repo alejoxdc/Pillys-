@@ -1,0 +1,266 @@
+<?xml version="1.0" ?>
+<odoo>
+    <!--Change as per v14-->
+    <menuitem name="Imaging" id="medical_conf_imaging" parent="pragtech_veterinary_app.medical_conf_menu" sequence="3"/>
+    <menuitem name="Imaging" id="medical_imaging_menu" parent="pragtech_veterinary_app.medical_menu" sequence="4"/>
+
+    <record model="ir.ui.view" id="medical_imaging_test_type_form">
+        <field name="name">Imaging Test Type</field>
+        <field name="model">medical.imaging.test.type</field>
+        <field name="arch" type="xml">
+            <form string="Imaging Test Type">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="code"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_imaging_test_type_tree">
+        <field name="name">Imaging Test Type</field>
+        <field name="model">medical.imaging.test.type</field>
+        <field name="arch" type="xml">
+            <tree string="Imaging Test Type">
+                <field name="name"/>
+                <field name="code"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_type">
+        <field name="name">Imaging Test Type</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.type</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test_type" id="menu_medical_imaging_test_type"
+              parent="medical_conf_imaging"/>
+
+
+    <record model="ir.ui.view" id="medical_imaging_test_form">
+        <field name="name">Imaging Test</field>
+        <field name="model">medical.imaging.test</field>
+        <field name="arch" type="xml">
+            <form string="Imaging Test">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="product_id"/>
+                    </group>
+                    <group>
+                        <field name="code"/>
+                        <field name="test_type_id"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_imaging_test_tree">
+        <field name="name">Imaging Test</field>
+        <field name="model">medical.imaging.test</field>
+        <field name="arch" type="xml">
+            <tree string="Imaging Test">
+                <field name="name"/>
+                <field name="code"/>
+                <field name="product_id"/>
+                <field name="test_type_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test">
+        <field name="name">Imaging Test</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test" id="menu_medical_imaging_test" parent="medical_conf_imaging"/>
+
+    <!-- Imaging requests -->
+
+    <record model="ir.ui.view" id="medical_imaging_test_request_form">
+        <field name="name">Imaging Test Requests</field>
+        <field name="model">medical.imaging.test.request</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Test Requests">
+                <header>
+                    <button name="confirm" string="Confirm" type="object" invisible="state != 'draft'"/>
+                    <button name="create_invoice" string="Create Invoice" type="object" invisible="state != 'confirmed'"/>
+                    <button name="done" string="Create Result" type="object" invisible="invoice_id  != True or state == 'done'" />
+                    <button name="cancel" string="Cancel" type="object" invisible="state != 'draft'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="draft,confirmed,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="test_id"/>
+                            <field name="no_invoice"/>
+                            <field name="physician_id"/>
+                            <field name="invoice_id" readonly="1"/>
+                        </group>
+                        <group>
+                            <field name="test_date"/>
+                            <field name="test_price"/>
+                            <field name="patient_id"/>
+                            <field name="urgent"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="comments"/>
+                    </group>
+                    <group>
+                        <group>
+                            <field name="validity_status" readonly="1"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_imaging_test_request_tree">
+        <field name="name">Imaging Test Requests</field>
+        <field name="model">medical.imaging.test.request</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Test Requests">
+                <field name="name"/>
+                <field name="test_date"/>
+                <field name="test_id"/>
+                <field name="patient_id"/>
+                <field name="physician_id"/>
+                <field name="urgent"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_request">
+        <field name="name">All Requests</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.request</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+    <menuitem id="main_menu_medical_imaging_test_request" name="Imaging Test Requests" parent="medical_imaging_menu"/>
+    <menuitem action="action_medical_imaging_test_request" id="menu_medical_imaging_test_request"
+              parent="main_menu_medical_imaging_test_request"/>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_request_draft">
+        <field name="name">Draft Requests</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','draft')]</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test_request_draft" id="menu_action_medical_imaging_test_request_draft"
+              parent="main_menu_medical_imaging_test_request"/>
+
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_request_requested">
+        <field name="name">Confirm Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','confirmed')]</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test_request_requested"
+              id="menu_action_medical_imaging_test_request_requested" parent="main_menu_medical_imaging_test_request"/>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_request_done">
+        <field name="name">Processed Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','done')]</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test_request_done" id="menu_medical_imaging_test_request_done"
+              parent="main_menu_medical_imaging_test_request"/>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_request_cancel">
+        <field name="name">Cancel Request</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.request</field>
+        <field name="view_mode">tree,form</field>
+        <field name="domain">[('state','=','cancel')]</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test_request_cancel" id="menu_action_medical_imaging_test_request_cancel"
+              parent="main_menu_medical_imaging_test_request"/>
+
+
+    <record model="ir.ui.view" id="medical_imaging_test_result_form">
+        <field name="name">Imaging Test Result</field>
+        <field name="model">medical.imaging.test.result</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Test Requests">
+                <group>
+                    <group>
+                        <field name="name"/>
+                        <field name="request_id"/>
+                        <field name="test_id"/>
+                        <field name="physician_id"/>
+                    </group>
+                    <group>
+                        <field name="test_date"/>
+                        <field name="request_date"/>
+                        <field name="patient_id"/>
+                    </group>
+                    <newline/>
+                    <field name="images">
+                        <tree editable="top">
+                            <field name="type"/>
+                            <field name="datas" filename="name" widget="binary" invisible="type  == 'url'"/>
+                            <field name="name" invisible="0"/>
+                            <field name="create_uid"/>
+                            <field name="create_date"/>
+                        </tree>
+                    </field>
+                    <newline/>
+                    <field name="comments" colspan="4"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_imaging_test_result_tree">
+        <field name="name">Imaging Test Requests</field>
+        <field name="model">medical.imaging.test.result</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Test Requests" create="0">
+                <field name="name"/>
+                <field name="test_date"/>
+                <field name="request_id"/>
+                <field name="request_date"/>
+                <field name="test_id"/>
+                <field name="patient_id"/>
+                <field name="physician_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_medical_imaging_test_result">
+        <field name="name">Imaging Test Result</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.imaging.test.result</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_medical_imaging_test_result" id="menu_medical_imaging_test_result"
+              parent="medical_imaging_menu"/>
+
+</odoo>

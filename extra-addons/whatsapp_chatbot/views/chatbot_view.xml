@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="view_chatbot_form" model="ir.ui.view">
+        <field name="name">whatsapp_chatbot.chatbot.form</field>
+        <field name="model">whatsapp_chatbot.chatbot</field>
+        <field name="arch" type="xml">
+            <form string="Chatbot">
+                <sheet>
+                    <!-- vista del formulario para integrar acciones de chatbot -->
+                    <group>
+                        <field name="name" />
+                        <field name="parent_id" domain="[('id', '!=', id)]" invisible="1" />
+                        <field name="bot_action"/>
+                        <field name="next_chatbot_id" domain="[('id', '!=', id)]" invisible="bot_action != 'go_to'"/>
+                        <field name="message_type" invisible="bot_action == 'go_to'"/>
+                        <field name="message_intention" invisible="bot_action == 'go_to'"/>
+                        <field name="message_content" invisible="message_type != 'text' or bot_action == 'go_to'" widget="text_emojis" placeholder="e.g. 'How can I help you?'"/>
+                        <field name="server_action_id" invisible="message_type != 'server_action' or bot_action == 'go_to'" />
+                        <field name="wa_template_id" invisible="message_type != 'template' or bot_action == 'go_to'" />
+                        <field name="message_action" invisible="message_intention == 'info' or bot_action == 'go_to'" />
+                        <!-- <field name="action_model_create"/>
+                        <field name="action_model_update"/>
+                        <field name="partner_type"/>
+                        <field name="partner_field"/>
+                        <field name="res_partner_l10n_latam_identification_type_id"/>
+                        <field name="res_partner_category_id"/> -->
+                        <!-- Agregando el campo is_active como un interruptor -->
+                        <field name="is_active" widget="boolean_toggle" />
+
+                        <field name="run_once" widget="boolean_toggle" />
+                        <field name="button_id" groups="base.group_no_one" />
+                    </group>
+                    <notebook>
+                        <page string="Childs">
+                            <field name="child_ids" />
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_chatbot_tree" model="ir.ui.view">
+        <field name="name">whatsapp_chatbot.chatbot.tree</field>
+        <field name="model">whatsapp_chatbot.chatbot</field>
+        <field name="arch" type="xml">
+            <tree string="Chatbot">
+                <field name="sequence" widget="handle" />
+                <field name="name" />
+                <field name="message_type" />
+                <field name="message_content" />
+                <field name="server_action_id" />
+                <field name="wa_template_id" />
+                <field name="child_ids" widget="many2many_tags" />
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_chatbot" model="ir.actions.act_window">
+        <field name="name">Chatbot</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">whatsapp_chatbot.chatbot</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create a new Chatbot
+            </p>
+            <p>
+                Here you can create and manage your chatbots.
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_chatbot" name="Chatbot" parent="base.menu_administration"
+        action="action_chatbot" />
+</odoo>

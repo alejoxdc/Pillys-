@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="whatsapp_template_view_form_inherit" model="ir.ui.view">
+        <field name="name">whatsapp.template.view.form.inherit</field>
+        <field name="model">whatsapp.template</field>
+        <field name="inherit_id" ref="whatsapp.whatsapp_template_view_form"/>
+        <field name="arch" type="xml">
+            <field name="footer_text" position="after">
+                <field name="create_server_action"/>
+                <field name="utm_campaign_id" invisible="create_server_action != True" />
+            </field>
+        </field>
+    </record>
+</odoo>

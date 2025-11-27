@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<template xml:space="preserve">
+    <t t-name="discuss.DiscussSidebarChannelPatch" t-inherit="mail.DiscussSidebarChannel" t-inherit-mode="extension">
+        <!-- <xpath expr="//button[@class='o-mail-DiscussSidebarChannel o-mail-DiscussSidebar-item btn btn-secondary d-flex align-items-center w-100 px-0 py-2 border-0 rounded-0 text-reset']/div[@class='bg-inherit position-relative d-flex ms-4 flex-shrink-0']" position="before">
+            <t t-if="thread and thread.type == 'whatsapp'"> -->
+                <!-- <t t-if="thread.recently_terminated">
+                    <div class="success-indicator"></div>
+                </t>
+                <t t-else=""> -->
+                <!-- <t t-if="!thread.attention_state">
+                    <div class="danger-indicator"></div>
+                </t>
+                <t t-else="">
+                    <div class="success-indicator"></div>
+                </t> -->
+                <!-- </t> -->
+                <!-- <attribute name="style">
+                border-left: 2mm ridge red !important;
+                </attribute> -->
+                <!-- <div class="contact-info" style="padding: 10px; background-color: #f8f9fa; border-radius: 5px;">
+                    <a t-attf-href="/web#id={{thread.whatsapp_partner_id}}&amp;model=res.partner" style="text-decoration: none; color: #28a745">
+                        <i class="fa fa-user" style="margin-right: 5px;"></i>Ir al contacto
+                    </a>
+                </div> -->
+            <!-- </t>
+        </xpath> -->
+        <!-- TODO: - Difference between incoming and outgoing message
+                   - Files description -->
+        <xpath expr="//button[@class='o-mail-DiscussSidebarChannel o-mail-DiscussSidebar-item btn btn-secondary d-flex align-items-center w-100 px-0 py-2 border-0 rounded-0 text-reset']" position="after">
+            <t t-if="thread.type === 'whatsapp'">
+                <div class="contact-info" style="margin-left: 54px; margin-top: -18px">
+                    <span class="ms-3 me-2 text-truncate">
+                        <t t-esc="thread.last_message_trucated"/>
+                    </span>
+                    <span class="fa fa-check" style="margin-right: 5px;"/>
+                </div>
+                <t t-if="thread.partner_category_id.length">
+                    <div name="tag_ids" class="o_field_widget o_field_many2many_tags">
+                        <div class="d-flex flex-wrap gap-1">
+                            <t t-foreach="thread.partner_category_id" t-as="cat" t-key="cat.id">
+                                <span t-attf-class="o_tag position-relative d-inline-flex align-items-center user-select-none mw-100 o_badge badge rounded-pill lh-1 o_tag_color_{{cat.color}}" tabindex="-1" t-attf-data-color="{{cat.color}}" t-attf-title="{{cat.name}}">
+                                    <div class="o_tag_badge_text text-truncate">
+                                        <t t-esc="cat.name"/>
+                                    </div>
+                                </span>
+                            </t>
+                        </div>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+    </t>
+    <t t-name="discuss.DiscussSidebarCategoryPatch" t-inherit="mail.DiscussSidebarCategory" t-inherit-mode="extension">
+        <xpath expr="//t[@t-foreach='filteredThreads(category)']" position="replace">
+            <!-- <t t-log="category.name"/> -->
+            <t t-if="category.name == 'WhatsApp'">
+                <!-- Zone 1: Threads with attention_state 'high' -->
+                <div class="zone-attention-container">
+                    <div t-attf-class="zone-attention d-flex align-items-baseline mx-1 {{ hover_class }}">
+                        <span class="btn-sm p-0 text-uppercase fw-bolder">Atendiendo</span>
+                    </div>
+                    <div class="zone-attention-chats">
+                        <t t-foreach="filteredThreads(category).filter(thread => thread.attention_state)" t-as="thread" t-key="thread.localId">
+                            <t t-call="mail.DiscussSidebarChannel">
+                                <t t-set="thread" t-value="thread"/>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+                <!-- Zone 2: Threads with attention_state 'low' -->
+                <div class="zone-attention-container">
+                    <div t-attf-class="zone-attention d-flex align-items-baseline mx-1 {{ hover_class }}">
+                        <span class="btn-sm p-0 text-uppercase fw-bolder">Sin Atender</span>
+                    </div>
+                    <div class="zone-no-attention-chats">
+                        <t t-foreach="filteredThreads(category).filter(thread => !thread.attention_state)" t-as="thread" t-key="thread.localId">
+                            <t t-call="mail.DiscussSidebarChannel">
+                                <t t-set="thread" t-value="thread"/>
+                            </t>
+                        </t>
+                    </div>
+                </div>
+            </t>
+            <t t-else="">
+                <t t-foreach="filteredThreads(category)" t-as="thread" t-key="thread.localId" t-call="mail.DiscussSidebarChannel">
+                    <t t-set="thread" t-value="thread"/>
+                </t>
+            </t>
+        </xpath>
+
+    </t>
+</template>

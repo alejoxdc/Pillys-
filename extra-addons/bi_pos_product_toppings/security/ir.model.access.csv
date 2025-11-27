@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+bi_pos_product_toppings.access_topping_groups,access_topping_groups,bi_pos_product_toppings.model_topping_groups,point_of_sale.group_pos_user,1,1,1,1
+bi_pos_product_toppings.access_product_topping_add_wizard,access_product_topping_add_wizard,bi_pos_product_toppings.model_product_topping_add_wizard,point_of_sale.group_pos_user,1,1,1,1

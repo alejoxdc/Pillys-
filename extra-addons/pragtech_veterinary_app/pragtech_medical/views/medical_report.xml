@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="report_medical" model="ir.actions.report">
+        <field name="name">Appointments Recipts</field>
+        <field name="model">medical.appointment</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.report_appointments</field>
+        <field name="report_file">pragtech_veterinary_app.report_appointments</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_appointment"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_patient_medical" model="ir.actions.report">
+        <field name="name">Medication History</field>
+        <field name="model">medical.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.patient_medications</field>
+        <field name="report_file">pragtech_veterinary_app.patient_medications</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_patient_vaccination" model="ir.actions.report">
+        <field name="name">Vaccination History</field>
+        <field name="model">medical.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.patient_vaccinations</field>
+        <field name="report_file">pragtech_veterinary_app.patient_vaccinations</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_patient_disease" model="ir.actions.report">
+        <field name="name">Diseases Report</field>
+        <field name="model">medical.patient</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.patient_diseases</field>
+        <field name="report_file">pragtech_veterinary_app.patient_diseases</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_patient"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="report_prescription" model="ir.actions.report">
+        <field name="name">Prescription</field>
+        <field name="model">medical.prescription.order</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">pragtech_veterinary_app.report_prescription_main</field>
+        <field name="report_file">pragtech_veterinary_app.report_prescription_main</field>
+        <field name="binding_model_id" ref="pragtech_veterinary_app.model_medical_prescription_order"/>
+        <field name="binding_type">report</field>
+    </record>
+
+</odoo>

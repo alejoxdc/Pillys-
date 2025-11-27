@@ -1,0 +1,651 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_inpatient
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:16+0000\n"
+"PO-Revision-Date: 2015-09-10 10:16+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication,is_active:0
+msgid "Active"
+msgstr "Active"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication,admin_times:0
+msgid "Admin times"
+msgstr "Admin times"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Administrative data"
+msgstr "Données administratives"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,admission_type:0
+msgid "Admission type"
+msgstr "Type d'admission"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+msgid "Admnistration"
+msgstr "Admnistration"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+#: field:medical.inpatient.medication,adverse_reaction:0
+msgid "Adverse Reactions / Notes"
+msgstr "Adverse Reactions / Notes"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.medication.admin.time,dose:0
+#: help:medical.inpatient.medication.log,dose:0
+msgid "Amount of medication (eg, 250 mg) per dose"
+msgstr "Amount of medication (eg, 250 mg) per dose"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,attending_physician:0
+msgid "Attending Physician"
+msgstr "Médecin traitant"
+
+#. module: medical_inpatient
+#: model:ir.actions.act_window,name:medical_inpatient.action_bed_transfer_init
+#: view:medical.bed.transfer.wizard:medical_inpatient.view_bed_transfer_init
+msgid "Bed Transfer"
+msgstr "Bed Transfer"
+
+#. module: medical_inpatient
+#: view:bed.transfer:medical_inpatient.bed_transfer_tree
+#: view:bed.transfer:medical_inpatient.bed_transfer_view
+msgid "Bed Transfer History"
+msgstr "Bed Transfer History"
+
+#. module: medical_inpatient
+#: field:medical.diet.belief,name:0
+#: field:medical.inpatient.registration,diet_belief:0
+msgid "Belief"
+msgstr "Belief"
+
+#. module: medical_inpatient
+#: code:addons/medical_inpatient/wizard/bed_transfer_wizard.py:47
+#, python-format
+msgid "Can not transfer bed if record is not in state of confirmed or hospitalized."
+msgstr "Can not transfer bed if record is not in state of confirmed or hospitalized."
+
+#. module: medical_inpatient
+#: view:medical.bed.transfer.wizard:medical_inpatient.view_bed_transfer_init
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Cancel Registration"
+msgstr "Annuler inscription"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Care Plan"
+msgstr "Plan de soins"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.medication,is_active:0
+msgid "Check this option if the patient is currently taking the medication"
+msgstr "Check this option if the patient is currently taking the medication"
+
+#. module: medical_inpatient
+#: field:medical.diet.belief,code:0
+#: field:medical.diet.therapeutic,code:0
+msgid "Code"
+msgstr "Code"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Confirm Registration"
+msgstr "Confirmer l'inscription"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication,course_completed:0
+msgid "Course Completed"
+msgstr "Course Completed"
+
+#. module: medical_inpatient
+#: model:ir.model,name:medical_inpatient.model_medical_bed_transfer_wizard
+msgid "Create Bed Transfer Init"
+msgstr "Create Bed Transfer Init"
+
+#. module: medical_inpatient
+#: field:bed.transfer,create_uid:0
+#: field:medical.bed.transfer.wizard,create_uid:0
+#: field:medical.diet.belief,create_uid:0
+#: field:medical.diet.therapeutic,create_uid:0
+#: field:medical.inpatient.diet,create_uid:0
+#: field:medical.inpatient.medication,create_uid:0
+#: field:medical.inpatient.medication.admin.time,create_uid:0
+#: field:medical.inpatient.medication.log,create_uid:0
+#: field:medical.inpatient.registration,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_inpatient
+#: field:bed.transfer,create_date:0
+#: field:medical.bed.transfer.wizard,create_date:0
+#: field:medical.diet.belief,create_date:0
+#: field:medical.diet.therapeutic,create_date:0
+#: field:medical.inpatient.diet,create_date:0
+#: field:medical.inpatient.medication,create_date:0
+#: field:medical.inpatient.medication.admin.time,create_date:0
+#: field:medical.inpatient.medication.log,create_date:0
+#: field:medical.inpatient.registration,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_inpatient
+#: field:bed.transfer,transfer_date:0
+#: field:medical.inpatient.medication.admin.time,admin_time:0
+#: field:medical.inpatient.medication.log,admin_time:0
+msgid "Date"
+msgstr "Date"
+
+#. module: medical_inpatient
+#: field:medical.diet.belief,description:0
+#: field:medical.diet.therapeutic,description:0
+msgid "Description"
+msgstr "Description"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.diet,diet:0
+msgid "Diet"
+msgstr "Diet"
+
+#. module: medical_inpatient
+#: field:medical.diet.therapeutic,name:0
+msgid "Diet type"
+msgstr "Diet type"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Discharge Patient"
+msgstr "Sortie du patient"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,discharge_plan:0
+msgid "Discharge Plan"
+msgstr "Plan de sortie"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication,discontinued:0
+msgid "Discontinued"
+msgstr "Discontinued"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+msgid "Dosage"
+msgstr "Dosage"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication.admin.time,dose:0
+#: field:medical.inpatient.medication.log,dose:0
+msgid "Dose"
+msgstr "Dose"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,admission_type:0
+msgid "Elective"
+msgstr "élective"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,admission_type:0
+msgid "Emergency"
+msgstr "Urgences"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.registration,diet_belief:0
+msgid "Enter the patient belief or religion to choose the proper diet"
+msgstr "Enter the patient belief or religion to choose the proper diet"
+
+#. module: medical_inpatient
+#: help:medical.appointment,inpatient_registration_code:0
+msgid "Enter the patient hospitalization code"
+msgstr "Entrez le code d'hospitalisation du patient"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,discharge_date:0
+msgid "Expected Discharge date"
+msgstr "Expected Discharge date"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+#: field:medical.inpatient.registration,info:0
+msgid "Extra Info"
+msgstr "Information supplémentaires"
+
+#. module: medical_inpatient
+#: field:bed.transfer,bed_from:0
+msgid "From"
+msgstr "From"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+msgid "General Info"
+msgstr "General Info"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication.admin.time,health_professional:0
+#: field:medical.inpatient.medication.log,health_professional:0
+msgid "Health Professional"
+msgstr "Health Professional"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,bed:0
+msgid "Hospital Bed"
+msgstr "Lit d'hopital"
+
+#. module: medical_inpatient
+#: sql_constraint:medical.inpatient.registration:0
+msgid "Hospitalization Date Should be lesser than the Discharge Date!"
+msgstr "Hospitalization Date Should be lesser than the Discharge Date!"
+
+#. module: medical_inpatient
+#: field:medical.patient,patient_status:0
+msgid "Hospitalization Status"
+msgstr "Statut d'hospitalisation"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,hospitalization_date:0
+msgid "Hospitalization date"
+msgstr "Date de l'hospitalisation"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.view_medical_inpatient
+msgid "Hospitalizations"
+msgstr "Hospitalisations"
+
+#. module: medical_inpatient
+#: field:bed.transfer,id:0
+#: field:medical.bed.transfer.wizard,id:0
+#: field:medical.diet.belief,id:0
+#: field:medical.diet.therapeutic,id:0
+#: field:medical.inpatient.diet,id:0
+#: field:medical.inpatient.medication,id:0
+#: field:medical.inpatient.medication.admin.time,id:0
+#: field:medical.inpatient.medication.log,id:0
+#: field:medical.inpatient.registration,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_inpatient
+#: model:ir.ui.menu,name:medical_inpatient.medical_inpatient_menu
+msgid "Inpatient Administration"
+msgstr "Administration des patients hospitalisés"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.diet:medical_inpatient.medical_inpatient_diet_tree
+#: view:medical.inpatient.diet:medical_inpatient.medical_inpatient_diet_view
+msgid "Inpatient Diet"
+msgstr "Inpatient Diet"
+
+#. module: medical_inpatient
+#: model:ir.model,name:medical_inpatient.model_medical_inpatient_medication
+msgid "Inpatient Medication"
+msgstr "Inpatient Medication"
+
+#. module: medical_inpatient
+#: model:ir.model,name:medical_inpatient.model_medical_inpatient_medication_admin_time
+msgid "Inpatient Medication Admin Times"
+msgstr "Inpatient Medication Admin Times"
+
+#. module: medical_inpatient
+#: model:ir.model,name:medical_inpatient.model_medical_inpatient_medication_log
+msgid "Inpatient Medication Log History"
+msgstr "Inpatient Medication Log History"
+
+#. module: medical_inpatient
+#: field:medical.appointment,inpatient_registration_code:0
+msgid "Inpatient Registration"
+msgstr "Enregistrement des patients hospitalisés"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_tree
+msgid "Inpatient Registration Info"
+msgstr "Information d'inscription des patients hospitalisés"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Inpatient Registration Information"
+msgstr "Information d'enregistrement du patient"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,diet_vegetarian:0
+msgid "Lacto vegetarian"
+msgstr "Lacto vegetarian"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,diet_vegetarian:0
+msgid "Lacto-ovo vegetarian"
+msgstr "Lacto-ovo vegetarian"
+
+#. module: medical_inpatient
+#: field:bed.transfer,write_uid:0
+#: field:medical.bed.transfer.wizard,write_uid:0
+#: field:medical.diet.belief,write_uid:0
+#: field:medical.diet.therapeutic,write_uid:0
+#: field:medical.inpatient.diet,write_uid:0
+#: field:medical.inpatient.medication,write_uid:0
+#: field:medical.inpatient.medication.admin.time,write_uid:0
+#: field:medical.inpatient.medication.log,write_uid:0
+#: field:medical.inpatient.registration,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_inpatient
+#: field:bed.transfer,write_date:0
+#: field:medical.bed.transfer.wizard,write_date:0
+#: field:medical.diet.belief,write_date:0
+#: field:medical.diet.therapeutic,write_date:0
+#: field:medical.inpatient.diet,write_date:0
+#: field:medical.inpatient.medication,write_date:0
+#: field:medical.inpatient.medication.admin.time,write_date:0
+#: field:medical.inpatient.medication.log,write_date:0
+#: field:medical.inpatient.registration,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+#: field:medical.inpatient.medication,log_history:0
+msgid "Log History"
+msgstr "Log History"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,admission_type:0
+msgid "Maternity"
+msgstr "Maternité"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_tree
+#: view:medical.inpatient.medication:medical_inpatient.medical_inpatient_medication_view
+#: field:medical.inpatient.medication.admin.time,name:0
+#: view:medical.inpatient.medication.log:medical_inpatient.medical_inpatient_medication_log_tree
+#: view:medical.inpatient.medication.log:medical_inpatient.medical_inpatient_medication_log_view
+#: field:medical.inpatient.medication.log,name:0
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Medication"
+msgstr "Medication"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.medication.admin.time:medical_inpatient.medical_inpatient_medication_admin_time_tree
+#: view:medical.inpatient.medication.admin.time:medical_inpatient.medical_inpatient_medication_admin_time_view
+msgid "Medication Admin Times"
+msgstr "Medication Admin Times"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,medications:0
+msgid "Medications"
+msgstr "Medications"
+
+#. module: medical_inpatient
+#: field:medical.bed.transfer.wizard,newbed:0
+msgid "New Bed"
+msgstr "New Bed"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,diet_vegetarian:0
+msgid "None"
+msgstr "None"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,nursing_plan:0
+msgid "Nursing Plan"
+msgstr "Plan de soins infirmiers"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Nutrition"
+msgstr "Nutrition"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,nutrition_notes:0
+msgid "Nutrition notes / directions"
+msgstr "Nutrition notes / directions"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,operating_physician:0
+msgid "Operating Physician"
+msgstr "Chirurgien effectuant l'opération"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,patient:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.medical_inpatient_registration_view
+msgid "Patient Admission"
+msgstr "Admission des patients"
+
+#. module: medical_inpatient
+#: model:ir.actions.act_window,name:medical_inpatient.medical_action_form_inpatient
+#: model:ir.ui.menu,name:medical_inpatient.medical_conf_inpatient_add
+msgid "Patient Hospitalization Administration"
+msgstr "Administration d'hospitalisation des patients"
+
+#. module: medical_inpatient
+#: model:ir.model,name:medical_inpatient.model_medical_inpatient_registration
+msgid "Patient admission History"
+msgstr "Historique d'admission du patient"
+
+#. module: medical_inpatient
+#: model:ir.model,name:medical_inpatient.model_medical_patient
+msgid "Patient related information"
+msgstr "Renseignements sur le patient"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,diet_vegetarian:0
+msgid "Pescetarian"
+msgstr "Pescetarian"
+
+#. module: medical_inpatient
+#: view:medical.bed.transfer.wizard:medical_inpatient.view_bed_transfer_init
+msgid "Plz choose the new bed to allocate"
+msgstr "Plz choose the new bed to allocate"
+
+#. module: medical_inpatient
+#: field:bed.transfer,reason:0
+#: field:medical.bed.transfer.wizard,reason:0
+msgid "Reason"
+msgstr "Reason"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,admission_reason:0
+#: help:medical.inpatient.registration,admission_reason:0
+msgid "Reason for Admission"
+msgstr "Raison de l'admission"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication,discontinued_reason:0
+msgid "Reason for discontinuation"
+msgstr "Reason for discontinuation"
+
+#. module: medical_inpatient
+#: field:bed.transfer,name:0
+#: field:medical.inpatient.diet,name:0
+#: field:medical.inpatient.medication,name:0
+#: field:medical.inpatient.registration,name:0
+msgid "Registration Code"
+msgstr "Code d'enregistrement"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication.admin.time,remarks:0
+#: field:medical.inpatient.medication.log,remarks:0
+msgid "Remarks"
+msgstr "Remarks"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.diet,remarks:0
+msgid "Remarks / Directions"
+msgstr "Remarks / Directions"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,admission_type:0
+msgid "Routine"
+msgstr "Routine"
+
+#. module: medical_inpatient
+#: view:medical.inpatient.registration:medical_inpatient.view_medical_inpatient_registration_filter
+msgid "Search Hospitalizations"
+msgstr "Recherche d'hospitalisations"
+
+#. module: medical_inpatient
+#: code:addons/medical_inpatient/wizard/bed_transfer_wizard.py:64
+#, python-format
+msgid "Selected new bed is not Free."
+msgstr "Selected new bed is not Free."
+
+#. module: medical_inpatient
+#: help:medical.inpatient.medication,discontinued_reason:0
+msgid "Short description for discontinuing the treatment"
+msgstr "Short description for discontinuing the treatment"
+
+#. module: medical_inpatient
+#: help:medical.patient,patient_status:0
+msgid "Shows whether the patient is hospitalized"
+msgstr "Indique si le patient est hospitalisé"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.medication,adverse_reaction:0
+msgid "Specific side effects or adverse reactions that the patient experienced"
+msgstr "Specific side effects or adverse reactions that the patient experienced"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,state:0
+msgid "Status"
+msgstr "Bilan"
+
+#. module: medical_inpatient
+#: sql_constraint:medical.diet.belief:0
+msgid "The Diet code already exists"
+msgstr "The Diet code already exists"
+
+#. module: medical_inpatient
+#: sql_constraint:medical.diet.therapeutic:0
+msgid "The Diet therapeutic code already exists"
+msgstr "The Diet therapeutic code already exists"
+
+#. module: medical_inpatient
+#: sql_constraint:medical.inpatient.registration:0
+msgid "The Registration code already exists"
+msgstr "The Registration code already exists"
+
+#. module: medical_inpatient
+#: view:medical.diet.therapeutic:medical_inpatient.medical_diet_therapeutic_tree
+#: view:medical.diet.therapeutic:medical_inpatient.medical_diet_therapeutic_view
+msgid "Therapeutic Diet"
+msgstr "Therapeutic Diet"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,therapeutic_diets:0
+msgid "Therapeutic Diets"
+msgstr "Therapeutic Diets"
+
+#. module: medical_inpatient
+#: field:bed.transfer,bed_to:0
+msgid "To"
+msgstr "To"
+
+#. module: medical_inpatient
+#: view:medical.bed.transfer.wizard:medical_inpatient.view_bed_transfer_init
+msgid "Transfer"
+msgstr "Transfer"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,bed_transfers:0
+msgid "Transfer History"
+msgstr "Transfer History"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.medication.admin.time,dose_unit:0
+#: help:medical.inpatient.medication.log,dose_unit:0
+msgid "Unit of measure for the medication to be taken"
+msgstr "Unit of measure for the medication to be taken"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,admission_type:0
+msgid "Urgent"
+msgstr "Urgent"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,diet_vegetarian:0
+msgid "Vegan"
+msgstr "Vegan"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.registration,diet_vegetarian:0
+#: selection:medical.inpatient.registration,diet_vegetarian:0
+msgid "Vegetarian"
+msgstr "Vegetarian"
+
+#. module: medical_inpatient
+#: code:addons/medical_inpatient/wizard/bed_transfer_wizard.py:44
+#: code:addons/medical_inpatient/wizard/bed_transfer_wizard.py:47
+#: code:addons/medical_inpatient/wizard/bed_transfer_wizard.py:64
+#, python-format
+msgid "Warning !"
+msgstr "Warning !"
+
+#. module: medical_inpatient
+#: code:addons/medical_inpatient/wizard/bed_transfer_wizard.py:44
+#, python-format
+msgid "You have chosen more than 1 records. Please choose only one"
+msgstr "You have chosen more than 1 records. Please choose only one"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,state:0
+msgid "cancelled"
+msgstr "Annulé"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,state:0
+msgid "confirmed"
+msgstr "confirmé"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication.admin.time,dose_unit:0
+#: field:medical.inpatient.medication.log,dose_unit:0
+msgid "dose unit"
+msgstr "dose unit"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,state:0
+msgid "free"
+msgstr "libre"
+
+#. module: medical_inpatient
+#: selection:medical.inpatient.registration,state:0
+msgid "hospitalized"
+msgstr "hospitalisés"
+
+#. module: medical_inpatient
+#: field:medical.inpatient.medication,medication_id:0
+msgid "medication_id"
+msgstr "medication_id"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.diet,remarks:0
+msgid "specific remarks for this diet / patient"
+msgstr "specific remarks for this diet / patient"
+
+#. module: medical_inpatient
+#: help:medical.inpatient.medication.admin.time,remarks:0
+#: help:medical.inpatient.medication.log,remarks:0
+msgid "specific remarks for this dose"
+msgstr "specific remarks for this dose"
+

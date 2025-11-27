@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_whatsapp_quick_response_list" model="ir.ui.view">
+        <field name="name">whatsapp.quick.response.list</field>
+        <field name="model">whatsapp.quick.response</field>
+        <field name="arch" type="xml">
+            <tree string="WhatsApp Quick Responses">
+                <field name="name"/>
+                <field name="type"/>
+                <field name="text_content"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="view_whatsapp_quick_response_form" model="ir.ui.view">
+        <field name="name">whatsapp.quick.response.form</field>
+        <field name="model">whatsapp.quick.response</field>
+        <field name="arch" type="xml">
+            <form string="WhatsApp Quick Response">
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                        <field name="type"/>
+                        <field name="text_content"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="action_whatsapp_quick_response" model="ir.actions.act_window">
+        <field name="name">WhatsApp Quick Responses</field>
+        <field name="res_model">whatsapp.quick.response</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first WhatsApp Quick Response
+            </p>
+        </field>
+    </record>
+
+    <menuitem id="menu_whatsapp_quick_response" name="Quick Responses" parent="whatsapp.whatsapp_configuration_menu" action="action_whatsapp_quick_response" />
+</odoo>

@@ -1,0 +1,315 @@
+<?xml version="1.0" ?>
+<odoo>
+
+    <menuitem name="Pediatrics" id="medical_pediatrics_menu" parent="pragtech_veterinary_app.medical_menu"
+              sequence="4"/>
+
+    <record id="view_medical_newborn_filter" model="ir.ui.view">
+        <field name="name">medical.newborn.select</field>
+        <field name="model">medical.newborn</field>
+        <field name="type">search</field>
+        <field name="arch" type="xml">
+            <search string="Search Newborn">
+                <group expand="1" string="Group By...">
+                    <filter name="Date" string="Date" icon="terp-go-month" domain="[]"
+                            context="{'group_by':'birth_date'}"/>
+                </group>
+            </search>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_newborn_form">
+        <field name="name">medical.newborn.form</field>
+        <field name="model">medical.newborn</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Newborn Info">
+                <header>
+                </header>
+                <sheet string="Basic Info">
+                    <group col="3">
+                        <group>
+                            <field name="name"/>
+                            <field name="mother" domain="[('sex', '=', 'f')]"/>
+                            <field name="birth_date"/>
+                            <field name="length"/>
+                            <field name="responsible"/>
+                        </group>
+                        <group>
+                            <field name="newborn_name"/>
+                            <field name="sex"/>
+                            <field name="dismissed"/>
+                            <field name="weight"/>
+                            <field name="cephalic_perimeter" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="photo" widget="image"/>
+                        </group>
+                    </group>
+                    <notebook colspan="4">
+                        <page string="Findings and Tests" invisible="1">
+                            <group string="Neonatal Signs and Symptoms" colspan="8" col="8">
+                                <field name="meconium"/>
+                                <field name="neonatal_ortolani"/>
+                                <field name="neonatal_barlow"/>
+                                <field name="neonatal_hernia"/>
+                                <field name="neonatal_erbs_palsy"/>
+                                <field name="neonatal_hematoma"/>
+                                <field name="neonatal_talipes_equinovarus"/>
+                                <field name="neonatal_palmar_crease"/>
+                                <field name="neonatal_polydactyly"/>
+                                <field name="neonatal_syndactyly"/>
+                                <field name="neonatal_ambiguous_genitalia" invisible="1"/>
+                            </group>
+                            <newline/>
+                            <group string="Neonatal Reflex Check" colspan="8" col="8">
+                                <field name="neonatal_moro_reflex"/>
+                                <field name="neonatal_grasp_reflex"/>
+                                <field name="neonatal_stepping_reflex"/>
+                                <field name="neonatal_babinski_reflex"/>
+                                <field name="neonatal_blink_reflex"/>
+                                <field name="neonatal_sucking_reflex"/>
+                                <field name="neonatal_swimming_reflex"/>
+                                <field name="neonatal_tonic_neck_reflex"/>
+                            </group>
+                            <newline/>
+                            <field name="congenital_diseases"/>
+                            <field name="medication_ids"/>
+                            <newline/>
+                            <group colspan="6" col="6" string="Tests">
+                                <field name="test_vdrl"/>
+                                <field name="test_toxo"/>
+                                <field name="test_chagas"/>
+                                <field name="test_billirubin"/>
+                                <field name="test_audition"/>
+                                <field name="test_metabolic"/>
+                            </group>
+                        </page>
+                        <page string="Other">
+                            <group string="Deceased">
+                                <group>
+                                    <field name="bd"/>
+                                    <field name="died_at_the_hospital"/>
+                                    <field name="tod"/>
+                                </group>
+                                <group>
+                                    <field name="died_at_delivery"/>
+                                    <field name="died_being_transferred"/>
+                                    <field name="cod"/>
+                                </group>
+                            </group>
+                            <field name="apgar_scores" colspan="4" nolabel="1"/>
+                            <group col="3" id="group_newborn_reanimation">
+                                <group>
+                                    <field name="reanimation_stimulation"/>
+                                    <field name="reanimation_mask"/>
+                                </group>
+                                <group>
+                                    <field name="reanimation_aspiration"/>
+                                    <field name="reanimation_oxygen"/>
+                                </group>
+                                <group>
+                                    <field name="reanimation_intubation"/>
+                                </group>
+                            </group>
+                            <group string="Notes" colspan="4">
+                                <field colspan="4" name="notes" nolabel="1"/>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_newborn_tree">
+        <field name="name">medical.newborn.tree</field>
+        <field name="model">medical.newborn</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Newborn Info">
+                <field name="name"/>
+                <field name="newborn_name"/>
+                <field name="mother"/>
+                <field name="birth_date"/>
+                <field name="sex"/>
+                <field name="length"/>
+                <field name="weight"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_newborn_action">
+        <field name="name">Newborn Info</field>
+        <field name="res_model">medical.newborn</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Newborn" id="medical_newborn_menu"
+              action="medical_newborn_action" parent="medical_pediatrics_menu"/>
+
+    <!-- Neonatal APGAR Score -->
+
+    <record model="ir.ui.view" id="medical_neonatal_apgar_form">
+        <field name="name">medical.neonatal.apgar.form</field>
+        <field name="model">medical.neonatal.apgar</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="APGAR Score">
+                <group>
+                    <group>
+                        <field name="apgar_minute"/>
+                        <field name="apgar_appearance"/>
+                        <field name="apgar_grimace"/>
+                        <field name="apgar_respiration"/>
+                    </group>
+                    <group>
+                        <field name="apgar_score"/>
+                        <field name="apgar_pulse"/>
+                        <field name="apgar_activity"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_neonatal_apgar_tree">
+        <field name="name">medical.neonatal.apgar.tree</field>
+        <field name="model">medical.neonatal.apgar</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="APGAR Score">
+                <field name="apgar_minute"/>
+                <field name="apgar_score"/>
+                <field name="apgar_appearance"/>
+                <field name="apgar_pulse"/>
+                <field name="apgar_grimace"/>
+                <field name="apgar_activity"/>
+                <field name="apgar_respiration"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Pediatric Symptoms Evaluation -->
+
+    <record model="ir.ui.view" id="medical_patient_psc_form">
+        <field name="name">medical.patient.psc.form</field>
+        <field name="model">medical.patient.psc</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Pediatric Symptoms Checklist">
+                <sheet string="Basic Info">
+                    <group colspan="4" col="4">
+                        <field name="patient"/>
+                        <field name="evaluation_start"/>
+                        <field name="evaluation_date"/>
+                        <field name="psc_total"/>
+                    </group>
+                    <group colspan="4" col="4">
+                        <field name="psc_aches_pains"/>
+                        <field name="psc_spend_time_alone"/>
+                        <field name="psc_tires_easily"/>
+                        <field name="psc_fidgety"/>
+                        <field name="psc_trouble_with_teacher"/>
+                        <field name="psc_less_interest_in_school"/>
+                        <field name="psc_acts_as_driven_by_motor"/>
+                        <field name="psc_daydreams_too_much"/>
+                        <field name="psc_distracted_easily"/>
+                        <field name="psc_afraid_of_new_situations"/>
+                        <field name="psc_sad_unhappy"/>
+                        <field name="psc_irritable_angry"/>
+                        <field name="psc_feels_hopeless"/>
+                        <field name="psc_trouble_concentrating"/>
+                        <field name="psc_less_interested_in_friends"/>
+                        <field name="psc_fights_with_others"/>
+                        <field name="psc_absent_from_school"/>
+                        <field name="psc_school_grades_dropping"/>
+                        <field name="psc_down_on_self"/>
+                        <field name="psc_visit_doctor_finds_ok"/>
+                        <field name="psc_trouble_sleeping"/>
+                        <field name="psc_worries_a_lot"/>
+                        <field name="psc_wants_to_be_with_parents"/>
+                        <field name="psc_feels_is_bad_child"/>
+                        <field name="psc_takes_unnecesary_risks"/>
+                        <field name="psc_gets_hurt_often"/>
+                        <field name="psc_having_less_fun"/>
+                        <field name="psc_act_as_younger"/>
+                        <field name="psc_does_not_listen_to_rules"/>
+                        <field name="psc_does_not_show_feelings"/>
+                        <field name="psc_does_not_get_people_feelings"/>
+                        <field name="psc_teases_others"/>
+                        <field name="psc_takes_things_from_others"/>
+                        <field name="psc_refuses_to_share"/>
+                    </group>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_patient_psc_tree">
+        <field name="name">medical.patient.psc.tree</field>
+        <field name="model">medical.patient.psc</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string="Pediatric Symptoms Checklist">
+                <field name="patient"/>
+                <field name="evaluation_start"/>
+                <field name="psc_total"/>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_patient_psc_action">
+        <field name="name">Pediatric Symptoms Checklist</field>
+        <field name="res_model">medical.patient.psc</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <!-- <menuitem name="Pediatric Symptoms Checklist" id="medical_patient_psc_menu"
+        action="medical_patient_psc_action" parent="medical_pediatrics_menu"/> -->
+
+    <record model="ir.ui.view" id="view_hotel_room_tree_multicompany">
+        <field name="name">medical.patient.form.inherit</field>
+        <field name="type">form</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_view"/>
+        <field name="arch" type="xml">
+            <field name="diseases" nolabel="1" widget="one2many" position="after">
+                <newline/>
+                <field name="psc" nolabel="1" colspan="4" invisible="1"/>
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_invoice_appointment_view">
+        <field name="name">Appointment</field>
+        <field name="model">medical.appointment</field>
+        <field name="type">form</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_appointment_view"/>
+        <field name="arch" type="xml">
+
+
+            <xpath expr="//notebook/page[1]" position="after">
+                <page string="Pediatric Symptoms Checklist" invisible="1">
+                    <field name="ped_id1"/>
+                </page>
+            </xpath>
+
+            <!-- <notebook>
+                <page string="Pediatric Symptoms Checklist" position="after">
+                    <page string="Pediatric">
+                      <field name="ped_id1"/>
+                      </page>
+                </page>
+            </notebook> -->
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="medical_action_tobeinvoiced_appointment">
+        <field name="name">Appointments</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.appointment</field>
+        <field name="view_mode">tree,calendar,form</field>
+
+    </record>
+</odoo>

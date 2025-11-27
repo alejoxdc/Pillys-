@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="whatsapp_chat_discuss" t-inherit="mail.DiscussSidebar" t-inherit-mode="extension">
+        <xpath expr="//t[@t-foreach='discussSidebarItems']" position="replace">
+            <t t-if="this.__owl__.parent.parent.props.action.display_name === 'Discuss Whatsapp'">
+                <t t-foreach="discussSidebarItems" t-as="item" t-key="item_index" t-component="item"
+                   t-if="item.name === 'DiscussSidebarCategories'"/>
+            </t>
+            <t t-elif="this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">
+                <t t-foreach="discussSidebarItems" t-as="item" t-key="item_index" t-component="item"
+                   t-if="item.name === 'DiscussSidebarCategories'"/>
+            </t>
+            <t t-else=" ">
+                <t t-foreach="discussSidebarItems" t-as="item" t-key="item_index" t-component="item"/>
+            </t>
+        </xpath>
+    </t>
+
+<!--        /////////////////////////07/09/24///////////-->
+    <t t-name="whatsapp_message_content" t-inherit="mail.MessagingMenu.content"  t-inherit-mode="extension">
+
+        <xpath expr="//div[@t-if='ui.isSmall']" position="replace">
+             <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'" >
+                 <div t-if="ui.isSmall" class="o-mail-MessagingMenu-navbar d-flex border-top bg-view shadow-lg w-100 btn-group">
+                    <button t-foreach="tabs" t-key="tab.id" t-as="tab" t-if="tab.id === 'whatsapp'" class="o-mail-MessagingMenu-tab btn d-flex flex-column align-items-center flex-grow-1 flex-basis-0 p-2 mx-0" t-att-class="{
+                        'text-primary fw-bolder o-active': store.discuss.activeTab === tab.id,
+                        'border-end': !tab_last,
+                    }" t-on-click="() => this.onClickNavTab(tab.id)">
+                        <i t-attf-class="p-2 fs-4 {{ tab.icon }}"/>
+                        <span class="small" t-esc="tab.label"/>
+                    </button>
+                 </div>
+             </t>
+            <t t-elif="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === this.discuss_name and this.hideWhatsappMenu === 'true'" >
+                 <div t-if="ui.isSmall" class="o-mail-MessagingMenu-navbar d-flex border-top bg-view shadow-lg w-100 btn-group">
+                    <button t-foreach="tabs" t-key="tab.id" t-as="tab" t-if="tab.id !== 'whatsapp'" class="o-mail-MessagingMenu-tab btn d-flex flex-column align-items-center flex-grow-1 flex-basis-0 p-2 mx-0" t-att-class="{
+                        'text-primary fw-bolder o-active': store.discuss.activeTab === tab.id,
+                        'border-end': !tab_last,
+                    }" t-on-click="() => this.onClickNavTab(tab.id)">
+                        <i t-attf-class="p-2 fs-4 {{ tab.icon }}"/>
+                        <span class="small" t-esc="tab.label"/>
+                    </button>
+                 </div>
+             </t>
+            <t t-else="">
+                <div t-if="ui.isSmall" class="o-mail-MessagingMenu-navbar d-flex border-top bg-view shadow-lg w-100 btn-group">
+                    <button t-foreach="tabs" t-key="tab.id" t-as="tab" class="o-mail-MessagingMenu-tab btn d-flex flex-column align-items-center flex-grow-1 flex-basis-0 p-2 mx-0" t-att-class="{
+                        'text-primary fw-bolder o-active': store.discuss.activeTab === tab.id,
+                        'border-end': !tab_last,
+                    }" t-on-click="() => this.onClickNavTab(tab.id)">
+                        <i t-attf-class="p-2 fs-4 {{ tab.icon }}"/>
+                        <span class="small" t-esc="tab.label"/>
+                    </button>
+                </div>
+            </t>
+        </xpath>
+
+<!--    ///////////////////////08/09/24///////////////////////////-->
+        <xpath expr="//t[@t-foreach='threads']" position="replace">
+<!--             <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'" >-->
+<!--             <t t-if="this.action.currentController.action and this.action.currentController.action === 'Discuss Whatsapp'" >-->
+             <t t-if="this.store.discuss.activeTab === 'whatsapp'" >
+                 <t t-foreach="threads" name="threads" t-as="thread" t-key="thread.localId">
+                     <t t-set="message"
+                        t-value="thread.isChatChannel or (thread.type === 'channel' and thread.needactionMessages.length === 0) ? thread.newestPersistentNotEmptyOfAllMessage : thread.needactionMessages.at(-1)"/>
+                     <NotificationItem
+                             body="message?.inlineBody or message?.subtype_description"
+                             counter="thread.needactionCounter"
+                             datetime="message?.datetime"
+                             displayName="thread.displayName"
+                             iconSrc="thread.imgUrl"
+                             hasMarkAsReadButton="thread.isUnread"
+                             muted="thread.muteUntilDateTime ? 2 : !thread.isUnread ? 1 : 0"
+                             onClick="(isMarkAsRead) => this.onClickThread(isMarkAsRead, thread)"
+                             onSwipeRight="hasTouch() and thread.isUnread ? { action: () => this.markAsRead(thread), icon: 'fa-check-circle', bgColor: 'bg-success' } : undefined"
+                             onSwipeLeft="hasTouch() and threadService.canUnpin(thread) ? { action: () => this.threadService.unpin(thread), icon: 'fa-times-circle', bgColor: 'bg-danger' } : undefined"
+                             threadType="thread.type"
+                             whatsappPartnerName="thread.whatsapp_partner_name"
+                     >
+                         <t t-set-slot="icon">
+                             <ImStatus t-if="thread.type === 'chat'" persona="thread.chatPartner" thread="thread"
+                                       className="'position-absolute top-100 start-100 translate-middle mt-n1 ms-n1'"/>
+                         </t>
+                         <t t-if="message" t-set-slot="body-icon">
+                             <t t-if="message.isSelfAuthored">
+                                 <i class="fa fa-mail-reply me-1"/>You:
+                             </t>
+                             <t t-elif="message.author and !message.author?.eq(thread.correspondent)">
+                                 <t t-esc="message.author.name"/>:
+                             </t>
+                         </t>
+                     </NotificationItem>
+                 </t>
+             </t>
+            <t t-else="">
+                <t t-foreach="threads" name="threads" t-as="thread" t-key="thread.localId">
+                    <t t-set="message"
+                       t-value="thread.isChatChannel or (thread.type === 'channel' and thread.needactionMessages.length === 0) ? thread.newestPersistentNotEmptyOfAllMessage : thread.needactionMessages.at(-1)"/>
+                    <NotificationItem
+                            body="message?.inlineBody or message?.subtype_description"
+                            counter="thread.needactionCounter"
+                            datetime="message?.datetime"
+                            displayName="thread.displayName"
+                            iconSrc="thread.imgUrl"
+                            hasMarkAsReadButton="thread.isUnread"
+                            muted="thread.muteUntilDateTime ? 2 : !thread.isUnread ? 1 : 0"
+                            onClick="(isMarkAsRead) => this.onClickThread(isMarkAsRead, thread)"
+                            onSwipeRight="hasTouch() and thread.isUnread ? { action: () => this.markAsRead(thread), icon: 'fa-check-circle', bgColor: 'bg-success' } : undefined"
+                            onSwipeLeft="hasTouch() and threadService.canUnpin(thread) ? { action: () => this.threadService.unpin(thread), icon: 'fa-times-circle', bgColor: 'bg-danger' } : undefined"
+                    >
+                        <t t-set-slot="icon">
+                            <ImStatus t-if="thread.type === 'chat'" persona="thread.chatPartner" thread="thread"
+                                      className="'position-absolute top-100 start-100 translate-middle mt-n1 ms-n1'"/>
+                            <ThreadIcon t-if="thread.type === 'whatsapp'" className="'o-mail-whatsapp-threadIcon rounded-circle align-items-center o-bg-inherit position-absolute top-100 start-100 translate-middle mt-n1 ms-n1'" thread="thread" />
+                        </t>
+                        <t t-if="message" t-set-slot="body-icon">
+                            <t t-if="message.isSelfAuthored">
+                                <i class="fa fa-mail-reply me-1"/>You:
+                            </t>
+                            <t t-elif="message.author and !message.author?.eq(thread.correspondent)">
+                                <t t-esc="message.author.name"/>:
+                            </t>
+                        </t>
+                    </NotificationItem>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//t[contains(@t-foreach, 'threads')]//*[contains(@t-set-slot, 'icon')]" position="inside">
+            <ThreadIcon t-if="thread.type === 'whatsapp'" className="'o-mail-whatsapp-threadIcon rounded-circle align-items-center o-bg-inherit position-absolute top-100 start-100 translate-middle mt-n1 ms-n1'" thread="thread" />
+        </xpath>
+<!--    ///////////////////////////////////////-->
+    </t>
+
+
+     <t name="inherit_mail_thread" t-inherit="mail.Thread" t-inherit-mode="extension">
+        <xpath expr="//t[@t-if='props.thread.isLoaded']" position="replace">
+            <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">
+                <t t-if="props.thread.isLoaded">
+                    <t t-if="props.thread.type === 'mailbox'">
+                        <t t-if="props.thread.id === 'inbox'">
+                            <h4 class="mb-3 fw-bolder">
+                                WhatsApp Messages
+                            </h4>
+                            <!--                            New messages appear here.-->
+                        </t>
+                        <t t-if="props.thread.id === 'starred'">
+                            <h4 class="mb-3 fw-bolder">
+                                No starred messages
+                            </h4>
+                            You can mark any message as 'starred', and it shows up in this mailbox.
+                        </t>
+                        <t t-if="props.thread.id === 'history'">
+                            <img src="/web/static/img/neutral_face.svg" alt="History"/>
+                            <h4 class="mb-3 fw-bolder">
+                                No history messages
+                            </h4>
+                            Messages marked as read will appear in the history.
+                        </t>
+                    </t>
+                    <t t-elif="props.showEmptyMessage">
+                        There are no messages in this conversation.
+                    </t>
+                </t>
+            </t>
+            <t t-else=" ">
+                <t t-if="props.thread.isLoaded">
+                    <t t-if="props.thread.isEmpty and props.thread.type === 'mailbox'">
+                        <t t-if="props.thread.id === 'inbox'">
+                            <h4 class="mb-3 fw-bolder">
+                                Congratulations, your inbox is empty
+                            </h4>
+                            New messages appear here.
+                        </t>
+                        <t t-if="props.thread.id === 'starred'">
+                            <h4 class="mb-3 fw-bolder">
+                                No starred messages
+                            </h4>
+                            You can mark any message as 'starred', and it shows up in this mailbox.
+                        </t>
+                        <t t-if="props.thread.id === 'history'">
+                            <img src="/web/static/img/neutral_face.svg" alt="History"/>
+                            <h4 class="mb-3 fw-bolder">
+                                No history messages
+                            </h4>
+                            Messages marked as read will appear in the history.
+                        </t>
+                    </t>
+                    <t t-elif="props.showEmptyMessage">
+                        There are no messages in this conversation.
+                    </t>
+                </t>
+            </t>
+        </xpath>
+    </t>
+<!--        /////////////////////////////////-->
+
+
+
+<!--//////////////////////////////////08/09/24/////////////////////////////////////-->
+    <t t-name="whatsapp_mail_NotificationItem" t-inherit="mail.NotificationItem" t-inherit-mode="extension">
+        <xpath expr="//div[@class='d-flex flex-column flex-grow-1 align-self-start overflow-auto']" position="replace">
+<!--            <t t-if="this.__owl__.parent.parent.props.action and this.__owl__.parent.parent.props.action.name === 'Discuss Whatsapp'">-->
+            <t t-if="props.whatsappPartnerName and props.threadType">
+                <div class="d-flex flex-column flex-grow-1 align-self-start overflow-auto">
+                    <div class="d-flex text-nowrap">
+                        <span class="o-mail-NotificationItem-name text-truncate fw-bold" t-esc="props.whatsappPartnerName"/> |
+                        <span class="o-mail-NotificationItem-name text-truncate fw-bold" t-esc="props.displayName"/>
+                        <span class="flex-grow-1"/>
+                        <small t-if="props.datetime" class="o-mail-NotificationItem-date ms-2 opacity-75"
+                               t-att-class="{ 'opacity-50 fw-bold': !props.muted, 'opacity-25 text-muted': props.muted }">
+                            <RelativeTime datetime="props.datetime"/>
+                        </small>
+                    </div>
+                    <div class="d-flex">
+                        <div class="o-mail-NotificationItem-text text-truncate opacity-75">
+                            <t t-slot="body-icon"/>
+                            <t t-if="props.body" t-esc="props.body" name="notificationBody"/>
+                        </div>
+                        <div class="flex-grow-1"/>
+                        <div class="d-flex align-items-center">
+                            <span t-if="props.counter > 0 and !rootHover.isHover"
+                                  t-attf-class="o-mail-NotificationItem-badge cust-o-discuss-badge {{props.muted === 2 ? 'o-muted' : ''}} d-flex align-items-center justify-content-center m-0 badge rounded-pill fw-bold o-mail-NotificationItem-counter">
+                                <t t-esc="props.counter"/>
+                            </span>
+                            <span t-if="props.hasMarkAsReadButton and rootHover.isHover"
+                                  class="o-mail-NotificationItem-badge o-discuss-badgeShape text-success d-flex align-items-center justify-content-center m-0 badge rounded-pill fw-bold o-mail-NotificationItem-markAsRead fa fa-check text-600 opacity-75 opacity-100-hover cursor-pointer"
+                                  title="Mark As Read" t-ref="markAsRead"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+            <t t-else=" ">
+                <div class="d-flex flex-column flex-grow-1 align-self-start overflow-auto">
+                    <div class="d-flex text-nowrap">
+                        <span class="o-mail-NotificationItem-name text-truncate fw-bold" t-esc="props.displayName"/>
+                        <span class="flex-grow-1"/>
+                        <small t-if="props.datetime" class="o-mail-NotificationItem-date ms-2 opacity-75"
+                               t-att-class="{ 'opacity-50 fw-bold': !props.muted, 'opacity-25 text-muted': props.muted }">
+                            <RelativeTime datetime="props.datetime"/>
+                        </small>
+                    </div>
+                    <div class="d-flex">
+                        <div class="o-mail-NotificationItem-text text-truncate opacity-75">
+                            <t t-slot="body-icon"/>
+                            <t t-if="props.body" t-esc="props.body" name="notificationBody"/>
+                        </div>
+                        <div class="flex-grow-1"/>
+                        <div class="d-flex align-items-center">
+                            <span t-if="props.counter > 0 and !rootHover.isHover"
+                                  t-attf-class="o-mail-NotificationItem-badge o-discuss-badge {{props.muted === 2 ? 'o-muted' : ''}} d-flex align-items-center justify-content-center m-0 badge rounded-pill fw-bold o-mail-NotificationItem-counter">
+                                <t t-esc="props.counter"/>
+                            </span>
+                            <span t-if="props.hasMarkAsReadButton and rootHover.isHover"
+                                  class="o-mail-NotificationItem-badge o-discuss-badgeShape text-success d-flex align-items-center justify-content-center m-0 badge rounded-pill fw-bold o-mail-NotificationItem-markAsRead fa fa-check text-600 opacity-75 opacity-100-hover cursor-pointer"
+                                  title="Mark As Read" t-ref="markAsRead"/>
+                        </div>
+                    </div>
+                </div>
+            </t>
+        </xpath>
+    </t>
+<!--/////////////////////////////////////////////////////////////////////////////////-->
+</templates>

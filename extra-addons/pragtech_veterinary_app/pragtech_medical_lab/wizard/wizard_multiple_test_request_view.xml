@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.ui.view" id="multi_request_wizard_form">
+        <field name="name">wizard.multiple.test.request.form</field>
+        <field name="model">wizard.multiple.test.request</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Multiple Request Wizard">
+                <group colspan="4" col='4'>
+                    <field name="r_date"/>
+                    <field name="phy_id"/>
+                    <field name="patient_id"/>
+                    <field name="urgent"/>
+                </group>
+                <group>
+                    <field name="tests_id"/>
+                </group>
+                <footer>
+                    <button name="create_lab_test" string="Create lab Test" type="object"/>
+                    <button special="cancel" string="Cancel"/>
+                </footer>
+            </form>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="multi_request_wizard_act">
+        <field name="name">Multiple Tests Wizard</field>
+        <field name="res_model">wizard.multiple.test.request</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+    </record>
+
+    <!--         <menuitem action="action_medical_create_imaging_test_request_wizard" id="menu_medical_create_imaging_test_request_wizard" parent="medical_imaging.medical_imaging_menu" sequence="1" /> -->
+
+    <!--         <record model="ir.actions.act_window" id="multi_request_wizard_act"> -->
+    <!--             <field name="name">Multiple Tests Wizard</field> -->
+    <!--             <field name="res_model">wizard.multiple.test.request</field> -->
+    <!--             <field name="view_id" ref="multi_request_wizard_form"/> -->
+    <!--             <field name="view_mode">form</field> -->
+    <!--             <field name="target">new</field> -->
+    <!--         </record> -->
+
+    <menuitem action="multi_request_wizard_act" id="multi_request_wizard_act_form" parent="medical_laboratory_menu"
+              sequence="1"/>
+</odoo>      

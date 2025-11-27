@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_backup_auto_scp,backup.auto.scp,model_backup_auto_scp,base.group_user,1,1,1,1
+access_backup_auto_scp_manager,backup.auto.scp.manager,model_backup_auto_scp,base.group_system,1,1,1,1

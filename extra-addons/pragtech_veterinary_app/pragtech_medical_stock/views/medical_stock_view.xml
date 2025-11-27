@@ -1,0 +1,385 @@
+<?xml version="1.0"?>
+<odoo>
+    <!--		<record model="ir.ui.view" id="medical_stock_rounding_form">-->
+    <!--			<field name="name">medical.patient.rounding.form</field>-->
+    <!--			<field name="model">medical.patient.rounding</field>-->
+    <!--			<field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_rounding_form" />-->
+    <!--			<field name="type">form</field>-->
+    <!--			<field name="arch" type="xml">-->
+    <!--				<header>-->
+    <!--					<button name="done_button" invisible="state != 'draft'" string="Done"  type="object"/>-->
+    <!--					<field name="state" readonly="1" widget="statusbar" statusbar_visible="draft"/>-->
+    <!--				</header>-->
+    <!--				<notebook>-->
+    <!--					<page string="Medication">-->
+    <!--						<group>-->
+    <!--							<field name="hospitalization_location" attrs="{'readonly': [('state', '=', 'done')],'required':['|','|',('medicaments','!=',[]),('medical_supplies','!=',[]), ('vaccines','!=',[])]}"/>-->
+    <!--						</group>-->
+    <!--						<group  string="Medicaments">-->
+    <!--							<field name="medicaments" string="Medicaments" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
+    <!--						</group>-->
+    <!--						<group string="Medical Supplies">-->
+    <!--							<field name="medical_supplies" string="Medical Supplies" nolabel="1"  attrs="{'readonly': [('state', '=', 'done')]}"/>-->
+    <!--						</group>-->
+    <!--						<group  string="Vaccines">-->
+    <!--							<field name="vaccines" string="Vaccines" nolabel="1"  attrs="{'readonly': [('state', '=', 'done')]}"/>-->
+    <!--						</group>-->
+    <!--					</page>-->
+    <!--					<page string="Stock Moves">-->
+    <!--						<field name="moves" string="Stock Moves" nolabel="1" >-->
+    <!--							<tree>-->
+    <!--								<field name="product_id"/>-->
+    <!--								<field name="lot"/>-->
+    <!--								<field name="location_id"/>-->
+    <!--								<field name="location_dest_id"/>-->
+    <!--								<field name="product_qty"/>-->
+    <!--								<field name="product_uom"/>-->
+    <!--								<field name="date_expected"/>-->
+    <!--								<field name="state"/>-->
+    <!--							</tree>-->
+    <!--						</field>-->
+    <!--					</page>-->
+    <!--				</notebook>-->
+    <!--			</field>-->
+    <!--		</record>-->
+
+    <record model="ir.ui.view" id="medical_stock_rounding_tree">
+        <field name="name">medical.patient.rounding.tree</field>
+        <field name="model">medical.patient.rounding</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_rounding_tree"/>
+        <field name="arch" type="xml">
+            <field name='evolution' position="after">
+                <field name="state"/>
+            </field>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_rounding_medicament_form">
+        <field name="name">medical.patient.rounding.medicament.form</field>
+        <field name="model">medical.patient.rounding.medicament</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medicament">
+                <group colspan="4" col="4">
+                    <!-- 					<field name="name"/> -->
+                    <field name="medicament"></field>
+                    <field name="quantity"></field>
+                    <field name="lot" domain="[('product_id','=',medicament)]"/>
+                    <field name="short_comment"></field>
+                    <field name="product"></field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_rounding_medicament_tree">
+        <field name="name">medical.patient.rounding.medicament.tree</field>
+        <field name="model">medical.patient.rounding.medicament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string='Medicaments'>
+                <!-- 					<field name="name"/> -->
+                <field name="medicament"></field>
+                <field name="quantity"></field>
+                <field name="lot" domain="[('product_id','=',medicament+1)]"/>
+                <field name="short_comment"></field>
+                <field name="product"></field>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_rounding_medical_supply_form">
+        <field name="name">medical.patient.rounding.medical_supply.form</field>
+        <field name="model">medical.patient.rounding.medical_supply</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient Rounding Medical Supply">
+                <group colspan="4" col="4">
+                    <!-- 					<field name="name"/> -->
+                    <field name="product"></field>
+                    <field name="short_comment"></field>
+                    <field name="lot" domain="[('product_id','=',product)]"/>
+                    <field name="quantity"></field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_rounding_medical_supply_tree">
+        <field name="name">medical.patient.rounding.medical_supply.tree</field>
+        <field name="model">medical.patient.rounding.medical_supply</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string='Patient Rounding Medical Supply'>
+                <!-- 					<field name="name"/> -->
+                <field name="product"></field>
+                <field name="short_comment"></field>
+                <field name="lot" domain="[('product_id','=',product)]"/>
+                <field name="quantity"></field>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_rounding_vaccine_form">
+        <field name="name">medical.patient.rounding.vaccine.form</field>
+        <field name="model">medical.patient.rounding.vaccine</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Vaccines">
+                <group colspan="4" col="4">
+                    <!-- 					<field name="name"/> -->
+                    <field name="vaccine"></field>
+                    <field name="quantity"></field>
+                    <field name="lot" domain="[('product_id','=',vaccine)]"/>
+                    <field name="dose"></field>
+                    <field name="next_dose_date"></field>
+                    <field name="short_comment"></field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_rounding_vaccine_tree">
+        <field name="name">medical.patient.rounding.vaccine.tree</field>
+        <field name="model">medical.patient.rounding.vaccine</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree editable="top" string='Vaccines'>
+                <!-- 					<field name="name"/> -->
+                <field name="vaccine"></field>
+                <field name="quantity"></field>
+                <field name="lot" domain="[('product_id','=',vaccine)]"/>
+                <field name="dose"></field>
+                <field name="next_dose_date"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+    <!--		<record model="ir.ui.view" id="medical_stock_ambulatory_care_form">-->
+    <!--			<field name="name">medical.patient.ambulatory_care.form</field>-->
+    <!--			<field name="model">medical.patient.ambulatory_care</field>-->
+    <!--			<field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_ambulatory_care_form" />-->
+    <!--			<field name="type">form</field>-->
+    <!--			<field name="arch" type="xml">-->
+    <!--				<header>-->
+    <!--					<button name="done_button" invisible="state != 'draft'" string="Done" type="object"/>-->
+    <!--					<field name="state" readonly="1" widget="statusbar" statusbar_visible="draft"/>-->
+    <!--				</header>-->
+    <!--				<notebook>-->
+
+    <!--					<page string="Medication">-->
+    <!--						<group colspan="2">-->
+    <!--							<field name="care_location" attrs="{'readonly': [('state', '=', 'done')],'required':['|','|',('medicaments','!=',[]),('medical_supplies','!=',[]), ('vaccines','!=',[])]}"/>-->
+    <!--						</group>-->
+    <!--						<group colspan="3" string="Medicaments">-->
+    <!--							<field name="medicaments" string="Medicaments" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
+    <!--						</group>-->
+    <!--						<group colspan="3" string="Medical Supplies">-->
+    <!--							<field name="medical_supplies" string="Medical Supplies" nolabel="1"  attrs="{'readonly': [('state', '=', 'done')]}"/>-->
+    <!--						</group>-->
+    <!--						<group colspan="3" string="Vaccines">-->
+    <!--							<field name="vaccines" string="Vaccines" nolabel="1" attrs="{'readonly': [('state', '=', 'done')]}"/>-->
+    <!--						</group>-->
+    <!--					</page>-->
+    <!--					<page string="Stock Moves">-->
+    <!--						<field name="moves" string="Stock Moves" nolabel="1">-->
+    <!--							<tree>-->
+    <!--								<field name="product_id"/>-->
+    <!--								<field name="lot"/>-->
+    <!--								<field name="location_id"/>-->
+    <!--								<field name="location_dest_id"/>-->
+    <!--								<field name="product_qty"/>-->
+    <!--								<field name="product_uom"/>-->
+    <!--								<field name="date_expected"/>-->
+    <!--								<field name="state"/>-->
+    <!--							</tree>-->
+    <!--						</field>-->
+    <!--					</page>-->
+
+    <!--				</notebook>-->
+    <!--			</field>-->
+    <!--		</record>-->
+    <record model="ir.ui.view" id="medical_stock_ambulatory_care_tree">
+        <field name="name">medical.patient.ambulatory_care.tree</field>
+        <field name="model">medical.patient.ambulatory_care</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_ambulatory_care_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='evolution']" position="after">
+                <field name="state"/>
+            </xpath>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medicament_form">
+        <field name="name">medical.patient.ambulatory_care.medicament.form</field>
+        <field name="model">medical.patient.ambulatory_care.medicament</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Medicament">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="medicament"></field>
+                    <field name="quantity"></field>
+                    <field name="lot" domain="[('product_id','=',medicament)]"/>
+                    <field name="short_comment"></field>
+                    <field name="product"></field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medicament_tree">
+        <field name="name">medical.patient.ambulatory_care.medicament.tree</field>
+        <field name="model">medical.patient.ambulatory_care.medicament</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Medicaments'>
+                <field name="name"/>
+                <field name="medicament"></field>
+                <field name="quantity"></field>
+                <field name="lot"/>
+                <field name="short_comment"></field>
+                <field name="product"></field>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medical_supply_form">
+        <field name="name">medical.patient.ambulatory_care.medical_supply.form</field>
+        <field name="model">medical.patient.ambulatory_care.medical_supply</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Patient Rounding Medical Supply">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="product"></field>
+                    <field name="short_comment"></field>
+                    <field name="lot" domain="[('product_id','=',product)]"/>
+                    <field name="quantity"></field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_medical_supply_tree">
+        <field name="name">medical.patient.ambulatory_care.medical_supply.tree</field>
+        <field name="model">medical.patient.ambulatory_care.medical_supply</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Patient Rounding Medical Supply'>
+                <field name="name"/>
+                <field name="product"></field>
+                <field name="short_comment"></field>
+                <field name="lot"/>
+                <field name="quantity"></field>
+
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_vaccine_form">
+        <field name="name">medical.patient.ambulatory_care.vaccine.form</field>
+        <field name="model">medical.patient.ambulatory_care.vaccine</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Vaccines">
+                <group colspan="4" col="4">
+                    <field name="name"/>
+                    <field name="vaccine"></field>
+                    <field name="quantity"></field>
+                    <field name="lot" domain="[('product_id','=',vaccine)]"/>
+                    <field name="dose"></field>
+                    <field name="next_dose_date"></field>
+                    <field name="short_comment"></field>
+                </group>
+            </form>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="medical_patient_ambulatory_care_vaccine_tree">
+        <field name="name">medical.patient.ambulatory_care.vaccine.tree</field>
+        <field name="model">medical.patient.ambulatory_care.vaccine</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Vaccines'>
+                <field name="name"/>
+                <field name="vaccine"></field>
+                <field name="quantity"></field>
+                <field name="lot"/>
+                <field name="dose"></field>
+                <field name="next_dose_date"></field>
+                <field name="short_comment"></field>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.ui.view" id="lot_view_form_inherit">
+        <field name="name">stock.production.lot.form</field>
+        <field name="model">stock.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='product_id']" position="after">
+                <group colspan="2">
+                    <field name="product_id"/>
+                    <field name="expiration_date"/>
+
+                </group>
+            </xpath>
+        </field>
+    </record>
+    <!-- <record model="ir.ui.view" id="lot_view_tree_inherit">
+        <field name="name">stock.production.lot.tree</field>
+        <field name="model">stock.production.lot</field>
+        <field name="inherit_id" ref="stock.view_production_lot_tree"/>
+        <field name="arch" type="xml">
+            <tree  string='Serial Number'>
+                <field name='product_id' position="replace">
+                    <group colspan="2">
+                        <field name="product_id"/>
+                        <field name="expiration_date"/>
+                    </group>
+                </field>
+            </tree>
+        </field>
+    </record> -->
+    <record model="ir.ui.view" id="view_partner_form">
+        <field name="name">res.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <field name='company_id' position="after">
+                <!--					<field name="warehouse" attrs="{'invisible': [('is_pharmacy', '!=', True)], 'required' : [('is_pharmacy', '=', True)]}"/>-->
+                <field name="warehouse" invisible="1"/>
+            </field>
+        </field>
+    </record>
+
+    <!--
+    <record model="ir.ui.view" id="lot_view_form_inherit">
+    <field name="name">stock.lot.form</field>
+    <field name="model">stock.lot</field>
+    <field name="inherit_id" ref="medical_lot.lot_view_form"/>
+    <field name="arch" type="xml">
+    <field name="product" position="after">
+    <group colspan="2">
+    <field name="expiration_date"/>
+    <field name="quantity"/>
+    </group>
+    </field>
+    </field>
+    </record>
+
+    <record model="ir.ui.view" id="lot_view_tree_inherit">
+    <field name="name">stock.lot.tree</field>
+    <field name="model">stock.lot</field>
+    <field name="inherit_id" ref="medical_lot.lot_view_tree"/>
+    <field name="arch" type="xml">
+    <field name="product" position="after">
+    <field name="expiration_date"/>
+    <field name="quantity"/>
+    </field>
+    </field>
+    </record>
+    -->
+    <!--
+    <record model="ir.ui.view" id="medical_stock_view_form">
+    <field name="name">stock.move.form</field>
+    <field name="model">stock.move</field>
+    <field name="inherit_id" ref="stock.view_move_form">
+    <field name="arch" type="xml">
+    <field name="date" position="after">
+    <field name="ambulatory_care"/>
+    <field name="rounding"/>
+    </field>
+    </record>
+    -->
+</odoo>
+

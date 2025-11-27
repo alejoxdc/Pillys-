@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_medical_newborn_12222,access_medical_newborn_1111,pragtech_veterinary_app.model_medical_newborn,base.group_user,1,1,1,1
+access_medical_neonatal_apgar_new,access_medical_neonatal_apgar_new,pragtech_veterinary_app.model_medical_neonatal_apgar,base.group_user,1,1,1,1
+access_medical_patient_psc_new,medical.patient.psc,pragtech_veterinary_app.model_medical_patient_psc,base.group_user,1,1,1,1
+

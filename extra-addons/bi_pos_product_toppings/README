@@ -1,0 +1,12 @@
+Version 17.0.0.1 : (09/11/22)
+		- Make moudle compatible with POS Restaurant.
+
+Version 17.0.0.2 : (12/06/24)
+	-> Add topping into kitchen screen display orderline.
+
+Version 17.0.0.3 : (20/06/24)
+	-> Fixed two odoo_sh issue in enterprise this _process_preparation_changes method is updated so update code.
+	-> Facing key error from this method _order_line_fields fixed issue.
+
+Version 17.0.0.4 : (26/09/24)
+	-> Fix the odoo.sh errors.

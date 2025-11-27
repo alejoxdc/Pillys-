@@ -1,0 +1,276 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+#	* medical_service
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 8.0rc1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-09-10 10:26+0000\n"
+"PO-Revision-Date: 2015-09-10 10:26+0000\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: medical_service
+#: field:medical.health_service.line,appointment:0
+msgid "Appointment"
+msgstr "Appointment"
+
+#. module: medical_service
+#: model:ir.actions.act_window,name:medical_service.service_start_end_wizard_act
+#: model:ir.ui.menu,name:medical_service.appointment_wizard_act11_startend_form
+msgid "Appointment Evaluation Per Medical Health Services"
+msgstr "Appointment Evaluation Per Medical Health Services"
+
+#. module: medical_service
+#: view:invoice.service.wizard:medical_service.invoice_service_wizard_form
+#: view:medical.service.invoice.wizard:medical_service.view_medical_invoice_invoice
+msgid "Cancel"
+msgstr "Cancel"
+
+#. module: medical_service
+#: view:medical.health_service:medical_service.view_medical_health_service_form
+msgid "Confirm"
+msgstr "Confirm"
+
+#. module: medical_service
+#: selection:medical.health_service,state:0
+msgid "Confirmed"
+msgstr "Confirmed"
+
+#. module: medical_service
+#: model:ir.actions.act_window,name:medical_service.action_create_medical_service_invoice
+msgid "Create Invoice"
+msgstr "Créer facture"
+
+#. module: medical_service
+#: view:medical.service.invoice.wizard:medical_service.view_medical_invoice_invoice
+msgid "Create Invoices"
+msgstr "Create Invoices"
+
+#. module: medical_service
+#: view:medical.service.invoice.wizard:medical_service.view_medical_invoice_invoice
+msgid "Create invoices"
+msgstr "Create invoices"
+
+#. module: medical_service
+#: field:invoice.service.wizard,create_uid:0
+#: field:medical.health_service,create_uid:0
+#: field:medical.health_service.line,create_uid:0
+#: field:medical.service.invoice.wizard,create_uid:0
+msgid "Created by"
+msgstr "Created by"
+
+#. module: medical_service
+#: field:invoice.service.wizard,create_date:0
+#: field:medical.health_service,create_date:0
+#: field:medical.health_service.line,create_date:0
+#: field:medical.service.invoice.wizard,create_date:0
+msgid "Created on"
+msgstr "Created on"
+
+#. module: medical_service
+#: view:medical.health_service:medical_service.view_medical_health_service_filter
+#: field:medical.health_service,service_date:0
+msgid "Date"
+msgstr "Date"
+
+#. module: medical_service
+#: field:medical.health_service,desc:0
+#: field:medical.health_service.line,desc:0
+msgid "Description"
+msgstr "Description"
+
+#. module: medical_service
+#: view:medical.service.invoice.wizard:medical_service.view_medical_invoice_invoice
+msgid "Do you want to create the invoice(s) ?"
+msgstr "Do you want to create the invoice(s) ?"
+
+#. module: medical_service
+#: selection:medical.health_service,state:0
+msgid "Draft"
+msgstr "Draft"
+
+#. module: medical_service
+#: field:invoice.service.wizard,e_date:0
+msgid "End Date"
+msgstr "End Date"
+
+#. module: medical_service
+#: help:medical.health_service.line,appointment:0
+msgid "Enter or select the date / ID of the appointment related to this evaluation"
+msgstr "Enter or select the date / ID of the appointment related to this evaluation"
+
+#. module: medical_service
+#: code:addons/medical_service/wizard/medical_service_invoice.py:71
+#, python-format
+msgid "Error !"
+msgstr "Error !"
+
+#. module: medical_service
+#: field:medical.health_service.line,from_date:0
+msgid "From"
+msgstr "From"
+
+#. module: medical_service
+#: view:medical.health_service:medical_service.view_medical_health_service_filter
+msgid "Group By..."
+msgstr "Group By..."
+
+#. module: medical_service
+#: model:ir.model,name:medical_service.model_medical_health_service
+#: model:ir.model,name:medical_service.model_medical_health_service_line
+msgid "Health Service"
+msgstr "Health Service"
+
+#. module: medical_service
+#: field:invoice.service.wizard,id:0
+#: field:medical.health_service,id:0
+#: field:medical.health_service,name:0
+#: field:medical.health_service.line,id:0
+#: field:medical.service.invoice.wizard,id:0
+msgid "ID"
+msgstr "ID"
+
+#. module: medical_service
+#: field:medical.health_service.line,to_invoice:0
+msgid "Invoice"
+msgstr "Invoice"
+
+#. module: medical_service
+#: selection:medical.health_service,state:0
+msgid "Invoiced"
+msgstr "Invoiced"
+
+#. module: medical_service
+#: field:invoice.service.wizard,write_uid:0
+#: field:medical.health_service,write_uid:0
+#: field:medical.health_service.line,write_uid:0
+#: field:medical.service.invoice.wizard,write_uid:0
+msgid "Last Updated by"
+msgstr "Last Updated by"
+
+#. module: medical_service
+#: field:invoice.service.wizard,write_date:0
+#: field:medical.health_service,write_date:0
+#: field:medical.health_service.line,write_date:0
+#: field:medical.service.invoice.wizard,write_date:0
+msgid "Last Updated on"
+msgstr "Last Updated on"
+
+#. module: medical_service
+#: model:ir.ui.menu,name:medical_service.medical_health_service_action_main_menu
+#: model:ir.ui.menu,name:medical_service.medical_health_service_action_menu
+msgid "Medical Service"
+msgstr "Medical Service"
+
+#. module: medical_service
+#: field:medical.health_service,patient:0
+msgid "Patient"
+msgstr "Patient"
+
+#. module: medical_service
+#: field:medical.health_service.line,product:0
+msgid "Product"
+msgstr "Product"
+
+#. module: medical_service
+#: field:medical.health_service.line,qty:0
+msgid "Qty"
+msgstr "Qty"
+
+#. module: medical_service
+#: view:medical.health_service:medical_service.view_medical_health_service_filter
+msgid "Search Health Service"
+msgstr "Search Health Service"
+
+#. module: medical_service
+#: model:ir.actions.act_window,name:medical_service.medical_health_service_action
+#: view:medical.health_service:medical_service.view_medical_health_service_form
+#: view:medical.health_service:medical_service.view_medical_health_service_tree
+#: field:medical.health_service.line,name:0
+msgid "Service"
+msgstr "Service"
+
+#. module: medical_service
+#: code:addons/medical_service/wizard/medical_service_invoice.py:47
+#, python-format
+msgid "Service %s can not be invoiced as it is in draft state."
+msgstr "Service %s can not be invoiced as it is in draft state."
+
+#. module: medical_service
+#: code:addons/medical_service/wizard/medical_service_invoice.py:45
+#, python-format
+msgid "Service %s is already invoiced"
+msgstr "Service %s is already invoiced"
+
+#. module: medical_service
+#: field:medical.health_service,service_line:0
+#: help:medical.health_service,service_line:0
+#: view:medical.health_service.line:medical_service.view_medical_health_service_line_form
+#: view:medical.health_service.line:medical_service.view_medical_health_service_line_tree
+msgid "Service Line"
+msgstr "Service Line"
+
+#. module: medical_service
+#: view:invoice.service.wizard:medical_service.invoice_service_wizard_form
+msgid "Service Start-end Wizard"
+msgstr "Service Start-end Wizard"
+
+#. module: medical_service
+#: view:invoice.service.wizard:medical_service.invoice_service_wizard_form
+msgid "Show"
+msgstr "Show"
+
+#. module: medical_service
+#: field:invoice.service.wizard,s_date:0
+msgid "Start Date"
+msgstr "Start Date"
+
+#. module: medical_service
+#: field:medical.health_service,state:0
+msgid "State"
+msgstr "State"
+
+#. module: medical_service
+#: sql_constraint:medical.health_service:0
+msgid "The Service_ID must be unique"
+msgstr "The Service_ID must be unique"
+
+#. module: medical_service
+#: code:addons/medical_service/wizard/medical_service_invoice.py:71
+#, python-format
+msgid "There is no expense account defined for this product: \"%s\" (id:%d)"
+msgstr "There is no expense account defined for this product: \"%s\" (id:%d)"
+
+#. module: medical_service
+#: model:ir.model,name:medical_service.model_invoice_service_wizard
+msgid "This is form for view of tender"
+msgstr "This is form for view of tender"
+
+#. module: medical_service
+#: field:medical.health_service.line,to_date:0
+msgid "To"
+msgstr "To"
+
+#. module: medical_service
+#: code:addons/medical_service/wizard/medical_service_invoice.py:45
+#: code:addons/medical_service/wizard/medical_service_invoice.py:47
+#, python-format
+msgid "UserError"
+msgstr "UserError"
+
+#. module: medical_service
+#: field:medical.health_service,inv_id:0
+msgid "invoice"
+msgstr "invoice"
+
+#. module: medical_service
+#: model:ir.model,name:medical_service.model_medical_service_invoice_wizard
+msgid "medical service Invoice"
+msgstr "medical service Invoice"
+

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Copyright (c) 2016-Present Webkul Software Pvt. Ltd. (<https://webkul.com/>) -->
+<!-- See LICENSE file for full copyright and licensing details. -->
+<!-- License URL : <https://store.webkul.com/license.html/> -->
+
+<odoo>
+    <data noupdate="1">
+        <!-- Cron job for automatic backup every 8 hours -->
+        <record id="ir_cron_backup_process_auto" model="ir.cron">
+            <field name="name">Automatic Database Backup Every 8 Hours</field>
+            <field name="model_id" ref="model_backup_process"/>
+            <field name="state">code</field>
+            <field name="code">model.run_automatic_backup()</field>
+            <field name="interval_number">8</field>
+            <field name="interval_type">hours</field>
+            <field name="numbercall">-1</field>
+            <field name="active" eval="True"/>
+        </record>
+    </data>
+</odoo>

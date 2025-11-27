@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        
+        <!-- Vista Tree (Lista) -->
+        <record id="backup_auto_scp_tree_view" model="ir.ui.view">
+            <field name="name">backup.auto.scp.tree</field>
+            <field name="model">backup.auto.scp</field>
+            <field name="arch" type="xml">
+                <tree string="Backups Automáticos SCP">
+                    <field name="name"/>
+                    <field name="database_name"/>
+                    <field name="backup_frequency"/>
+                    <field name="state" widget="badge" decoration-success="state == 'active'" decoration-warning="state == 'inactive'" decoration-info="state == 'draft'"/>
+                    <field name="last_backup_date"/>
+                    <field name="next_backup_date"/>
+                    <field name="backup_count"/>
+                    <field name="last_backup_size"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Vista Form -->
+        <record id="backup_auto_scp_form_view" model="ir.ui.view">
+            <field name="name">backup.auto.scp.form</field>
+            <field name="model">backup.auto.scp</field>
+            <field name="arch" type="xml">
+                <form string="Configuración Backup Automático SCP">
+                    <header>
+                        <button name="action_activate" type="object" string="🟢 Activar Backup" class="btn-primary" invisible="state == 'active'"/>
+                        <button name="action_deactivate" type="object" string="⏹️ Desactivar" class="btn-secondary" invisible="state != 'active'"/>
+                        <button name="action_backup_manual" type="object" string="📤 Backup Manual" class="btn-success"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,active,inactive"/>
+                    </header>
+                    
+                    <sheet>
+                        <div class="oe_title">
+                            <h1>
+                                <field name="name" placeholder="Nombre del Backup"/>
+                            </h1>
+                        </div>
+                        
+                        <group>
+                            <group string="🗄️ Configuración Base de Datos">
+                                <field name="database_name"/>
+                                <field name="backup_frequency"/>
+                            </group>
+                            <group string="🖥️ Configuración Odoo Local">
+                                <field name="local_odoo_host"/>
+                                <field name="local_odoo_port"/>
+                                <field name="master_password" password="True"/>
+                            </group>
+                        </group>
+                        <group>
+                            <group string="🌐 Configuración Servidor SSH">
+                                <field name="server_host"/>
+                                <field name="server_user"/>
+                                <field name="server_password" password="True"/>
+                                <field name="server_path"/>
+                                <field name="ssh_key_path"/>
+                            </group>
+                        </group>
+                        
+                        <group>
+                            <group string="📊 Estadísticas">
+                                <field name="backup_count"/>
+                                <field name="last_backup_date"/>
+                                <field name="next_backup_date" invisible="state != 'active'"/>
+                                <field name="last_backup_size"/>
+                                <field name="last_backup_file"/>
+                            </group>
+                        </group>
+                        
+                        <group string="📋 Resultado del Último Backup">
+                            <field name="last_backup_result" widget="text" nolabel="1"/>
+                        </group>
+                        
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Vista Kanban -->
+        <record id="backup_auto_scp_kanban_view" model="ir.ui.view">
+            <field name="name">backup.auto.scp.kanban</field>
+            <field name="model">backup.auto.scp</field>
+            <field name="arch" type="xml">
+                <kanban string="Backups Automáticos SCP">
+                    <field name="name"/>
+                    <field name="state"/>
+                    <field name="database_name"/>
+                    <field name="backup_count"/>
+                    <field name="last_backup_date"/>
+                    <field name="next_backup_date"/>
+                    <field name="server_host"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card oe_kanban_global_click">
+                                <div class="oe_kanban_content">
+                                    <div class="row">
+                                        <div class="col-6">
+                                            <strong><field name="name"/></strong>
+                                        </div>
+                                        <div class="col-6 text-right">
+                                            <span t-if="record.state.raw_value == 'active'" class="badge badge-success">🟢 Activo</span>
+                                            <span t-if="record.state.raw_value == 'inactive'" class="badge badge-warning">⏹️ Inactivo</span>
+                                            <span t-if="record.state.raw_value == 'draft'" class="badge badge-info">📝 Borrador</span>
+                                        </div>
+                                    </div>
+                                    <div class="row mt8">
+                                        <div class="col-12">
+                                            <i class="fa fa-database"/> <field name="database_name"/>
+                                        </div>
+                                    </div>
+                                    <div class="row mt8">
+                                        <div class="col-12">
+                                            <i class="fa fa-server"/> <field name="server_host"/>
+                                        </div>
+                                    </div>
+                                    <div class="row mt8">
+                                        <div class="col-6">
+                                            <i class="fa fa-copy"/> <field name="backup_count"/> backups
+                                        </div>
+                                        <div class="col-6 text-right" t-if="record.next_backup_date.raw_value">
+                                            <i class="fa fa-clock-o"/> <field name="next_backup_date"/>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Acción -->
+        <record id="backup_auto_scp_action" model="ir.actions.act_window">
+            <field name="name">Backup Automático SCP</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">backup.auto.scp</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    🚀 Crear tu primer backup automático
+                </p>
+                <p>
+                    Configura backups automáticos cada 8 horas que se envían directamente 
+                    a tu servidor remoto usando SCP, sin usar espacio en disco local.
+                </p>
+            </field>
+        </record>
+
+        <!-- Menú principal -->
+        <menuitem 
+            id="backup_auto_scp_menu_root" 
+            name="🚀 Backup SCP" 
+            sequence="100"/>
+        
+        <menuitem 
+            id="backup_auto_scp_menu" 
+            name="Configuraciones Backup" 
+            parent="backup_auto_scp_menu_root" 
+            action="backup_auto_scp_action" 
+            sequence="10"/>
+
+    </data>
+</odoo>

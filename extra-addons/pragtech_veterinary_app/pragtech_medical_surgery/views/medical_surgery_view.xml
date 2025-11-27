@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <menuitem name="Surgery" id="main_menu_medical_surgery" parent="pragtech_veterinary_app.medical_menu" sequence="5"/>
+    <!-- Surgery -->
+    <record model="ir.ui.view" id="medical_rcri_view">
+        <field name="name">Revised Cardiac Risk Index</field>
+        <field name="model">medical.rcri</field>
+        <field name="arch" type="xml">
+            <form string="Revised Cardiac Risk Index">
+                <group colspan="4" col="4">
+                    <field name="patient_id"/>
+                    <field name="rcri_date"/>
+                    <field name="surgeon"/>
+                    <newline/>
+                    <field name="rcri_high_risk_surgery"/>
+                    <field name="rcri_ischemic_history"/>
+                    <field name="rcri_congestive_history"/>
+                    <field name="rcri_diabetes_history"/>
+                    <field name="rcri_cerebrovascular_history"/>
+                    <field name="rcri_kidney_history"/>
+                    <field name="rcri_total"/>
+                    <field name="rcri_class"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_rcri_tree">
+        <field name="name">Revised Cardiac Risk Index</field>
+        <field name="model">medical.rcri</field>
+        <field name="arch" type="xml">
+            <tree string='Operation'>
+                <field name="patient_id"/>
+                <field name="rcri_date"/>
+                <field name="surgeon"/>
+                <field name="rcri_total"/>
+                <field name="rcri_class"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_surgery_view">
+        <field name="name">Surgery</field>
+        <field name="model">medical.surgery</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Surgery">
+                <header>
+                    <button name="done" string="Done" type="object" invisible="state != 'in_progress'"/>
+                    <field name="state" widget="statusbar" statusbar_visible="in_progress,done"/>
+                </header>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="patient_id"/>
+                            <field name="description" required="1"/>
+                            <field name="classification"/>
+                            <field name="surgery_age"/>
+                            <field name="anesthetist"/>
+                            <field name="surgery_end_date"/>
+                            <field name="signed_by"/>
+                        </group>
+                        <group>
+                            <field name="name"/>
+                            <field name="pathology"/>
+                            <field name="date"/>
+                            <field name="surgeon"/>
+                            <field name="operating_room"/>
+                            <field name="surgery_length"/>
+                        </group>
+                    </group>
+                    <group string='Surgical Safety Checklist'>
+                        <group>
+                            <field name="preop_bleeding_risk"/>
+                            <field name="preop_site_marking"/>
+                            <field name="preop_sterility"/>
+                        </group>
+                        <group>
+                            <field name="preop_oximeter"/>
+                            <field name="preop_antibiotics"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="preop_asa"/>
+                        <field name="preop_mallampati" colspan='4' invisible="1"/>
+                        <field name="preop_rcri" colspan='4' invisible="1"/>
+                    </group>
+                    <separator string="Procedures"/>
+                    <field name="procedures" nolabel="1" colspan='4'/>
+                    <separator string="Details/Incidents"/>
+                    <field name="extra_info" nolabel="1"/>
+                    <separator string="Anesthesia Report"/>
+                    <field name="anesthesia_report" nolabel="1"/>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_surgery_tree">
+        <field name="name">Surgery Lists</field>
+        <field name="model">medical.surgery</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Surgery'>
+                <field name="name"></field>
+                <field name="description"></field>
+                <field name="pathology"></field>
+                <field name="classification"></field>
+                <field name="date"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.actions.act_window" id="action_medical_surgery">
+        <field name="name">Surgery</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">medical.surgery</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem action="action_medical_surgery" id="menu_medical_surgery" parent="main_menu_medical_surgery"/>
+    <!-- Procedure -->
+
+    <record model="ir.ui.view" id="medical_procedure_view">
+        <field name="name">Procedure</field>
+        <field name="model">medical.procedure</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Procedure">
+                <group>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="description"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_procedure_tree">
+        <field name="name">Procedure List</field>
+        <field name="model">medical.procedure</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Procedure'>
+                <field name="name"></field>
+                <field name="description"></field>
+            </tree>
+        </field>
+    </record>
+
+    <record model="ir.ui.view" id="medical_operation_view">
+        <field name="name">Operation</field>
+        <field name="model">medical.operation</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form string="Operation">
+                <group>
+                    <group>
+                        <field name="procedure"/>
+                    </group>
+                    <group>
+                        <field name="notes"/>
+                    </group>
+                </group>
+            </form>
+        </field>
+    </record>
+
+
+    <record model="ir.ui.view" id="medical_operation_tree">
+        <field name="name">Operation List</field>
+        <field name="model">medical.operation</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree string='Operation'>
+                <field name="procedure"/>
+                <field name="notes"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <!-- Include the Surgery page into the Patient History -->
+
+    <record model="ir.ui.view" id="medical_patient_view_inherit_surgery">
+        <field name="name">Patient</field>
+        <field name="model">medical.patient</field>
+        <field name="inherit_id" ref="pragtech_veterinary_app.medical_patient_view"/>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <notebook>
+                <page string="Surgeries">
+                    <field name="surgery_ids" colspan="4" nolabel="1"/>
+                </page>
+            </notebook>
+        </field>
+    </record>
+</odoo>
+

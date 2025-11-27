@@ -1,0 +1,764 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data noupdate="1">
+        <record model="medical.pathology.category" id="icdcat1-101">
+            <field name="name">Multiple species diseases, infections and infestations</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-102">
+            <field name="name">Cattle diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-103">
+            <field name="name">Sheep and goat diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-104">
+            <field name="name">Equine diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-105">
+            <field name="name">Swine diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-106">
+            <field name="name">Avian diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-107">
+            <field name="name">Lagomorph diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-108">
+            <field name="name">Bee diseases, infections and infestations</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-109">
+            <field name="name">Other diseases and infections</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-110">
+            <field name="name">Fish diseases</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-111">
+            <field name="name">Mollusc diseases</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-112">
+            <field name="name">Crustacean diseases</field>
+        </record>
+
+        <record model="medical.pathology.category" id="icdcat1-113">
+            <field name="name">Amphibians</field>
+        </record>
+
+
+        <record model="medical.pathology" id="icdcat1-101-1">
+            <field name="name">Anthrax</field>
+            <field name="code">AA01</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-2">
+            <field name="name">Bluetongue</field>
+            <field name="code">AA02</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-3">
+            <field name="name">Brucellosis (Brucella abortus)</field>
+            <field name="code">AA03</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-4">
+            <field name="name">Brucellosis (Brucella melitensis)</field>
+            <field name="code">AA04</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-5">
+            <field name="name">Brucellosis (Brucella suis)</field>
+            <field name="code">AA05</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-6">
+            <field name="name">Crimean Congo haemorrhagic fever</field>
+            <field name="code">AA06</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-7">
+            <field name="name">Epizootic haemorrhagic disease</field>
+            <field name="code">AA07</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-8">
+            <field name="name">Equine encephalomyelitis (Eastern)</field>
+            <field name="code">AA08</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-9">
+            <field name="name">Foot and mouth disease</field>
+            <field name="code">AA09</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-10">
+            <field name="name">Heartwater</field>
+            <field name="code">AA10</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-11">
+            <field name="name">Infection with Aujeszky's disease virus</field>
+            <field name="code">AA11</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-12">
+            <field name="name">Infection with Echinococcus granulosus</field>
+            <field name="code">AA12</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-13">
+            <field name="name">Infection with Echinococcus multilocularis</field>
+            <field name="code">AA13</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-14">
+            <field name="name">Infection with rabies virus</field>
+            <field name="code">AA14</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-15">
+            <field name="name">Infection with Rift Valley fever virus</field>
+            <field name="code">AA15</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-16">
+            <field name="name">Infection with rinderpest virus</field>
+            <field name="code">AA16</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-17">
+            <field name="name">Infection with Trichinella spp.</field>
+            <field name="code">AA17</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-18">
+            <field name="name">Japanese encephalitis</field>
+            <field name="code">AA18</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-19">
+            <field name="name">New world screwworm (Cochliomyia hominivorax)</field>
+            <field name="code">AA19</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-20">
+            <field name="name">Old world screwworm (Chrysomya bezziana)</field>
+            <field name="code">AA20</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-21">
+            <field name="name">Paratuberculosis</field>
+            <field name="code">AA21</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-22">
+            <field name="name">Q fever</field>
+            <field name="code">AA22</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-23">
+            <field name="name">Surra (Trypanosoma evansi)</field>
+            <field name="code">AA23</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-24">
+            <field name="name">Tularemia</field>
+            <field name="code">AA24</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-101-25">
+            <field name="name">West Nile fever</field>
+            <field name="code">AA25</field>
+            <field name="category" ref="icdcat1-101"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-1">
+            <field name="name">Bovine anaplasmosis</field>
+            <field name="code">AB01</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-2">
+            <field name="name">Bovine babesiosis</field>
+            <field name="code">AB02</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-3">
+            <field name="name">Bovine genital campylobacteriosis</field>
+            <field name="code">AB03</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-4">
+            <field name="name">Bovine spongiform encephalopathy</field>
+            <field name="code">AB04</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-5">
+            <field name="name">Bovine tuberculosis</field>
+            <field name="code">AB05</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-6">
+            <field name="name">Bovine viral diarrhoea</field>
+            <field name="code">AB06</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-7">
+            <field name="name">Enzootic bovine leukosis</field>
+            <field name="code">AB07</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-8">
+            <field name="name">Haemorrhagic septicaemia</field>
+            <field name="code">AB08</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-9">
+            <field name="name">Infectious bovine rhinotracheitis/infectious pustular vulvovaginitis</field>
+            <field name="code">AB09</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-10">
+            <field name="name">Infection with Mycoplasma mycoides subsp. mycoides SC (Contagious bovine
+                pleuropneumonia)
+            </field>
+            <field name="code">AB10</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-11">
+            <field name="name">Lumpy skin disease</field>
+            <field name="code">AB11</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-12">
+            <field name="name">Theileriosis</field>
+            <field name="code">AB12</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-13">
+            <field name="name">Trichomonosis</field>
+            <field name="code">AB13</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-102-14">
+            <field name="name">Trypanosomosis (tsetse-transmitted)</field>
+            <field name="code">AB14</field>
+            <field name="category" ref="icdcat1-102"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-1">
+            <field name="name">Caprine arthritis/encephalitis</field>
+            <field name="code">AC01</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-2">
+            <field name="name">Contagious agalactia</field>
+            <field name="code">AC02</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-3">
+            <field name="name">Contagious caprine pleuropneumonia</field>
+            <field name="code">AC03</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-4">
+            <field name="name">Infection with Chlamydophila abortus (Enzootic abortion of ewes, ovine chlamydiosis)
+            </field>
+            <field name="code">AC04</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-5">
+            <field name="name">Infection with peste des petits ruminants virus</field>
+            <field name="code">AC05</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-6">
+            <field name="name">Maedi-visna</field>
+            <field name="code">AC06</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-7">
+            <field name="name">Nairobi sheep disease</field>
+            <field name="code">AC07</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-8">
+            <field name="name">Ovine epididymitis (Brucella ovis)</field>
+            <field name="code">AC08</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-9">
+            <field name="name">Salmonellosis (S. abortusovis)</field>
+            <field name="code">AC09</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-10">
+            <field name="name">Scrapie</field>
+            <field name="code">AC10</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-103-11">
+            <field name="name">Sheep pox and goat pox</field>
+            <field name="code">AC11</field>
+            <field name="category" ref="icdcat1-103"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-1">
+            <field name="name">Contagious equine metritis</field>
+            <field name="code">AD01</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-2">
+            <field name="name">Dourine</field>
+            <field name="code">AD02</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-3">
+            <field name="name">Equine encephalomyelitis (Western)</field>
+            <field name="code">AD03</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-4">
+            <field name="name">Equine infectious anaemia</field>
+            <field name="code">AD04</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-5">
+            <field name="name">Equine influenza</field>
+            <field name="code">AD05</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-6">
+            <field name="name">Equine piroplasmosis</field>
+            <field name="code">AD06</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-7">
+            <field name="name">Glanders</field>
+            <field name="code">AD07</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-8">
+            <field name="name">Infection with African horse sickness virus</field>
+            <field name="code">AD08</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-9">
+            <field name="name">Infection with equid herpesvirus-1 (EHV-1)</field>
+            <field name="code">AD09</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-10">
+            <field name="name">Infection with equine arteritis virus</field>
+            <field name="code">AD10</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-104-11">
+            <field name="name">Venezuelan equine encephalomyelitis</field>
+            <field name="code">AD11</field>
+            <field name="category" ref="icdcat1-104"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-105-1">
+            <field name="name">African swine fever</field>
+            <field name="code">AE01</field>
+            <field name="category" ref="icdcat1-105"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-105-2">
+            <field name="name">Infection with classical swine fever virus</field>
+            <field name="code">AE02</field>
+            <field name="category" ref="icdcat1-105"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-105-3">
+            <field name="name">Nipah virus encephalitis</field>
+            <field name="code">AE03</field>
+            <field name="category" ref="icdcat1-105"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-105-4">
+            <field name="name">Porcine cysticercosis</field>
+            <field name="code">AE04</field>
+            <field name="category" ref="icdcat1-105"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-105-5">
+            <field name="name">Porcine reproductive and respiratory syndrome</field>
+            <field name="code">AE05</field>
+            <field name="category" ref="icdcat1-105"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-105-6">
+            <field name="name">Transmissible gastroenteritis</field>
+            <field name="code">AE06</field>
+            <field name="category" ref="icdcat1-105"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-1">
+            <field name="name">Avian chlamydiosis</field>
+            <field name="code">AF01</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-2">
+            <field name="name">Avian infectious bronchitis</field>
+            <field name="code">AF02</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-3">
+            <field name="name">Avian infectious laryngotracheitis</field>
+            <field name="code">AF03</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-4">
+            <field name="name">Avian mycoplasmosis (Mycoplasma gallisepticum)</field>
+            <field name="code">AF04</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-5">
+            <field name="name">Avian mycoplasmosis (Mycoplasma synoviae)</field>
+            <field name="code">AF05</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-6">
+            <field name="name">Duck virus hepatitis</field>
+            <field name="code">AF06</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-7">
+            <field name="name">Fowl typhoid</field>
+            <field name="code">AF07</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-8">
+            <field name="name">Infection with avian influenza viruses</field>
+            <field name="code">AF08</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-9">
+            <field name="name">infection with influenza A viruses of high pathogenicity in birds other than poultry
+                including wild birds
+            </field>
+            <field name="code">AF09</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-10">
+            <field name="name">Infection with Newcastle disease virus</field>
+            <field name="code">AF10</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-11">
+            <field name="name">Infectious bursal disease (Gumboro disease)</field>
+            <field name="code">AF11</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-12">
+            <field name="name">Pullorum disease</field>
+            <field name="code">AF12</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-106-13">
+            <field name="name">Turkey rhinotracheitis</field>
+            <field name="code">AF13</field>
+            <field name="category" ref="icdcat1-106"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-107-1">
+            <field name="name">Myxomatosis</field>
+            <field name="code">AG01</field>
+            <field name="category" ref="icdcat1-107"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-107-2">
+            <field name="name">Rabbit haemorrhagic disease</field>
+            <field name="code">AG02</field>
+            <field name="category" ref="icdcat1-107"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-108-1">
+            <field name="name">Infection of honey bees with Melissococcus plutonius (European foulbrood)</field>
+            <field name="code">AH01</field>
+            <field name="category" ref="icdcat1-108"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-108-2">
+            <field name="name">Infection of honey bees with Paenibacillus larvae (American foulbrood)</field>
+            <field name="code">AH02</field>
+            <field name="category" ref="icdcat1-108"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-108-3">
+            <field name="name">Infestation of honey bees with Acarapis woodi</field>
+            <field name="code">AH03</field>
+            <field name="category" ref="icdcat1-108"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-108-4">
+            <field name="name">Infestation of honey bees with Tropilaelaps spp.</field>
+            <field name="code">AH04</field>
+            <field name="category" ref="icdcat1-108"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-108-5">
+            <field name="name">Infestation of honey bees with Varroa spp. (Varroosis)</field>
+            <field name="code">AH05</field>
+            <field name="category" ref="icdcat1-108"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-108-6">
+            <field name="name">Infestation with Aethina tumida (Small hive beetle).</field>
+            <field name="code">AH06</field>
+            <field name="category" ref="icdcat1-108"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-109-1">
+            <field name="name">Camelpox</field>
+            <field name="code">AI01</field>
+            <field name="category" ref="icdcat1-109"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-109-2">
+            <field name="name">Leishmaniosis</field>
+            <field name="code">AI02</field>
+            <field name="category" ref="icdcat1-109"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-1">
+            <field name="name">Epizootic haematopoietic necrosis</field>
+            <field name="code">AJ01</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-2">
+            <field name="name">Infection with Aphanomyces invadans (epizootic ulcerative syndrome)</field>
+            <field name="code">AJ02</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-3">
+            <field name="name">Infection with Gyrodactylus salaris</field>
+            <field name="code">AJ03</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-4">
+            <field name="name">Infection with HPR-deleted or HPR0 infectious salmon anaemia virus</field>
+            <field name="code">AJ04</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-5">
+            <field name="name">Infection with salmonid alphavirus</field>
+            <field name="code">AJ05</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-6">
+            <field name="name">Infectious haematopoietic necrosis</field>
+            <field name="code">AJ06</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-7">
+            <field name="name">Koi herpesvirus disease</field>
+            <field name="code">AJ07</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-8">
+            <field name="name">Red sea bream iridoviral disease</field>
+            <field name="code">AJ08</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-9">
+            <field name="name">Spring viraemia of carp</field>
+            <field name="code">AJ09</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-110-10">
+            <field name="name">Viral haemorrhagic septicaemia</field>
+            <field name="code">AJ10</field>
+            <field name="category" ref="icdcat1-110"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-1">
+            <field name="name">Infection with abalone herpesvirus</field>
+            <field name="code">AK01</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-2">
+            <field name="name">Infection with Bonamia exitiosa</field>
+            <field name="code">AK02</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-3">
+            <field name="name">Infection with Bonamia ostreae</field>
+            <field name="code">AK03</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-4">
+            <field name="name">Infection with Marteilia refringens</field>
+            <field name="code">AK04</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-5">
+            <field name="name">Infection with Perkinsus marinus</field>
+            <field name="code">AK05</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-6">
+            <field name="name">Infection with Perkinsus olseni</field>
+            <field name="code">AK06</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-111-7">
+            <field name="name">Infection with Xenohaliotis californiensis</field>
+            <field name="code">AK07</field>
+            <field name="category" ref="icdcat1-111"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-1">
+            <field name="name">Crayfish plague (Aphanomyces astaci)</field>
+            <field name="code">AL01</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-2">
+            <field name="name">Infection with Yellowhead virus</field>
+            <field name="code">AL02</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-3">
+            <field name="name">Infectious hypodermal and haematopoietic necrosis</field>
+            <field name="code">AL03</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-4">
+            <field name="name">Infectious myonecrosis</field>
+            <field name="code">AL04</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-5">
+            <field name="name">Necrotising hepatopancreatitis</field>
+            <field name="code">AL05</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-6">
+            <field name="name">Taura syndrome</field>
+            <field name="code">AL06</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-7">
+            <field name="name">White spot disease</field>
+            <field name="code">AL07</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-112-8">
+            <field name="name">White tail disease</field>
+            <field name="code">AL08</field>
+            <field name="category" ref="icdcat1-112"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-113-1">
+            <field name="name">Infection with Batrachochytrium dendrobatidis</field>
+            <field name="code">AM01</field>
+            <field name="category" ref="icdcat1-113"></field>
+        </record>
+
+        <record model="medical.pathology" id="icdcat1-113-2">
+            <field name="name">Infection with ranavirus</field>
+            <field name="code">AM02</field>
+            <field name="category" ref="icdcat1-113"></field>
+        </record>
+    </data>
+</odoo>
