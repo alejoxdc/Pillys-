@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="popup_pricelist">
+        <div class="popup pricelist-popup">
+            <div class="header">
+                <h4 class="title">Select Price List</h4>
+                <i class="fa fa-times close"></i>
+            </div>
+            <div class="body">
+                <ul>
+                    <t t-foreach="pricelists" t-as="pricelist">
+                        <li class="pricelist-item" t-att-data-pricelist-id="pricelist.id">
+                            <span class="pricelist-name" t-esc="pricelist.name"></span>
+                            <span class="pricelist-price" t-esc="pricelist.currency_id.symbol + ' ' + pricelist.price"></span>
+                        </li>
+                    </t>
+                </ul>
+            </div>
+            <div class="footer">
+                <button class="button confirm-button">Confirm</button>
+                <button class="button cancel-button">Cancel</button>
+            </div>
+        </div>
+    </t>
+</templates>

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="ClientDetailsEdit" t-inherit="point_of_sale.ClientDetailsEdit" t-inherit-mode="extension" owl="1">
+        <xpath expr="//div[@class='client-details-left']" position="inside">
+            <div class='client-detail'>
+                <span class='label'>Regimen</span>
+                <select class='detail client-edi-type_regime needsclick' name='tribute_id'
+                        t-on-change="captureChange">
+                    <t t-foreach='env.pos.dian_tributes' t-as='tribute_id' t-key="tribute_id.id">
+                        <option t-att-value="tribute_id.id"
+                                t-att-selected="props.partner.tribute_id ? ((tribute_id.id === props.partner.tribute_id[0]) ? true : undefined) : undefined">
+                            <t t-esc="tribute_id.name"/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Ciudad.</span>
+                <select class='detail client-edi-municipality needsclick' name='city_id'
+                        t-on-change="captureChange">
+                    <option value=''>None</option>
+                    <t t-foreach='env.pos.res_city2' t-as='city_id' t-key="city_id.id">
+                        <option t-att-value='city_id.id'
+                                t-att-selected="props.partner.city_id ? ((city_id.id === props.partner.city_id[0]) ? true : undefined) : undefined">
+                            <t t-esc='city_id.name'/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+        </xpath>
+        <xpath expr="//div[@class='client-details-right']" position="inside">
+            <div class='client-detail'>
+                <span class='label'>Tipo doc.</span>
+                <select class='detail client-edi-l10n_latam_identification_type needsclick' name='l10n_latam_identification_type_id'
+                        t-on-change="captureChange">
+                    <t t-foreach='env.pos.l10n_latam_identification_types' t-as='l10n_latam_identification_type_id' t-key="l10n_latam_identification_type_id.id">
+                        <option t-att-value='l10n_latam_identification_type_id.id'
+                                t-att-selected="props.partner.l10n_latam_identification_type_id ? ((l10n_latam_identification_type_id.id === props.partner.l10n_latam_identification_type_id[0]) ? true : undefined) : undefined">
+                            <t t-esc='l10n_latam_identification_type_id.name'/>
+                        </option>
+                    </t>
+                </select>
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Tipo per.</span>
+                <select class='detail client-edi-company_type needsclick' name='company_type'
+                        t-on-change="captureChange">
+                    <option value='person'
+                            t-att-selected="props.partner.company_type ? (('person' === props.partner.company_type) ? true : undefined) : undefined">Persona Natural</option>
+                    <option value='company'
+                            t-att-selected="props.partner.company_type ? (('company' === props.partner.company_type) ? true : undefined) : undefined">Persona Jurídica</option>
+                </select>
+            </div>
+            <div class='client-detail'>
+                <span class='label'>Email fact.</span>
+                <input class='detail client-edi-email' name='email_invoice_electronic' type='email' t-on-change="captureChange"
+                       t-att-value='props.partner.email_invoice_electronic || ""' placeholder="fe@example.com"/>
+            </div>
+        </xpath>
+    </t>
+</templates>

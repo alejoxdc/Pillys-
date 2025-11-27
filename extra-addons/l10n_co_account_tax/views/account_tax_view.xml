@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+    
+		<record model='ir.ui.view' id='view_account_fiscal_year_form_inherit_tax_invoice'>
+			<field name='name'>account.fiscal.year.form.inherit.tax.invoice</field>
+			<field name='model'>account.fiscal.year</field>
+			<field name='inherit_id' ref='account_accountant.action_account_fiscal_year_form'/>
+			<field name='type'>form</field>
+			<field name='arch' type='xml'>
+			  <field name="date_to" position="after">
+			    <field name="fiscal_unit"/>
+			  </field>
+			</field>
+		</record>
+		
+		<record model='ir.ui.view' id='view_tax_code_form_inherit_tax_invoice'>
+		  <field name='name'>account.tax.code.form.inherit.tax.invoice</field>
+		  <field name='model'>account.tax</field>
+		  <field name='inherit_id' ref='account.view_tax_form'/>
+		  <field name='type'>form</field>
+		  <field name='arch' type='xml'>			    
+		    <xpath expr="//page[@name='advanced_options']" position="after">
+                <page string="Base">
+				  <group>
+				    <field name="in_order" colspan="2" string="Calcular en el pedido"/>
+                    <field name="notprintable" colspan="2" string="No se imprime"/>
+                    <field name="applicable_invoice" colspan="2" string="Aplica base"/>
+					<field name="base_uvt_qty" colspan="2" string="Base en UVT" readonly="applicable_invoice == False"/>
+                    <field name="python_invoice" colspan="2" invisible="1" nolabel="1" readonly="applicable_invoice == False"/>
+				  </group>	
+                </page>
+			</xpath>
+		  </field>
+		</record>
+
+	</data>
+</odoo>

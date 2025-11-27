@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates>
+    <t t-name="popup_uom">
+        <div class="popup uom-popup">
+            <div class="header">
+                <h4 class="title">Select Unit of Measure</h4>
+                <i class="fa fa-times close"></i>
+            </div>
+            <div class="body">
+                <ul>
+                    <t t-foreach="uoms" t-as="uom">
+                        <li class="uom" data-uom-id="{{ uom.id }}">
+                            <span class="name">{{ uom.name }}</span>
+                            <span class="factor">{{ uom.factor }}</span>
+                        </li>
+                    </t>
+                </ul>
+            </div>
+        </div>
+    </t>
+</templates>

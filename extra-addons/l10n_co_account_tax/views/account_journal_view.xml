@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+	<data>
+    
+		<record model='ir.ui.view' id='view_account_journal_form_inherit_taxes'>
+			<field name='name'>account.journal.form.inherit.taxes</field>
+			<field name='model'>account.journal</field>
+			<field name='inherit_id' ref='account.view_account_journal_form'/>
+			<field name='type'>form</field>
+			<field name='arch' type='xml'>
+				<xpath expr="//field[@name='currency_id']" position="after">
+					<field name="taxes_ids" widget="many2many_tags"/>
+			    </xpath>
+			</field>	
+		</record>
+		
+	</data>
+</odoo>

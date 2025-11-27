@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<templates id="template" xml:space="preserve">
+
+    <t t-inherit="point_of_sale.PartnerDetailsEdit" t-inherit-mode="extension">
+        <xpath expr="//input[@name='name']" position="attributes">
+            <attribute
+                name="t-attf-style"
+            >display: {{changes.is_company ? 'block': 'none'}}</attribute>
+        </xpath>
+        <xpath expr="//div[hasclass('partner-details-header')]" position="inside">
+            <img
+                t-attf-class="fa {{isCompanyIcon}} fa-4x partner_is_company"
+                t-on-click="toggleIsCompany"
+            />
+        </xpath>
+
+        <xpath expr="//div[hasclass('partner-details-box')]/t" position="before">
+            <div class="partner-detail col" t-if="!changes.is_company">
+                <label class="form-label label" for="is_company">Apellidos</label>
+                <input
+                    class="detail form-control"
+                    name="first_lastname"
+                    t-model="changes.first_lastname"
+                    t-att-value="changes.first_lastname || ''"
+                    placeholder="Apellidos"
+                />
+            </div>
+            <div class="partner-detail col" t-if="!changes.is_company">
+                <label class="form-label label" for="is_company">Nombre</label>
+                    <input
+                    class="detail form-control"
+                    name="firs_name"
+                    t-model="changes.firs_name"
+                    t-att-value="changes.firs_name || ''"
+                    placeholder="Nombre"
+                />
+            </div>
+        </xpath>
+
+
+        <xpath expr="//div[input[@t-attf-name='{{item}}']]" position="attributes">
+            <attribute name="t-if">!pos.isColombiaCompany() || item != 'City'</attribute>
+        </xpath>
+
+        <xpath expr="//div[select[@name='country_id']]" position="after">
+            <t t-if="pos.isColombiaCompany()">
+                <div class="partner-detail col">
+                    <label class="form-label label" for="city">City</label>
+                    <select
+                        id="city"
+                        name="city_id"
+                        class="detail form-select"
+                        t-model="changes.city_id"
+                        t-att-class="{'border-danger': missingFields.includes('city_id')}"
+                    >
+                        <option value="">None</option>
+                        <option
+                            t-foreach="pos.cities"
+                            t-as="city"
+                            t-key="city.id"
+                            t-if="changes.state_id == city.state_id[0] and changes.country_id == city.country_id[0]"
+                            t-att-value="city.id"
+                            t-out="city.name"
+                        />
+                    </select>
+                </div>
+                <div class="partner-detail col">
+                <label class="form-label label" for="identification_type">Identification Type</label>
+                    <select
+                        id="identification_type"
+                        class="detail form-select"
+                        name="l10n_latam_identification_type_id"
+                        t-model="changes.l10n_latam_identification_type_id"
+                        t-att-class="{'border-danger': missingFields.includes('l10n_latam_identification_type_id')}"
+                    >
+                        <option
+                            t-foreach="pos.l10n_latam_identification_types"
+                            t-as="l10n_latam_identification_type"
+                            t-key="l10n_latam_identification_type.id"
+                            t-att-value="l10n_latam_identification_type.id"
+                            t-out="l10n_latam_identification_type.name"
+                        />
+                    </select>
+                </div>
+                <div class="partner-detail col">
+                    <label class="form-label label" for="country">Categoria</label>
+                    <select class="detail form-select" id="category_id" name="category_id" t-model="changes.category_id" t-att-class="{'border-danger': missingFields.includes('category_id')}">
+                        <option value="">None</option>
+                        <t t-foreach="pos.category_id" t-as="category_id" t-key="category_id.id">
+                            <option t-att-value="category_id.id">
+                                <t t-esc="category_id.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+
+                <div class="partner-detail col">
+                    <label class="form-label label" for="country">Tributo</label>
+                    <select class="detail form-select" id="tribute_id" name="tribute_id" t-model="changes.tribute_id" t-att-class="{'border-danger': missingFields.includes('tribute_id')}">
+                        <option value="">None</option>
+                        <t t-foreach="pos.tribute_id" t-as="tribute_id" t-key="tribute_id.id">
+                            <option t-att-value="tribute_id.id">
+                                <t t-esc="tribute_id.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+
+                <div class="partner-detail col">
+                    <label class="form-label label" for="country">Responsabilidades</label>
+                    <select class="detail form-select" id="fiscal_responsability_ids" name="fiscal_responsability_ids" t-model="changes.fiscal_responsability_ids" t-att-class="{'border-danger': missingFields.includes('fiscal_responsability_ids')}">
+                        <option value="">None</option>
+                        
+                        <t t-foreach="pos.fiscal_responsability_ids" t-as="fiscal_responsability_ids" t-key="fiscal_responsability_ids.id">
+                            <option t-att-value="fiscal_responsability_ids.id">
+                                <t t-esc="fiscal_responsability_ids.name" />
+                            </option>
+                        </t>
+                    </select>
+                </div>
+            </t>
+        </xpath>
+        
+        <label for="vat" position="attributes">
+            <attribute name="t-if">!pos.isColombiaCompany()</attribute>
+        </label>
+        <label for="vat" position="after">
+            <label t-if="pos.isColombiaCompany()" class="form-label label" for="vat">NIT/CC</label>
+        </label>
+    </t>
+
+</templates>
