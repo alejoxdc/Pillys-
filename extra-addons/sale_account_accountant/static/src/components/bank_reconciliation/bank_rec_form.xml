@@ -12,13 +12,10 @@
        t-inherit="account_accountant.BankRecRecordForm"
        t-inherit-mode="extension"
       >
-        <xpath expr="//t[@t-set='amls_tab_title']" position="after">
-            <t t-set="sale_orders_tab_title">Sale Orders</t>
-        </xpath>
         <xpath expr="//t[@t-set-slot='amls_tab']" position="after">
             <t t-set-slot="sale_orders_tab"
                name="'sale_orders_tab'"
-               title="sale_orders_tab_title"
+               title="'Sale Orders'"
                isVisible="['valid', 'invalid'].includes(data.state) and data.matched_sale_order_ids.currentIds.length">
                 <t t-call="sale_account_accountant.BankRecRecordNotebookSaleOrders"/>
             </t>

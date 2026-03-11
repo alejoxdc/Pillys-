@@ -12,13 +12,10 @@
        t-inherit="account_accountant.BankRecRecordForm"
        t-inherit-mode="extension"
       >
-        <xpath expr="//t[@t-set='amls_tab_title']" position="after">
-            <t t-set="batch_payments_tab_title">Batch Payments</t>
-        </xpath>
         <xpath expr="//t[@t-set-slot='amls_tab']" position="after">
             <t t-set-slot="batch_payments_tab"
                name="'batch_payments_tab'"
-               title="batch_payments_tab_title"
+               title="'Batch Payments'"
                isVisible="['valid', 'invalid'].includes(data.state)">
                 <t t-call="account_accountant_batch_payment.BankRecRecordNotebookBatchPayments"/>
             </t>
